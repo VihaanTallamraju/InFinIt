@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+
+{% block title %}Book Corner - FinLit{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- Header -->
+    <div class="row mb-5">
+        <div class="col text-center">
+            <h1 class="display-5 mb-3">
+                <i class="bi bi-book text-warning"></i> Book Corner
+            </h1>
+            <p class="lead text-muted">Great books about money and finance, perfect for your age group</p>
+        </div>
+    </div>
+
+    <!-- Books Grid -->
+    <div class="row g-4">
+        {% for book in books %}
+        <div class="col-lg-6">
+            <div class="card h-100 shadow-sm book-card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <!-- Book Icon -->
+                            <div class="book-icon mb-3">
+                                <i class="bi bi-book text-warning" style="font-size: 4rem;"></i>
+                            </div>
+                            <span class="badge bg-secondary">{{ book.age_range }}</span>
+                        </div>
+                        <div class="col-md-9">
+                            <h5 class="card-title">{{ book.title }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">by {{ book.author }}</h6>
+                            <p class="card-text">{{ book.description }}</p>
+                            
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <small class="text-success">
+                                    <i class="bi bi-check-circle"></i> Age Appropriate
+                                </small>
+                                <small class="text-muted">
+                                    <i class="bi bi-people"></i> {{ book.age_range }}
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- No Books Message -->
+    {% if not books %}
+    <div class="row">
+        <div class="col text-center">
+            <div class="alert alert-info">
+                <h4><i class="bi bi-info-circle"></i> Building our library!</h4>
+                <p class="mb-0">We're working on curating the best financial literacy books for teenagers. Check back soon!</p>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Reading Tips -->
+    <div class="row mt-5">
+        <div class="col">
+            <div class="card bg-light">
+                <div class="card-header">
+                    <h5><i class="bi bi-lightbulb text-primary"></i> Reading Tips</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h6 class="text-success">📚 Start Simple</h6>
+                            <p class="small">Begin with books that match your current knowledge level. Don't jump into advanced topics right away.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="text-warning">📝 Take Notes</h6>
+                            <p class="small">Write down important concepts and ideas. This helps you remember and apply what you learn.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="text-info">🎯 Apply Knowledge</h6>
+                            <p class="small">Try to use what you read in real life. Practice budgeting or saving based on the book's advice.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book Categories -->
+    <div class="row mt-4">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="bi bi-tags"></i> What These Books Cover</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="text-center mb-3">
+                                <i class="bi bi-piggy-bank text-primary" style="font-size: 2rem;"></i>
+                                <h6 class="mt-2">Saving Basics</h6>
+                                <small class="text-muted">Emergency funds, goal setting, and building good habits</small>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center mb-3">
+                                <i class="bi bi-calculator text-success" style="font-size: 2rem;"></i>
+                                <h6 class="mt-2">Budgeting</h6>
+                                <small class="text-muted">Creating and sticking to your first budget</small>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center mb-3">
+                                <i class="bi bi-graph-up text-warning" style="font-size: 2rem;"></i>
+                                <h6 class="mt-2">Investing</h6>
+                                <small class="text-muted">Understanding stocks, bonds, and compound interest</small>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center mb-3">
+                                <i class="bi bi-briefcase text-info" style="font-size: 2rem;"></i>
+                                <h6 class="mt-2">Careers & Money</h6>
+                                <small class="text-muted">Making smart financial decisions for your future</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="row mt-5">
+        <div class="col text-center">
+            <div class="card bg-primary text-white">
+                <div class="card-body">
+                    <h4>Ready to Learn More?</h4>
+                    <p class="mb-3">Combine reading with practice! Try our interactive games to reinforce what you learn from these books.</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="{{ url_for('games') }}" class="btn btn-light">
+                            <i class="bi bi-controller"></i> Play Games
+                        </a>
+                        <a href="{{ url_for('blog_list') }}" class="btn btn-outline-light">
+                            <i class="bi bi-journal-text"></i> Read Articles
+                        </a>
+                        <a href="{{ url_for('videos') }}" class="btn btn-outline-light">
+                            <i class="bi bi-play-circle"></i> Watch Videos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.book-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.book-icon {
+    opacity: 0.8;
+}
+</style>
+{% endblock %}

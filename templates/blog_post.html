@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} - FinLit{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Back Button -->
+            <div class="mb-4">
+                <a href="{{ url_for('blog_list') }}" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left"></i> Back to Blog
+                </a>
+            </div>
+
+            <!-- Blog Post -->
+            <article class="card shadow">
+                <div class="card-body">
+                    <!-- Post Header -->
+                    <header class="mb-4">
+                        <h1 class="display-6 mb-3">{{ post.title }}</h1>
+                        <div class="d-flex align-items-center text-muted">
+                            <i class="bi bi-calendar me-2"></i>
+                            <span>Published on {{ post.date_posted.strftime('%B %d, %Y') }}</span>
+                        </div>
+                    </header>
+
+                    <!-- Post Content -->
+                    <div class="post-content">
+                        {{ post.content | safe }}
+                    </div>
+                </div>
+            </article>
+
+            <!-- Related Actions -->
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <h6><i class="bi bi-controller text-primary"></i> Practice What You Learned</h6>
+                            <p class="small mb-3">Try our interactive games to apply these concepts!</p>
+                            <a href="{{ url_for('games') }}" class="btn btn-primary btn-sm">Play Games</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <h6><i class="bi bi-chat-square-text text-success"></i> Have Questions?</h6>
+                            <p class="small mb-3">Share your thoughts or ask for more information!</p>
+                            <a href="{{ url_for('survey') }}" class="btn btn-success btn-sm">Give Feedback</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="mt-4 text-center">
+                <div class="btn-group" role="group">
+                    <a href="{{ url_for('blog_list') }}" class="btn btn-outline-secondary">
+                        <i class="bi bi-journal-text"></i> More Articles
+                    </a>
+                    <a href="{{ url_for('books') }}" class="btn btn-outline-warning">
+                        <i class="bi bi-book"></i> Recommended Books
+                    </a>
+                    <a href="{{ url_for('videos') }}" class="btn btn-outline-danger">
+                        <i class="bi bi-play-circle"></i> Watch Videos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.post-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.post-content h2 {
+    color: #0d6efd;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.post-content h3 {
+    color: #198754;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.post-content ul {
+    padding-left: 2rem;
+}
+
+.post-content li {
+    margin-bottom: 0.5rem;
+}
+
+.post-content blockquote {
+    border-left: 4px solid #0d6efd;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #6c757d;
+}
+
+.post-content strong {
+    color: #212529;
+}
+
+.post-content .highlight {
+    background-color: #fff3cd;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+</style>
+{% endblock %}

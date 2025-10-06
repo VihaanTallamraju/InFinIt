@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Access - FinLit{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-warning text-dark">
+                    <h4 class="mb-0 text-center">
+                        <i class="bi bi-shield-lock"></i> Admin Access Required
+                    </h4>
+                </div>
+                <div class="card-body text-center">
+                    <p class="mb-4">This page requires admin access. Please enter the access code:</p>
+                    
+                    <form method="GET">
+                        <div class="mb-3">
+                            <input type="password" class="form-control" name="code" placeholder="Enter access code" required>
+                        </div>
+                        <button type="submit" class="btn btn-warning">
+                            <i class="bi bi-key"></i> Access Survey Results
+                        </button>
+                    </form>
+                    
+                    <hr class="my-4">
+                    
+                    <div class="text-muted">
+                        <small>
+                            <i class="bi bi-info-circle"></i>
+                            This page shows aggregated survey responses for educational analysis.
+                        </small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

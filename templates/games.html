@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+
+{% block title %}Games - FinLit{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- Header -->
+    <div class="row mb-5">
+        <div class="col text-center">
+            <h1 class="display-5 mb-3">
+                <i class="bi bi-controller text-primary"></i> Financial Games
+            </h1>
+            <p class="lead text-muted">Learn money management through fun, interactive challenges!</p>
+        </div>
+    </div>
+
+    <!-- Games Grid -->
+    <div class="row g-4">
+        <!-- Budget Challenge -->
+        <div class="col-lg-4">
+            <div class="card game-card h-100 shadow-sm">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4 class="mb-0">
+                        <i class="bi bi-calculator"></i> Budget Challenge
+                    </h4>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <div class="game-icon text-center mb-3">
+                        <i class="bi bi-pie-chart text-primary" style="font-size: 4rem;"></i>
+                    </div>
+                    <h5 class="card-title">Master Your Monthly Budget</h5>
+                    <p class="card-text flex-grow-1">
+                        You've got a monthly allowance and job income. Can you balance your needs and wants 
+                        while still saving for the future? Test your budgeting skills!
+                    </p>
+                    <div class="mb-3">
+                        <small class="text-muted">
+                            <i class="bi bi-clock"></i> 5-10 minutes |
+                            <i class="bi bi-star"></i> Beginner friendly
+                        </small>
+                    </div>
+                    <a href="{{ url_for('game_budget') }}" class="btn btn-primary">
+                        <i class="bi bi-play"></i> Start Challenge
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Saving Sprint -->
+        <div class="col-lg-4">
+            <div class="card game-card h-100 shadow-sm">
+                <div class="card-header bg-success text-white text-center">
+                    <h4 class="mb-0">
+                        <i class="bi bi-piggy-bank"></i> Saving Sprint
+                    </h4>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <div class="game-icon text-center mb-3">
+                        <i class="bi bi-graph-up text-success" style="font-size: 4rem;"></i>
+                    </div>
+                    <h5 class="card-title">Build Your Emergency Fund</h5>
+                    <p class="card-text flex-grow-1">
+                        Navigate through 6 months of financial decisions. Will you choose to save or spend 
+                        when unexpected events happen? Build your emergency fund wisely!
+                    </p>
+                    <div class="mb-3">
+                        <small class="text-muted">
+                            <i class="bi bi-clock"></i> 10-15 minutes |
+                            <i class="bi bi-star"></i> Interactive timeline
+                        </small>
+                    </div>
+                    <a href="{{ url_for('game_saving') }}" class="btn btn-success">
+                        <i class="bi bi-play"></i> Start Sprint
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Investment Simulation -->
+        <div class="col-lg-4">
+            <div class="card game-card h-100 shadow-sm">
+                <div class="card-header bg-warning text-dark text-center">
+                    <h4 class="mb-0">
+                        <i class="bi bi-graph-up-arrow"></i> Investment Sim
+                    </h4>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <div class="game-icon text-center mb-3">
+                        <i class="bi bi-currency-dollar text-warning" style="font-size: 4rem;"></i>
+                    </div>
+                    <h5 class="card-title">Grow Your Money</h5>
+                    <p class="card-text flex-grow-1">
+                        Compare different investment options: savings account, index funds, or individual stocks. 
+                        See how risk and time affect your returns!
+                    </p>
+                    <div class="mb-3">
+                        <small class="text-muted">
+                            <i class="bi bi-clock"></i> 5-10 minutes |
+                            <i class="bi bi-star"></i> Learn about risk
+                        </small>
+                    </div>
+                    <a href="{{ url_for('game_invest') }}" class="btn btn-warning">
+                        <i class="bi bi-play"></i> Start Simulation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Tips -->
+    <div class="row mt-5">
+        <div class="col">
+            <div class="alert alert-info">
+                <h5><i class="bi bi-lightbulb"></i> Game Tips</h5>
+                <ul class="mb-0">
+                    <li><strong>Start with Budget Challenge</strong> if you're new to financial planning</li>
+                    <li><strong>Take your time</strong> - these games are meant to help you learn, not rush</li>
+                    <li><strong>Try different strategies</strong> - play multiple times to see different outcomes</li>
+                    <li><strong>Ask questions</strong> - use the feedback form if you want to learn more about any topic</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Tracking (Local Storage) -->
+    <div class="row mt-4">
+        <div class="col text-center">
+            <div id="game-progress" class="alert alert-light">
+                <h6><i class="bi bi-trophy"></i> Your Progress</h6>
+                <p class="mb-0" id="progress-text">Play a game to start tracking your progress!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Update progress display on page load
+document.addEventListener('DOMContentLoaded', function() {
+    updateProgressDisplay();
+});
+
+function updateProgressDisplay() {
+    const budgetPlayed = localStorage.getItem('budget_games_played') || 0;
+    const savingPlayed = localStorage.getItem('saving_games_played') || 0;
+    const investPlayed = localStorage.getItem('invest_games_played') || 0;
+    
+    const totalGames = parseInt(budgetPlayed) + parseInt(savingPlayed) + parseInt(investPlayed);
+    
+    if (totalGames > 0) {
+        document.getElementById('progress-text').innerHTML = `
+            Games played: ${totalGames} | 
+            Budget: ${budgetPlayed} | 
+            Saving: ${savingPlayed} | 
+            Investment: ${investPlayed}
+        `;
+    }
+}
+</script>
+{% endblock %}

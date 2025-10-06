@@ -1,0 +1,459 @@
+{% extends "base.html" %}
+
+{% block title %}Investment Simulation - FinLit{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Game Header -->
+            <div class="text-center mb-4">
+                <h1 class="display-6">
+                    <i class="bi bi-graph-up-arrow text-warning"></i> Investment Simulation
+                </h1>
+                <p class="lead">See how different investments can grow your money over time!</p>
+            </div>
+
+            <!-- Investment Form -->
+            <div class="card shadow">
+                <div class="card-header bg-warning text-dark">
+                    <h4 class="mb-0">Choose Your Investment Strategy</h4>
+                </div>
+                <div class="card-body">
+                    <form id="investmentForm">
+                        <!-- Investment Amount -->
+                        <div class="mb-4">
+                            <label for="amount" class="form-label">
+                                <h5><i class="bi bi-currency-dollar"></i> How much do you want to invest?</h5>
+                            </label>
+                            <input type="range" class="form-range" id="amount" min="100" max="2000" step="50" value="500">
+                            <div class="d-flex justify-content-between">
+                                <span class="text-muted">$100</span>
+                                <span class="h5 text-primary" id="amount-display">$500</span>
+                                <span class="text-muted">$2000</span>
+                            </div>
+                            <small class="text-muted">This could be money from a summer job or gifts</small>
+                        </div>
+
+                        <!-- Time Period -->
+                        <div class="mb-4">
+                            <label for="years" class="form-label">
+                                <h5><i class="bi bi-clock"></i> How long will you invest?</h5>
+                            </label>
+                            <input type="range" class="form-range" id="years" min="1" max="10" step="1" value="5">
+                            <div class="d-flex justify-content-between">
+                                <span class="text-muted">1 year</span>
+                                <span class="h5 text-success" id="years-display">5 years</span>
+                                <span class="text-muted">10 years</span>
+                            </div>
+                            <small class="text-muted">Longer investments usually have more time to grow</small>
+                        </div>
+
+                        <!-- Investment Type -->
+                        <div class="mb-4">
+                            <h5><i class="bi bi-bank"></i> Choose your investment type:</h5>
+                            <div class="row g-3">
+                                <div class="col-lg-4">
+                                    <input type="radio" class="btn-check" name="investmentType" id="savings" value="savings" checked>
+                                    <label class="btn btn-outline-primary w-100 h-100" for="savings">
+                                        <div class="p-3">
+                                            <i class="bi bi-piggy-bank d-block mb-2" style="font-size: 2rem;"></i>
+                                            <strong>Savings Account</strong>
+                                            <div class="mt-2">
+                                                <small class="text-success">Very Safe</small><br>
+                                                <small class="text-muted">~1% return/year</small>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input type="radio" class="btn-check" name="investmentType" id="index" value="index">
+                                    <label class="btn btn-outline-warning w-100 h-100" for="index">
+                                        <div class="p-3">
+                                            <i class="bi bi-graph-up d-block mb-2" style="font-size: 2rem;"></i>
+                                            <strong>Index Fund</strong>
+                                            <div class="mt-2">
+                                                <small class="text-warning">Moderate Risk</small><br>
+                                                <small class="text-muted">~7% return/year</small>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input type="radio" class="btn-check" name="investmentType" id="stock" value="stock">
+                                    <label class="btn btn-outline-danger w-100 h-100" for="stock">
+                                        <div class="p-3">
+                                            <i class="bi bi-lightning d-block mb-2" style="font-size: 2rem;"></i>
+                                            <strong>Individual Stock</strong>
+                                            <div class="mt-2">
+                                                <small class="text-danger">High Risk</small><br>
+                                                <small class="text-muted">~12% return/year</small>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Investment Explanations -->
+                            <div class="mt-3">
+                                <div id="investment-explanation" class="alert alert-info">
+                                    <strong>Savings Account:</strong> Your money is safe and guaranteed, but grows very slowly. 
+                                    Perfect for emergency funds and short-term goals.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-warning btn-lg">
+                                <i class="bi bi-calculator"></i> Run Simulation
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div id="results" class="mt-4" style="display: none;">
+                <div class="card shadow">
+                    <div class="card-header bg-success text-white">
+                        <h4 class="mb-0"><i class="bi bi-graph-up"></i> Your Investment Results</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-4">
+                            <div class="col-md-4 text-center">
+                                <div class="result-box">
+                                    <h3 class="text-primary" id="final-value">$0</h3>
+                                    <p>Final Value</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="result-box">
+                                    <h3 class="text-success" id="total-return">$0</h3>
+                                    <p>Money Earned</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="result-box">
+                                    <h3 class="text-info" id="return-rate">0%</h3>
+                                    <p>Total Return Rate</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Annual Progress Chart -->
+                        <div class="mb-4">
+                            <h5>Year-by-Year Growth:</h5>
+                            <div id="growth-chart" class="mb-3">
+                                <!-- Chart will be generated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <!-- Explanation -->
+                        <div class="alert alert-light">
+                            <h6><i class="bi bi-lightbulb"></i> What This Means:</h6>
+                            <p id="result-explanation" class="mb-0"></p>
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn btn-outline-warning" onclick="resetSimulation()">
+                                <i class="bi bi-arrow-clockwise"></i> Try Different Settings
+                            </button>
+                            <button class="btn btn-warning ms-2" onclick="runComparison()">
+                                <i class="bi bi-bar-chart"></i> Compare All Options
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Results -->
+            <div id="comparison" class="mt-4" style="display: none;">
+                <div class="card shadow">
+                    <div class="card-header bg-info text-white">
+                        <h4 class="mb-0"><i class="bi bi-bar-chart"></i> Investment Comparison</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>Here's how your investment would perform with each option:</p>
+                        <div id="comparison-results">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Educational Content -->
+            <div class="mt-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5><i class="bi bi-book"></i> Investment Basics for Teens</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6><i class="bi bi-shield-check text-success"></i> Low Risk Options:</h6>
+                                <ul>
+                                    <li><strong>Savings Account:</strong> Money is guaranteed safe</li>
+                                    <li><strong>CDs:</strong> Higher interest but money is locked up</li>
+                                    <li><strong>Government Bonds:</strong> Very safe, moderate returns</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6><i class="bi bi-exclamation-triangle text-warning"></i> Higher Risk Options:</h6>
+                                <ul>
+                                    <li><strong>Index Funds:</strong> Diversified, moderate risk</li>
+                                    <li><strong>Individual Stocks:</strong> Can be very volatile</li>
+                                    <li><strong>Crypto:</strong> Extremely risky and unpredictable</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <h6><i class="bi bi-lightbulb text-primary"></i> Key Lessons:</h6>
+                            <ul class="mb-0">
+                                <li><strong>Time Matters:</strong> The longer you invest, the more your money can grow</li>
+                                <li><strong>Risk vs Reward:</strong> Higher potential returns usually mean higher risk</li>
+                                <li><strong>Diversification:</strong> Don't put all your eggs in one basket</li>
+                                <li><strong>Start Early:</strong> Even small amounts can grow significantly over time</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="text-center mt-4">
+                <a href="{{ url_for('games') }}" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left"></i> Back to Games
+                </a>
+                <a href="{{ url_for('blog_list') }}" class="btn btn-primary ms-2">
+                    Learn More in Blog <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+let investmentSim = {
+    currentSettings: {},
+    
+    init() {
+        // Update displays when sliders change
+        document.getElementById('amount').addEventListener('input', this.updateAmountDisplay);
+        document.getElementById('years').addEventListener('input', this.updateYearsDisplay);
+        
+        // Update explanations when investment type changes
+        document.querySelectorAll('input[name="investmentType"]').forEach(radio => {
+            radio.addEventListener('change', this.updateExplanation);
+        });
+        
+        // Handle form submission
+        document.getElementById('investmentForm').addEventListener('submit', this.runSimulation);
+        
+        // Initial updates
+        this.updateAmountDisplay();
+        this.updateYearsDisplay();
+        this.updateExplanation();
+    },
+    
+    updateAmountDisplay() {
+        const amount = document.getElementById('amount').value;
+        document.getElementById('amount-display').textContent = `$${amount}`;
+    },
+    
+    updateYearsDisplay() {
+        const years = document.getElementById('years').value;
+        document.getElementById('years-display').textContent = `${years} year${years > 1 ? 's' : ''}`;
+    },
+    
+    updateExplanation() {
+        const type = document.querySelector('input[name="investmentType"]:checked').value;
+        const explanations = {
+            savings: "Savings Account: Your money is safe and guaranteed, but grows very slowly. Perfect for emergency funds and short-term goals.",
+            index: "Index Fund: Invests in many companies at once, reducing risk. Good long-term option with moderate risk and solid returns.",
+            stock: "Individual Stock: Buying shares in one company. Can make a lot of money but also lose a lot. Very risky!"
+        };
+        
+        document.getElementById('investment-explanation').innerHTML = `<strong>${explanations[type]}</strong>`;
+    },
+    
+    async runSimulation(e) {
+        e.preventDefault();
+        
+        const amount = parseFloat(document.getElementById('amount').value);
+        const years = parseInt(document.getElementById('years').value);
+        const type = document.querySelector('input[name="investmentType"]:checked').value;
+        
+        investmentSim.currentSettings = { amount, years, type };
+        
+        try {
+            const response = await fetch('/api/games/invest', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    amount: amount,
+                    years: years,
+                    type: type
+                })
+            });
+            
+            const result = await response.json();
+            investmentSim.displayResults(result);
+            
+            // Update local storage
+            const played = parseInt(localStorage.getItem('invest_games_played') || 0) + 1;
+            localStorage.setItem('invest_games_played', played);
+            
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Sorry, there was an error running the simulation. Please try again.');
+        }
+    },
+    
+    displayResults(result) {
+        document.getElementById('final-value').textContent = `$${result.final_value}`;
+        document.getElementById('total-return').textContent = `$${result.total_return}`;
+        document.getElementById('return-rate').textContent = `${result.return_rate}%`;
+        document.getElementById('result-explanation').textContent = result.explanation;
+        
+        // Create growth chart
+        this.createGrowthChart(result.annual_returns);
+        
+        document.getElementById('results').style.display = 'block';
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    },
+    
+    createGrowthChart(annualReturns) {
+        const chartContainer = document.getElementById('growth-chart');
+        const maxValue = Math.max(...annualReturns);
+        const initialAmount = investmentSim.currentSettings.amount;
+        
+        let chartHtml = '<div class="row g-2">';
+        
+        annualReturns.forEach((value, index) => {
+            const height = Math.max((value / maxValue) * 100, 20);
+            const year = index + 1;
+            const growth = value > initialAmount ? 'text-success' : value < initialAmount ? 'text-danger' : 'text-warning';
+            
+            chartHtml += `
+                <div class="col text-center">
+                    <div class="chart-bar" style="height: ${height}px; background-color: #007bff; margin: 0 auto; width: 30px; border-radius: 3px;"></div>
+                    <small class="d-block mt-1">Year ${year}</small>
+                    <small class="d-block ${growth}">$${value}</small>
+                </div>
+            `;
+        });
+        
+        chartHtml += '</div>';
+        chartContainer.innerHTML = chartHtml;
+    },
+    
+    async runComparison() {
+        const { amount, years } = investmentSim.currentSettings;
+        const types = ['savings', 'index', 'stock'];
+        const results = {};
+        
+        // Run simulation for all types
+        for (const type of types) {
+            try {
+                const response = await fetch('/api/games/invest', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ amount, years, type })
+                });
+                results[type] = await response.json();
+            } catch (error) {
+                console.error('Error comparing investments:', error);
+            }
+        }
+        
+        // Display comparison
+        let comparisonHtml = `
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Investment Type</th>
+                            <th>Final Value</th>
+                            <th>Money Earned</th>
+                            <th>Return Rate</th>
+                            <th>Risk Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        `;
+        
+        const typeNames = {
+            savings: 'Savings Account',
+            index: 'Index Fund', 
+            stock: 'Individual Stock'
+        };
+        
+        const riskLevels = {
+            savings: '<span class="badge bg-success">Low</span>',
+            index: '<span class="badge bg-warning">Medium</span>',
+            stock: '<span class="badge bg-danger">High</span>'
+        };
+        
+        types.forEach(type => {
+            const result = results[type];
+            if (result) {
+                comparisonHtml += `
+                    <tr>
+                        <td><strong>${typeNames[type]}</strong></td>
+                        <td>$${result.final_value}</td>
+                        <td>$${result.total_return}</td>
+                        <td>${result.return_rate}%</td>
+                        <td>${riskLevels[type]}</td>
+                    </tr>
+                `;
+            }
+        });
+        
+        comparisonHtml += `
+                    </tbody>
+                </table>
+            </div>
+            <div class="alert alert-info mt-3">
+                <strong>Remember:</strong> These are simplified examples. Real investments can be more complex and unpredictable!
+            </div>
+        `;
+        
+        document.getElementById('comparison-results').innerHTML = comparisonHtml;
+        document.getElementById('comparison').style.display = 'block';
+    }
+};
+
+function resetSimulation() {
+    document.getElementById('results').style.display = 'none';
+    document.getElementById('comparison').style.display = 'none';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    investmentSim.init();
+});
+</script>
+
+<style>
+.result-box {
+    padding: 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.chart-bar {
+    transition: height 0.5s ease-in-out;
+}
+
+.btn-check:checked + .btn {
+    background-color: var(--bs-primary);
+    color: white;
+}
+</style>
+{% endblock %}

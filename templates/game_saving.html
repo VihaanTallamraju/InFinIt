@@ -1,0 +1,451 @@
+{% extends "base.html" %}
+
+{% block title %}Saving Sprint - FinLit{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <!-- Game Header -->
+            <div class="text-center mb-4">
+                <h1 class="display-6">
+                    <i class="bi bi-piggy-bank text-success"></i> Saving Sprint
+                </h1>
+                <p class="lead">Navigate 6 months of financial decisions and build your emergency fund!</p>
+            </div>
+
+            <!-- Game Progress -->
+            <div class="card shadow mb-4">
+                <div class="card-header bg-success text-white">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h4 class="mb-0">Month <span id="current-month">1</span> of 6</h4>
+                        </div>
+                        <div class="col-auto">
+                            <strong>Emergency Fund: $<span id="savings-amount">100</span></strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="progress mb-3" style="height: 25px;">
+                        <div class="progress-bar bg-success" id="savings-progress" role="progressbar" 
+                             style="width: 10%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="1000">
+                            $<span id="progress-text">100</span> / $1000
+                        </div>
+                    </div>
+                    <small class="text-muted">Goal: Build a $1000 emergency fund in 6 months</small>
+                </div>
+            </div>
+
+            <!-- Current Scenario -->
+            <div class="card shadow" id="scenario-card">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0" id="scenario-title">Welcome to Your Savings Journey!</h4>
+                </div>
+                <div class="card-body">
+                    <div id="scenario-content">
+                        <div class="alert alert-info">
+                            <h5><i class="bi bi-info-circle"></i> Your Starting Situation</h5>
+                            <p>
+                                You have a part-time job earning $400/month. You already have $100 in savings 
+                                from previous months. Your goal is to build an emergency fund of $1000 over 
+                                the next 6 months.
+                            </p>
+                            <p class="mb-0">
+                                Each month, you'll face different financial decisions. Choose wisely between 
+                                saving and spending to reach your goal!
+                            </p>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-success btn-lg" onclick="startGame()">
+                                <i class="bi bi-play"></i> Start Your Journey
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Results -->
+            <div id="results-card" class="card shadow mt-4" style="display: none;">
+                <div class="card-header bg-warning text-dark">
+                    <h4 class="mb-0"><i class="bi bi-trophy"></i> Your Savings Journey Results</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Final Results:</h5>
+                            <p><strong>Final Emergency Fund:</strong> $<span id="final-savings">0</span></p>
+                            <p><strong>Goal Achievement:</strong> <span id="goal-percentage">0</span>%</p>
+                            <p><strong>Your Grade:</strong> <span id="final-grade" class="h4"></span></p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>What You Learned:</h5>
+                            <div id="learning-summary"></div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="btn btn-success" onclick="resetGame()">
+                            <i class="bi bi-arrow-clockwise"></i> Play Again
+                        </button>
+                        <a href="{{ url_for('game_invest') }}" class="btn btn-warning ms-2">
+                            Next: Investment Simulation <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tips Card -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5><i class="bi bi-lightbulb"></i> Emergency Fund Tips</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="mb-0">
+                        <li><strong>Start Small:</strong> Even $5-10 per week adds up over time</li>
+                        <li><strong>Automate Savings:</strong> Set aside money before you spend it</li>
+                        <li><strong>Emergency Only:</strong> Use this fund only for true emergencies</li>
+                        <li><strong>Goal Amount:</strong> Aim for 3-6 months of expenses when you're older</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="text-center mt-4">
+                <a href="{{ url_for('games') }}" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left"></i> Back to Games
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+let savingGame = {
+    currentMonth: 1,
+    savings: 100,
+    monthlyIncome: 400,
+    decisions: [],
+    
+    scenarios: [
+        {
+            month: 1,
+            title: "Month 1: New School Semester",
+            description: "School is starting and you need new supplies. Your friends are also asking you to join them for a weekend trip to the mall.",
+            choices: [
+                {
+                    text: "Buy only essential school supplies ($25) and save the rest",
+                    impact: -25,
+                    message: "Smart choice! You saved $375 this month."
+                },
+                {
+                    text: "Buy supplies ($25) and go shopping with friends ($75)",
+                    impact: -100,
+                    message: "You had fun, but only saved $300 this month."
+                },
+                {
+                    text: "Go all out - new supplies, clothes, and activities ($150)",
+                    impact: -150,
+                    message: "Expensive month! You only saved $250."
+                }
+            ]
+        },
+        {
+            month: 2,
+            title: "Month 2: Birthday Season",
+            description: "It's your friend's birthday and there's a party this weekend. Plus, a new video game you've been wanting just came out.",
+            choices: [
+                {
+                    text: "Just buy a thoughtful but inexpensive gift ($15)",
+                    impact: -15,
+                    message: "Thoughtful and budget-friendly! Saved $385 this month."
+                },
+                {
+                    text: "Buy a nice gift ($30) and attend the party ($20)",
+                    impact: -50,
+                    message: "Good balance of social life and saving! Saved $350."
+                },
+                {
+                    text: "Gift + party + new video game ($100)",
+                    impact: -100,
+                    message: "Fun month but expensive. Only saved $300."
+                }
+            ]
+        },
+        {
+            month: 3,
+            title: "Month 3: Unexpected Opportunity",
+            description: "Your friend's family is going to a concert and invited you, but tickets are expensive. Also, your phone screen cracked.",
+            choices: [
+                {
+                    text: "Skip the concert, fix phone yourself with a kit ($20)",
+                    impact: -20,
+                    message: "Practical choice! You saved $380 this month."
+                },
+                {
+                    text: "Go to concert ($60) but DIY phone fix ($20)",
+                    impact: -80,
+                    message: "Enjoyed the concert and saved money on repairs. Saved $320."
+                },
+                {
+                    text: "Concert + professional phone repair ($130)",
+                    impact: -130,
+                    message: "Expensive month with the concert and repair. Saved $270."
+                }
+            ]
+        },
+        {
+            month: 4,
+            title: "Month 4: Emergency Strikes!",
+            description: "Oh no! Your bike tire is flat and you need it for work. Also, it's your parent's birthday coming up.",
+            event: "This is exactly why emergency funds exist!",
+            choices: [
+                {
+                    text: "Fix bike ($25), simple gift for parent ($15)",
+                    impact: -40,
+                    message: "You handled the emergency well! Saved $360 this month."
+                },
+                {
+                    text: "New bike tire ($40), nice parent gift ($35)",
+                    impact: -75,
+                    message: "Good priorities on both needs. Saved $325 this month."
+                },
+                {
+                    text: "New bike + expensive parent gift ($100)",
+                    impact: -100,
+                    message: "Generous but expensive choices. Saved $300 this month."
+                }
+            ]
+        },
+        {
+            month: 5,
+            title: "Month 5: Summer Planning",
+            description: "Summer is coming and friends are making plans for activities. You're also thinking about getting a new summer job that pays more.",
+            choices: [
+                {
+                    text: "Focus on job search, minimal summer spending ($30)",
+                    impact: -30,
+                    message: "Investment in your future! Great saving month: $370."
+                },
+                {
+                    text: "Some summer activities ($60) while job hunting",
+                    impact: -60,
+                    message: "Balanced approach to summer fun. Saved $340 this month."
+                },
+                {
+                    text: "All the summer activities with friends ($120)",
+                    impact: -120,
+                    message: "Summer fun but less savings. Only saved $280."
+                }
+            ]
+        },
+        {
+            month: 6,
+            title: "Month 6: Final Sprint",
+            description: "Last month of your challenge! You've gotten that better summer job (+$100/month), but there's a summer festival everyone is going to.",
+            specialIncome: 100,
+            choices: [
+                {
+                    text: "Skip festival, save all extra income ($10 expenses only)",
+                    impact: -10,
+                    message: "Amazing final month! You saved $490 with your new job!"
+                },
+                {
+                    text: "Go to festival ($40) but save most of extra income",
+                    impact: -40,
+                    message: "Great finish! Festival was fun and you saved $460."
+                },
+                {
+                    text: "Festival + celebration dinner + new clothes ($100)",
+                    impact: -100,
+                    message: "Celebratory month but you saved $400. Still good!"
+                }
+            ]
+        }
+    ],
+    
+    init() {
+        this.updateDisplay();
+    },
+    
+    updateDisplay() {
+        document.getElementById('current-month').textContent = this.currentMonth;
+        document.getElementById('savings-amount').textContent = this.savings;
+        
+        const progressPercent = Math.min((this.savings / 1000) * 100, 100);
+        document.getElementById('savings-progress').style.width = progressPercent + '%';
+        document.getElementById('progress-text').textContent = this.savings;
+        
+        // Update progress bar color based on savings level
+        const progressBar = document.getElementById('savings-progress');
+        if (this.savings >= 1000) {
+            progressBar.className = 'progress-bar bg-success';
+        } else if (this.savings >= 500) {
+            progressBar.className = 'progress-bar bg-warning';
+        } else {
+            progressBar.className = 'progress-bar bg-danger';
+        }
+    },
+    
+    showScenario() {
+        if (this.currentMonth > 6) {
+            this.showResults();
+            return;
+        }
+        
+        const scenario = this.scenarios[this.currentMonth - 1];
+        const income = scenario.specialIncome ? this.monthlyIncome + scenario.specialIncome : this.monthlyIncome;
+        
+        let content = `
+            <div class="alert alert-primary">
+                <h5><i class="bi bi-calendar"></i> ${scenario.title}</h5>
+                <p>${scenario.description}</p>
+                ${scenario.event ? `<p class="text-warning"><strong>${scenario.event}</strong></p>` : ''}
+                ${scenario.specialIncome ? `<p class="text-success"><strong>Good news: You earned an extra $${scenario.specialIncome} this month!</strong></p>` : ''}
+                <p><strong>Monthly Income: $${income}</strong></p>
+            </div>
+            
+            <h6>What do you choose?</h6>
+            <div class="d-grid gap-2">
+        `;
+        
+        scenario.choices.forEach((choice, index) => {
+            content += `
+                <button class="btn btn-outline-primary text-start" onclick="makeChoice(${index})">
+                    <strong>Option ${index + 1}:</strong> ${choice.text}
+                </button>
+            `;
+        });
+        
+        content += '</div>';
+        
+        document.getElementById('scenario-title').textContent = scenario.title;
+        document.getElementById('scenario-content').innerHTML = content;
+    },
+    
+    makeChoice(choiceIndex) {
+        const scenario = this.scenarios[this.currentMonth - 1];
+        const choice = scenario.choices[choiceIndex];
+        const income = scenario.specialIncome ? this.monthlyIncome + scenario.specialIncome : this.monthlyIncome;
+        
+        // Calculate savings change
+        const monthlySavings = income + choice.impact;
+        this.savings += monthlySavings;
+        
+        // Record decision
+        this.decisions.push({
+            month: this.currentMonth,
+            choice: choice.text,
+            impact: choice.impact,
+            monthlySavings: monthlySavings,
+            totalSavings: this.savings
+        });
+        
+        // Show result
+        const resultHtml = `
+            <div class="alert alert-info">
+                <h6><i class="bi bi-check-circle"></i> Month ${this.currentMonth} Results</h6>
+                <p>${choice.message}</p>
+                <p><strong>Total Emergency Fund: $${this.savings}</strong></p>
+                ${this.currentMonth < 6 ? 
+                    '<button class="btn btn-primary" onclick="nextMonth()">Continue to Next Month</button>' :
+                    '<button class="btn btn-success" onclick="savingGame.showResults()">See Final Results!</button>'
+                }
+            </div>
+        `;
+        
+        document.getElementById('scenario-content').innerHTML = resultHtml;
+        this.updateDisplay();
+    },
+    
+    showResults() {
+        const goalAchieved = Math.min((this.savings / 1000) * 100, 100);
+        let grade, message;
+        
+        if (goalAchieved >= 100) {
+            grade = "A+";
+            message = "Outstanding! You reached your emergency fund goal and learned excellent saving habits!";
+        } else if (goalAchieved >= 80) {
+            grade = "A";
+            message = "Excellent work! You're very close to your goal and showed great financial discipline.";
+        } else if (goalAchieved >= 60) {
+            grade = "B";
+            message = "Good job! You made solid progress toward your emergency fund goal.";
+        } else if (goalAchieved >= 40) {
+            grade = "C";
+            message = "Not bad, but you could save more by cutting back on optional expenses.";
+        } else {
+            grade = "D";
+            message = "You struggled with saving. Try prioritizing needs over wants next time.";
+        }
+        
+        document.getElementById('final-savings').textContent = this.savings;
+        document.getElementById('goal-percentage').textContent = Math.round(goalAchieved);
+        document.getElementById('final-grade').textContent = grade;
+        document.getElementById('learning-summary').innerHTML = `<p>${message}</p>`;
+        
+        document.getElementById('results-card').style.display = 'block';
+        document.getElementById('scenario-card').style.display = 'none';
+        
+        // Update local storage
+        const played = parseInt(localStorage.getItem('saving_games_played') || 0) + 1;
+        localStorage.setItem('saving_games_played', played);
+        
+        // Scroll to results
+        document.getElementById('results-card').scrollIntoView({ behavior: 'smooth' });
+    }
+};
+
+function startGame() {
+    savingGame.currentMonth = 1;
+    savingGame.showScenario();
+}
+
+function nextMonth() {
+    savingGame.currentMonth++;
+    savingGame.showScenario();
+}
+
+function makeChoice(choiceIndex) {
+    savingGame.makeChoice(choiceIndex);
+}
+
+function resetGame() {
+    savingGame.currentMonth = 1;
+    savingGame.savings = 100;
+    savingGame.decisions = [];
+    
+    document.getElementById('results-card').style.display = 'none';
+    document.getElementById('scenario-card').style.display = 'block';
+    
+    // Reset to initial scenario
+    document.getElementById('scenario-title').textContent = 'Welcome to Your Savings Journey!';
+    document.getElementById('scenario-content').innerHTML = `
+        <div class="alert alert-info">
+            <h5><i class="bi bi-info-circle"></i> Your Starting Situation</h5>
+            <p>
+                You have a part-time job earning $400/month. You already have $100 in savings 
+                from previous months. Your goal is to build an emergency fund of $1000 over 
+                the next 6 months.
+            </p>
+            <p class="mb-0">
+                Each month, you'll face different financial decisions. Choose wisely between 
+                saving and spending to reach your goal!
+            </p>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-success btn-lg" onclick="startGame()">
+                <i class="bi bi-play"></i> Start Your Journey
+            </button>
+        </div>
+    `;
+    
+    savingGame.updateDisplay();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    savingGame.init();
+});
+</script>
+{% endblock %}

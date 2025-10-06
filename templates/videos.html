@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+
+{% block title %}Video Library - FinLit{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- Header -->
+    <div class="row mb-5">
+        <div class="col text-center">
+            <h1 class="display-5 mb-3">
+                <i class="bi bi-play-circle text-danger"></i> Video Library
+            </h1>
+            <p class="lead text-muted">Learn about money through engaging videos that explain complex topics simply</p>
+        </div>
+    </div>
+
+    <!-- Videos Grid -->
+    <div class="row g-4">
+        {% for video in videos %}
+        <div class="col-lg-6">
+            <div class="card h-100 shadow-sm video-card">
+                <div class="card-body">
+                    <!-- YouTube Embed -->
+                    <div class="ratio ratio-16x9 mb-3">
+                        <iframe 
+                            src="https://www.youtube.com/embed/{{ video.youtube_id }}" 
+                            title="{{ video.title }}"
+                            allowfullscreen
+                            class="rounded">
+                        </iframe>
+                    </div>
+                    
+                    <h5 class="card-title">{{ video.title }}</h5>
+                    <p class="card-text">{{ video.description }}</p>
+                    
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="badge bg-primary">
+                            <i class="bi bi-clock"></i> {{ video.duration }}
+                        </span>
+                        <small class="text-muted">
+                            <i class="bi bi-youtube text-danger"></i> YouTube
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- No Videos Message -->
+    {% if not videos %}
+    <div class="row">
+        <div class="col text-center">
+            <div class="alert alert-info">
+                <h4><i class="bi bi-info-circle"></i> Building our video library!</h4>
+                <p class="mb-0">We're curating the best financial education videos for teenagers. Check back soon!</p>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Video Categories -->
+    <div class="row mt-5">
+        <div class="col">
+            <div class="card bg-light">
+                <div class="card-header">
+                    <h5><i class="bi bi-collection-play"></i> Video Topics</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="text-center mb-3">
+                                <i class="bi bi-piggy-bank text-success" style="font-size: 2.5rem;"></i>
+                                <h6 class="mt-2 text-success">Saving Money</h6>
+                                <small class="text-muted">Tips for building your first savings account and emergency fund</small>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center mb-3">
+                                <i class="bi bi-calculator text-primary" style="font-size: 2.5rem;"></i>
+                                <h6 class="mt-2 text-primary">Budgeting 101</h6>
+                                <small class="text-muted">How to create and stick to your first budget as a teenager</small>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center mb-3">
+                                <i class="bi bi-graph-up text-warning" style="font-size: 2.5rem;"></i>
+                                <h6 class="mt-2 text-warning">Investing Basics</h6>
+                                <small class="text-muted">Understanding stocks, bonds, and compound interest</small>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center mb-3">
+                                <i class="bi bi-credit-card text-danger" style="font-size: 2.5rem;"></i>
+                                <h6 class="mt-2 text-danger">Credit & Debt</h6>
+                                <small class="text-muted">Building good credit and avoiding debt traps</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Learning Tips -->
+    <div class="row mt-4">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="bi bi-lightbulb text-primary"></i> How to Learn from Videos</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h6 class="text-success">📝 Take Notes</h6>
+                            <p class="small">Pause the video and write down important concepts. This helps you remember key ideas.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="text-warning">🔄 Rewatch</h6>
+                            <p class="small">Don't hesitate to watch a video multiple times. Complex topics become clearer with repetition.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="text-info">🎮 Practice</h6>
+                            <p class="small">After watching, try our games to practice what you learned in a fun, interactive way.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Suggested Learning Path -->
+    <div class="row mt-4">
+        <div class="col">
+            <div class="card border-primary">
+                <div class="card-header bg-primary text-white">
+                    <h5><i class="bi bi-map"></i> Suggested Learning Path</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <div class="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width: 40px; height: 40px;">1</div>
+                            <h6>Start with Budgeting</h6>
+                            <small class="text-muted">Learn to track income and expenses</small>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <div class="step-number bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width: 40px; height: 40px;">2</div>
+                            <h6>Build Saving Habits</h6>
+                            <small class="text-muted">Emergency funds and goal setting</small>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <div class="step-number bg-warning text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width: 40px; height: 40px;">3</div>
+                            <h6>Understand Investing</h6>
+                            <small class="text-muted">Long-term wealth building</small>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <div class="step-number bg-danger text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width: 40px; height: 40px;">4</div>
+                            <h6>Learn About Credit</h6>
+                            <small class="text-muted">Building good credit history</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="row mt-5">
+        <div class="col text-center">
+            <div class="card bg-gradient text-white" style="background: linear-gradient(45deg, #FF6B6B, #4ECDC4);">
+                <div class="card-body">
+                    <h4>Ready to Practice What You've Learned?</h4>
+                    <p class="mb-3">Videos teach the concepts, but games help you practice! Try our interactive challenges to reinforce your learning.</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="{{ url_for('games') }}" class="btn btn-light">
+                            <i class="bi bi-controller"></i> Play Budget Challenge
+                        </a>
+                        <a href="{{ url_for('game_saving') }}" class="btn btn-outline-light">
+                            <i class="bi bi-piggy-bank"></i> Try Saving Sprint
+                        </a>
+                        <a href="{{ url_for('game_invest') }}" class="btn btn-outline-light">
+                            <i class="bi bi-graph-up"></i> Investment Simulator
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.video-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.bg-gradient {
+    background: linear-gradient(45deg, #007bff, #28a745) !important;
+}
+</style>
+{% endblock %}

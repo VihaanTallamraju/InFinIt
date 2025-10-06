@@ -1,0 +1,295 @@
+{% extends "base.html" %}
+
+{% block title %}Budget Challenge - FinLit{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Game Header -->
+            <div class="text-center mb-4">
+                <h1 class="display-6">
+                    <i class="bi bi-calculator text-primary"></i> Budget Challenge
+                </h1>
+                <p class="lead">Can you balance your needs and wants while saving for the future?</p>
+            </div>
+
+            <!-- Game Card -->
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Your Monthly Financial Challenge</h4>
+                </div>
+                <div class="card-body">
+                    <!-- Scenario -->
+                    <div id="scenario" class="mb-4">
+                        <div class="alert alert-info">
+                            <h5><i class="bi bi-info-circle"></i> Your Situation</h5>
+                            <p class="mb-2">
+                                You're 16 years old and have a part-time job at a local store. Here's your monthly income:
+                            </p>
+                            <ul class="mb-0">
+                                <li><strong>Part-time job:</strong> $800/month</li>
+                                <li><strong>Allowance from parents:</strong> $100/month</li>
+                                <li><strong>Total Monthly Income:</strong> <span class="text-primary fw-bold">$900</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Budget Form -->
+                    <form id="budgetForm">
+                        <h5 class="mb-3">Allocate Your Money:</h5>
+                        
+                        <!-- Essential Expenses -->
+                        <div class="mb-4">
+                            <h6 class="text-success"><i class="bi bi-shield-check"></i> Essential Expenses (Needs)</h6>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">Phone Bill</label>
+                                    <input type="number" class="form-control expense-input" id="phone" min="0" max="900" value="50">
+                                    <small class="text-muted">Typical: $30-80</small>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="transport" class="form-label">Transportation (gas/bus)</label>
+                                    <input type="number" class="form-control expense-input" id="transport" min="0" max="900" value="60">
+                                    <small class="text-muted">Typical: $40-100</small>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lunch" class="form-label">School Lunch Money</label>
+                                    <input type="number" class="form-control expense-input" id="lunch" min="0" max="900" value="80">
+                                    <small class="text-muted">Typical: $60-120</small>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="clothing" class="form-label">Essential Clothing</label>
+                                    <input type="number" class="form-control expense-input" id="clothing" min="0" max="900" value="40">
+                                    <small class="text-muted">Typical: $20-80</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Want Expenses -->
+                        <div class="mb-4">
+                            <h6 class="text-warning"><i class="bi bi-heart"></i> Fun Expenses (Wants)</h6>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="entertainment" class="form-label">Movies/Games/Fun</label>
+                                    <input type="number" class="form-control expense-input" id="entertainment" min="0" max="900" value="100">
+                                    <small class="text-muted">Typical: $50-200</small>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="shopping" class="form-label">Shopping/Fashion</label>
+                                    <input type="number" class="form-control expense-input" id="shopping" min="0" max="900" value="80">
+                                    <small class="text-muted">Typical: $40-150</small>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="eating_out" class="form-label">Eating Out</label>
+                                    <input type="number" class="form-control expense-input" id="eating_out" min="0" max="900" value="70">
+                                    <small class="text-muted">Typical: $40-120</small>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="subscriptions" class="form-label">Subscriptions (Spotify, etc.)</label>
+                                    <input type="number" class="expense-input form-control" id="subscriptions" min="0" max="900" value="30">
+                                    <small class="text-muted">Typical: $10-50</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Summary -->
+                        <div class="mb-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="alert alert-light text-center">
+                                        <strong>Total Income</strong><br>
+                                        <span class="h5 text-primary" id="total-income">$900</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="alert alert-light text-center">
+                                        <strong>Total Expenses</strong><br>
+                                        <span class="h5 text-danger" id="total-expenses">$0</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="alert alert-light text-center">
+                                        <strong>Money Left</strong><br>
+                                        <span class="h5" id="money-left">$900</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="bi bi-calculator"></i> Calculate My Score
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Results -->
+                    <div id="results" class="mt-4" style="display: none;">
+                        <div class="alert alert-success">
+                            <h5><i class="bi bi-trophy"></i> Your Budget Results</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>Savings:</strong> $<span id="result-savings"></span></p>
+                                    <p><strong>Savings Rate:</strong> <span id="result-rate"></span>%</p>
+                                    <p><strong>Your Score:</strong> <span id="result-score" class="h4"></span>/100</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <div id="result-message"></div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-primary mt-2" onclick="resetGame()">
+                                <i class="bi bi-arrow-clockwise"></i> Try Again
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tips -->
+            <div class="mt-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5><i class="bi bi-lightbulb"></i> Budgeting Tips</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="mb-0">
+                            <li><strong>50/30/20 Rule:</strong> Try spending 50% on needs, 30% on wants, and saving 20%</li>
+                            <li><strong>Track Your Spending:</strong> Know where your money goes each month</li>
+                            <li><strong>Emergency Fund:</strong> Aim to save at least $500 for unexpected expenses</li>
+                            <li><strong>Adjust as Needed:</strong> Your budget should change as your life changes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="text-center mt-4">
+                <a href="{{ url_for('games') }}" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left"></i> Back to Games
+                </a>
+                <a href="{{ url_for('game_saving') }}" class="btn btn-success ms-2">
+                    Next: Saving Sprint <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+let budgetGame = {
+    income: 900,
+    
+    init() {
+        // Add event listeners to all expense inputs
+        document.querySelectorAll('.expense-input').forEach(input => {
+            input.addEventListener('input', this.updateSummary);
+        });
+        
+        // Handle form submission
+        document.getElementById('budgetForm').addEventListener('submit', this.submitBudget);
+        
+        // Initial update
+        this.updateSummary();
+    },
+    
+    updateSummary() {
+        const expenses = budgetGame.getExpenses();
+        const totalExpenses = Object.values(expenses).reduce((sum, val) => sum + val, 0);
+        const moneyLeft = budgetGame.income - totalExpenses;
+        
+        document.getElementById('total-expenses').textContent = `$${totalExpenses}`;
+        document.getElementById('money-left').textContent = `$${moneyLeft}`;
+        
+        // Color coding for money left
+        const moneyLeftElement = document.getElementById('money-left');
+        if (moneyLeft < 0) {
+            moneyLeftElement.className = 'h5 text-danger';
+        } else if (moneyLeft > 150) {
+            moneyLeftElement.className = 'h5 text-success';
+        } else {
+            moneyLeftElement.className = 'h5 text-warning';
+        }
+    },
+    
+    getExpenses() {
+        return {
+            phone: parseFloat(document.getElementById('phone').value) || 0,
+            transport: parseFloat(document.getElementById('transport').value) || 0,
+            lunch: parseFloat(document.getElementById('lunch').value) || 0,
+            clothing: parseFloat(document.getElementById('clothing').value) || 0,
+            entertainment: parseFloat(document.getElementById('entertainment').value) || 0,
+            shopping: parseFloat(document.getElementById('shopping').value) || 0,
+            eating_out: parseFloat(document.getElementById('eating_out').value) || 0,
+            subscriptions: parseFloat(document.getElementById('subscriptions').value) || 0
+        };
+    },
+    
+    async submitBudget(e) {
+        e.preventDefault();
+        
+        const expenses = budgetGame.getExpenses();
+        
+        try {
+            const response = await fetch('/api/games/budget', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    income: budgetGame.income,
+                    expenses: expenses
+                })
+            });
+            
+            const result = await response.json();
+            budgetGame.displayResults(result);
+            
+            // Update local storage
+            const played = parseInt(localStorage.getItem('budget_games_played') || 0) + 1;
+            localStorage.setItem('budget_games_played', played);
+            
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Sorry, there was an error calculating your score. Please try again.');
+        }
+    },
+    
+    displayResults(result) {
+        document.getElementById('result-savings').textContent = result.savings;
+        document.getElementById('result-rate').textContent = result.savings_rate;
+        document.getElementById('result-score').textContent = result.score;
+        document.getElementById('result-message').innerHTML = `<p class="mb-0">${result.message}</p>`;
+        
+        document.getElementById('results').style.display = 'block';
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
+};
+
+function resetGame() {
+    // Reset form values
+    document.getElementById('phone').value = 50;
+    document.getElementById('transport').value = 60;
+    document.getElementById('lunch').value = 80;
+    document.getElementById('clothing').value = 40;
+    document.getElementById('entertainment').value = 100;
+    document.getElementById('shopping').value = 80;
+    document.getElementById('eating_out').value = 70;
+    document.getElementById('subscriptions').value = 30;
+    
+    // Hide results
+    document.getElementById('results').style.display = 'none';
+    
+    // Update summary
+    budgetGame.updateSummary();
+    
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    budgetGame.init();
+});
+</script>
+{% endblock %}

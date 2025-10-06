@@ -1,0 +1,264 @@
+{% extends "base.html" %}
+
+{% block title %}Feedback Survey - FinLit{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Header -->
+            <div class="text-center mb-5">
+                <h1 class="display-6 mb-3">
+                    <i class="bi bi-chat-square-text text-success"></i> We Want Your Feedback!
+                </h1>
+                <p class="lead text-muted">Help us improve FinLit by sharing your experience with our app</p>
+            </div>
+
+            <!-- Survey Form -->
+            <div class="card shadow">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0">Your Opinion Matters</h4>
+                </div>
+                <div class="card-body">
+                    <form method="POST" id="surveyForm">
+                        <!-- Age -->
+                        <div class="mb-4">
+                            <label for="age" class="form-label">
+                                <h6><i class="bi bi-person"></i> How old are you?</h6>
+                            </label>
+                            <select class="form-select" id="age" name="age" required>
+                                <option value="">Select your age</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19+</option>
+                            </select>
+                        </div>
+
+                        <!-- Financial Knowledge -->
+                        <div class="mb-4">
+                            <label class="form-label">
+                                <h6><i class="bi bi-graph-up"></i> How would you rate your financial knowledge before using this app?</h6>
+                            </label>
+                            <div class="rating-group">
+                                {% for i in range(1, 6) %}
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="financial_knowledge" id="knowledge{{ i }}" value="{{ i }}" required>
+                                    <label class="form-check-label" for="knowledge{{ i }}">{{ i }}</label>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <small class="text-muted">1 = Knew very little, 5 = Already knew a lot</small>
+                        </div>
+
+                        <!-- Games Rating -->
+                        <div class="mb-4">
+                            <label class="form-label">
+                                <h6><i class="bi bi-controller"></i> How fun and helpful did you find our games?</h6>
+                            </label>
+                            <div class="rating-group">
+                                {% for i in range(1, 6) %}
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="games_rating" id="games{{ i }}" value="{{ i }}" required>
+                                    <label class="form-check-label" for="games{{ i }}">{{ i }}</label>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <small class="text-muted">1 = Not fun at all, 5 = Super fun and educational</small>
+                        </div>
+
+                        <!-- Content Rating -->
+                        <div class="mb-4">
+                            <label class="form-label">
+                                <h6><i class="bi bi-book"></i> How would you rate the overall content (blog posts, videos, books)?</h6>
+                            </label>
+                            <div class="rating-group">
+                                {% for i in range(1, 6) %}
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="content_rating" id="content{{ i }}" value="{{ i }}" required>
+                                    <label class="form-check-label" for="content{{ i }}">{{ i }}</label>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <small class="text-muted">1 = Poor quality, 5 = Excellent quality</small>
+                        </div>
+
+                        <!-- Favorite Topic -->
+                        <div class="mb-4">
+                            <label for="favorite_topic" class="form-label">
+                                <h6><i class="bi bi-heart"></i> Which financial topic interests you most?</h6>
+                            </label>
+                            <select class="form-select" id="favorite_topic" name="favorite_topic" required>
+                                <option value="">Choose your favorite topic</option>
+                                <option value="budgeting">Budgeting & Expense Tracking</option>
+                                <option value="saving">Saving Money & Emergency Funds</option>
+                                <option value="investing">Investing & Growing Money</option>
+                                <option value="college">College & Education Costs</option>
+                                <option value="jobs">Jobs & Career Planning</option>
+                                <option value="credit">Credit Cards & Building Credit</option>
+                                <option value="entrepreneurship">Starting a Business</option>
+                                <option value="taxes">Understanding Taxes</option>
+                            </select>
+                        </div>
+
+                        <!-- Suggestions -->
+                        <div class="mb-4">
+                            <label for="suggestions" class="form-label">
+                                <h6><i class="bi bi-lightbulb"></i> Any suggestions for improvement? (Optional)</h6>
+                            </label>
+                            <textarea class="form-control" id="suggestions" name="suggestions" rows="4" 
+                                    placeholder="What would make this app even better? New games, topics, features..."></textarea>
+                            <small class="text-muted">Your ideas help us make FinLit better for everyone!</small>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <i class="bi bi-send"></i> Submit Feedback
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Thank You Message (Initially Hidden) -->
+            <div id="thankYouMessage" class="card shadow mt-4" style="display: none;">
+                <div class="card-body text-center">
+                    <h3 class="text-success mb-3">
+                        <i class="bi bi-check-circle"></i> Thank You!
+                    </h3>
+                    <p class="lead">Your feedback has been submitted successfully.</p>
+                    <p>We really appreciate you taking the time to help us improve FinLit. Your responses will help us make the app even better for other teenagers learning about money management.</p>
+                    <div class="mt-4">
+                        <a href="{{ url_for('index') }}" class="btn btn-primary">
+                            <i class="bi bi-house"></i> Back to Home
+                        </a>
+                        <a href="{{ url_for('games') }}" class="btn btn-success ms-2">
+                            <i class="bi bi-controller"></i> Play More Games
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Feedback Matters -->
+            <div class="card mt-4 bg-light">
+                <div class="card-header">
+                    <h5><i class="bi bi-info-circle text-primary"></i> Why Your Feedback Matters</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h6 class="text-success">🎯 Better Content</h6>
+                            <p class="small">Your input helps us create content that actually interests and helps teenagers.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="text-primary">🎮 Improved Games</h6>
+                            <p class="small">We use your feedback to make our games more fun and educational.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="text-warning">✨ New Features</h6>
+                            <p class="small">Your suggestions inspire new features and improvements to the app.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Privacy Notice -->
+            <div class="alert alert-info mt-4">
+                <h6><i class="bi bi-shield-check"></i> Privacy Notice</h6>
+                <p class="small mb-0">
+                    Your feedback is anonymous and will only be used to improve our educational content. 
+                    We don't collect any personal information that could identify you.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.rating-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.rating-group .form-check {
+    margin-right: 0;
+}
+
+.rating-group .form-check-input:checked + .form-check-label {
+    color: #198754;
+    font-weight: bold;
+}
+
+.form-check-label {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.form-check-label:hover {
+    background-color: #f8f9fa;
+}
+
+.form-check-input:checked + .form-check-label {
+    background-color: #198754;
+    color: white;
+    border-color: #198754;
+}
+</style>
+
+<script>
+// Handle form submission with better UX
+document.getElementById('surveyForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Show loading state
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="bi bi-hourglass"></i> Submitting...';
+    submitBtn.disabled = true;
+    
+    // Simulate form processing (replace with actual form submission)
+    setTimeout(() => {
+        // Hide form and show thank you message
+        document.querySelector('.card.shadow').style.display = 'none';
+        document.getElementById('thankYouMessage').style.display = 'block';
+        
+        // Scroll to thank you message
+        document.getElementById('thankYouMessage').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+        
+        // Actually submit the form data
+        const formData = new FormData(e.target);
+        fetch('{{ url_for("survey") }}', {
+            method: 'POST',
+            body: formData
+        }).catch(error => {
+            console.error('Error submitting form:', error);
+        });
+        
+    }, 1500);
+});
+
+// Add visual feedback for radio button selection
+document.querySelectorAll('input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        // Remove previous selection styling from siblings
+        const name = this.name;
+        document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
+            r.parentElement.classList.remove('selected');
+        });
+        
+        // Add selection styling to current selection
+        this.parentElement.classList.add('selected');
+    });
+});
+</script>
+{% endblock %}

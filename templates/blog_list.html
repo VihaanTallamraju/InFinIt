@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}Blog - FinLit{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- Header -->
+    <div class="row mb-5">
+        <div class="col text-center">
+            <h1 class="display-5 mb-3">
+                <i class="bi bi-journal-text text-success"></i> Financial Literacy Blog
+            </h1>
+            <p class="lead text-muted">Money tips and financial wisdom written for teenagers</p>
+        </div>
+    </div>
+
+    <!-- Blog Posts Grid -->
+    <div class="row g-4">
+        {% for post in posts %}
+        <div class="col-lg-6">
+            <article class="card h-100 shadow-sm blog-post-card">
+                <div class="card-body d-flex flex-column">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <h5 class="card-title mb-0">
+                            <a href="{{ url_for('blog_post', post_id=post.id) }}" class="text-decoration-none">
+                                {{ post.title }}
+                            </a>
+                        </h5>
+                        <small class="text-muted ms-2">
+                            <i class="bi bi-calendar"></i>
+                            {{ post.date_posted.strftime('%b %d') }}
+                        </small>
+                    </div>
+                    
+                    <p class="card-text flex-grow-1">{{ post.excerpt }}</p>
+                    
+                    <div class="mt-auto">
+                        <a href="{{ url_for('blog_post', post_id=post.id) }}" class="btn btn-outline-success">
+                            Read More <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- No Posts Message -->
+    {% if not posts %}
+    <div class="row">
+        <div class="col text-center">
+            <div class="alert alert-info">
+                <h4><i class="bi bi-info-circle"></i> No blog posts yet!</h4>
+                <p class="mb-0">Check back soon for helpful articles about money management and financial literacy.</p>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Blog Categories -->
+    <div class="row mt-5">
+        <div class="col">
+            <div class="card bg-light">
+                <div class="card-header">
+                    <h5><i class="bi bi-tags"></i> What You'll Learn</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h6 class="text-primary">💰 Budgeting</h6>
+                            <ul class="list-unstyled small">
+                                <li>• Creating your first budget</li>
+                                <li>• Tracking expenses</li>
+                                <li>• Needs vs wants</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h6 class="text-success">🏦 Saving</h6>
+                            <ul class="list-unstyled small">
+                                <li>• Emergency funds</li>
+                                <li>• Savings goals</li>
+                                <li>• High-yield accounts</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h6 class="text-warning">📈 Investing</h6>
+                            <ul class="list-unstyled small">
+                                <li>• Investment basics</li>
+                                <li>• Risk vs reward</li>
+                                <li>• Starting early</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h6 class="text-info">🎓 Education</h6>
+                            <ul class="list-unstyled small">
+                                <li>• College costs</li>
+                                <li>• Student loans</li>
+                                <li>• Scholarships</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
