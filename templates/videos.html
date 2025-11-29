@@ -7,10 +7,8 @@
     <!-- Header -->
     <div class="row mb-5">
         <div class="col text-center">
-            <h1 class="display-5 mb-3">
-                <i class="bi bi-play-circle text-danger"></i> Video Library
-            </h1>
-            <p class="lead text-muted">Learn about money through engaging videos that explain complex topics simply</p>
+            <h1 class="display-5 mb-3">Financial Literacy Video Library</h1>
+            <p class="lead text-muted">All videos play inline. Learn money skills without leaving the page.</p>
         </div>
     </div>
 
@@ -25,8 +23,9 @@
                         <iframe 
                             src="https://www.youtube.com/embed/{{ video.youtube_id }}" 
                             title="{{ video.title }}"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen
-                            class="rounded">
+                            class="rounded border">
                         </iframe>
                     </div>
                     
@@ -34,12 +33,8 @@
                     <p class="card-text">{{ video.description }}</p>
                     
                     <div class="d-flex justify-content-between align-items-center">
-                        <span class="badge bg-primary">
-                            <i class="bi bi-clock"></i> {{ video.duration }}
-                        </span>
-                        <small class="text-muted">
-                            <i class="bi bi-youtube text-danger"></i> YouTube
-                        </small>
+                        <span class="badge bg-primary">Duration: {{ video.duration }}</span>
+                        <small class="text-muted">YouTube</small>
                     </div>
                 </div>
             </div>
@@ -52,7 +47,7 @@
     <div class="row">
         <div class="col text-center">
             <div class="alert alert-info">
-                <h4><i class="bi bi-info-circle"></i> Building our video library!</h4>
+                <h4>Building our video library!</h4>
                 <p class="mb-0">We're curating the best financial education videos for teenagers. Check back soon!</p>
             </div>
         </div>
@@ -64,34 +59,30 @@
         <div class="col">
             <div class="card bg-light">
                 <div class="card-header">
-                    <h5><i class="bi bi-collection-play"></i> Video Topics</h5>
+                    <h5>Video Topics</h5>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-3">
                             <div class="text-center mb-3">
-                                <i class="bi bi-piggy-bank text-success" style="font-size: 2.5rem;"></i>
                                 <h6 class="mt-2 text-success">Saving Money</h6>
                                 <small class="text-muted">Tips for building your first savings account and emergency fund</small>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="text-center mb-3">
-                                <i class="bi bi-calculator text-primary" style="font-size: 2.5rem;"></i>
                                 <h6 class="mt-2 text-primary">Budgeting 101</h6>
                                 <small class="text-muted">How to create and stick to your first budget as a teenager</small>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="text-center mb-3">
-                                <i class="bi bi-graph-up text-warning" style="font-size: 2.5rem;"></i>
                                 <h6 class="mt-2 text-warning">Investing Basics</h6>
                                 <small class="text-muted">Understanding stocks, bonds, and compound interest</small>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="text-center mb-3">
-                                <i class="bi bi-credit-card text-danger" style="font-size: 2.5rem;"></i>
                                 <h6 class="mt-2 text-danger">Credit & Debt</h6>
                                 <small class="text-muted">Building good credit and avoiding debt traps</small>
                             </div>
@@ -107,7 +98,7 @@
         <div class="col">
             <div class="card">
                 <div class="card-header">
-                    <h5><i class="bi bi-lightbulb text-primary"></i> How to Learn from Videos</h5>
+                    <h5>How to Learn from Videos</h5>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -134,7 +125,7 @@
         <div class="col">
             <div class="card border-primary">
                 <div class="card-header bg-primary text-white">
-                    <h5><i class="bi bi-map"></i> Suggested Learning Path</h5>
+                    <h5>Suggested Learning Path</h5>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -172,15 +163,9 @@
                     <h4>Ready to Practice What You've Learned?</h4>
                     <p class="mb-3">Videos teach the concepts, but games help you practice! Try our interactive challenges to reinforce your learning.</p>
                     <div class="d-flex justify-content-center gap-3 flex-wrap">
-                        <a href="{{ url_for('games') }}" class="btn btn-light">
-                            <i class="bi bi-controller"></i> Play Budget Challenge
-                        </a>
-                        <a href="{{ url_for('game_saving') }}" class="btn btn-outline-light">
-                            <i class="bi bi-piggy-bank"></i> Try Saving Sprint
-                        </a>
-                        <a href="{{ url_for('game_invest') }}" class="btn btn-outline-light">
-                            <i class="bi bi-graph-up"></i> Investment Simulator
-                        </a>
+                        <a href="{{ url_for('games') }}" class="btn btn-light">Play Budget Challenge</a>
+                        <a href="{{ url_for('game_saving') }}" class="btn btn-outline-light">Try Saving Sprint</a>
+                        <a href="{{ url_for('game_invest') }}" class="btn btn-outline-light">Investment Simulator</a>
                     </div>
                 </div>
             </div>

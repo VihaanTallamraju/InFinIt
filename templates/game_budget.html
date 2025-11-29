@@ -132,10 +132,13 @@
                                 <div class="col-md-6">
                                     <p><strong>Savings:</strong> $<span id="result-savings"></span></p>
                                     <p><strong>Savings Rate:</strong> <span id="result-rate"></span>%</p>
-                                    <p><strong>Your Score:</strong> <span id="result-score" class="h4"></span>/100</p>
+                                    <p><strong>Your Score:</strong> <span id="result-score" class="h4"></span></p>
+                                    <p><strong>Tier:</strong> <span id="result-tier" class="badge bg-primary"></span></p>
                                 </div>
                                 <div class="col-md-6">
-                                    <div id="result-message"></div>
+                                    <div id="result-message" class="mb-2"></div>
+                                    <div id="result-rationale" class="small text-muted mb-2"></div>
+                                    <ul id="result-tips" class="small"></ul>
                                 </div>
                             </div>
                             <button class="btn btn-outline-primary mt-2" onclick="resetGame()">
@@ -229,6 +232,11 @@ let budgetGame = {
         e.preventDefault();
         
         const expenses = budgetGame.getExpenses();
+        const submitBtn = document.querySelector('#budgetForm button[type="submit"]');
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            if (window.FinLitGames) { FinLitGames.utils.showLoading(submitBtn); }
+        }
         
         try {
             const response = await fetch('/api/games/budget', {
@@ -243,6 +251,14 @@ let budgetGame = {
             });
             
             const result = await response.json();
+            if (result && result.error) {
+                if (window.FinLitGames) {
+                    FinLitGames.utils.showError(`Budget calculation error: ${result.message || result.error}`);
+                } else {
+                    alert(result.message || 'Budget calculation error');
+                }
+                return;
+            }
             budgetGame.displayResults(result);
             
             // Update local storage
@@ -252,14 +268,30 @@ let budgetGame = {
         } catch (error) {
             console.error('Error:', error);
             alert('Sorry, there was an error calculating your score. Please try again.');
+        } finally {
+            if (submitBtn) {
+                if (window.FinLitGames) { FinLitGames.utils.hideLoading(submitBtn); }
+                submitBtn.disabled = false;
+            }
         }
     },
     
     displayResults(result) {
-        document.getElementById('result-savings').textContent = result.savings;
+        document.getElementById('result-savings').textContent = result.savings.toFixed ? result.savings.toFixed(2) : result.savings;
         document.getElementById('result-rate').textContent = result.savings_rate;
         document.getElementById('result-score').textContent = result.score;
+        document.getElementById('result-tier').textContent = result.tier || '';
         document.getElementById('result-message').innerHTML = `<p class="mb-0">${result.message}</p>`;
+        document.getElementById('result-rationale').textContent = result.rationale || '';
+        const tipsEl = document.getElementById('result-tips');
+        tipsEl.innerHTML = '';
+        if (Array.isArray(result.tips)) {
+            result.tips.forEach(t => {
+                const li = document.createElement('li');
+                li.textContent = t;
+                tipsEl.appendChild(li);
+            });
+        }
         
         document.getElementById('results').style.display = 'block';
         document.getElementById('results').scrollIntoView({ behavior: 'smooth' });

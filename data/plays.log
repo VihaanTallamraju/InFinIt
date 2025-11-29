@@ -270,3 +270,586 @@
 2025-10-06 07:08:43,764 - 192.168.50.191 - - [06/Oct/2025 07:08:43] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
 2025-10-06 07:08:56,255 - {"game": "invest", "type": "stock", "amount": 500.0, "years": 4, "final_value": 717.15, "return_rate": 43.4}
 2025-10-06 07:08:56,256 - 192.168.50.191 - - [06/Oct/2025 07:08:56] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 16:19:38,820 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 16:19:38,822 - [33mPress CTRL+C to quit[0m
+2025-11-29 16:19:38,824 -  * Restarting with stat
+2025-11-29 16:19:39,097 -  * Debugger is active!
+2025-11-29 16:19:39,137 -  * Debugger PIN: 139-885-293
+2025-11-29 16:19:50,069 - 127.0.0.1 - - [29/Nov/2025 16:19:50] "GET / HTTP/1.1" 200 -
+2025-11-29 16:19:50,094 - 127.0.0.1 - - [29/Nov/2025 16:19:50] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-29 16:19:50,094 - 127.0.0.1 - - [29/Nov/2025 16:19:50] "GET /static/js/games.js HTTP/1.1" 200 -
+2025-11-29 16:19:50,234 - 127.0.0.1 - - [29/Nov/2025 16:19:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-29 16:20:05,536 - 127.0.0.1 - - [29/Nov/2025 16:20:05] "GET /blog HTTP/1.1" 200 -
+2025-11-29 16:20:05,565 - 127.0.0.1 - - [29/Nov/2025 16:20:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:20:05,565 - 127.0.0.1 - - [29/Nov/2025 16:20:05] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:22:09,776 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 16:22:09,776 - [33mPress CTRL+C to quit[0m
+2025-11-29 16:22:09,777 -  * Restarting with stat
+2025-11-29 16:22:10,043 -  * Debugger is active!
+2025-11-29 16:22:10,080 -  * Debugger PIN: 139-885-293
+2025-11-29 16:22:15,119 - 127.0.0.1 - - [29/Nov/2025 16:22:15] "GET /books HTTP/1.1" 200 -
+2025-11-29 16:22:15,147 - 127.0.0.1 - - [29/Nov/2025 16:22:15] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:22:15,147 - 127.0.0.1 - - [29/Nov/2025 16:22:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:28:55,088 - 127.0.0.1 - - [29/Nov/2025 16:28:55] "GET /books HTTP/1.1" 200 -
+2025-11-29 16:28:55,101 - 127.0.0.1 - - [29/Nov/2025 16:28:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:28:55,102 - 127.0.0.1 - - [29/Nov/2025 16:28:55] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:29:03,878 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 16:29:03,878 - [33mPress CTRL+C to quit[0m
+2025-11-29 16:29:03,879 -  * Restarting with stat
+2025-11-29 16:29:04,136 -  * Debugger is active!
+2025-11-29 16:29:04,172 -  * Debugger PIN: 139-885-293
+2025-11-29 16:29:22,374 - 127.0.0.1 - - [29/Nov/2025 16:29:22] "GET / HTTP/1.1" 200 -
+2025-11-29 16:29:22,395 - 127.0.0.1 - - [29/Nov/2025 16:29:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:29:22,396 - 127.0.0.1 - - [29/Nov/2025 16:29:22] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:29:25,834 - 127.0.0.1 - - [29/Nov/2025 16:29:25] "GET /books HTTP/1.1" 200 -
+2025-11-29 16:29:25,844 - 127.0.0.1 - - [29/Nov/2025 16:29:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:29:25,845 - 127.0.0.1 - - [29/Nov/2025 16:29:25] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:31:46,018 -  * Detected change in '/Users/bhaskar/src/FinLit/init_db.py', reloading
+2025-11-29 16:31:46,088 -  * Restarting with stat
+2025-11-29 16:31:46,399 -  * Debugger is active!
+2025-11-29 16:31:46,434 -  * Debugger PIN: 139-885-293
+2025-11-29 16:33:28,399 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 16:33:28,400 - [33mPress CTRL+C to quit[0m
+2025-11-29 16:33:28,400 -  * Restarting with stat
+2025-11-29 16:33:28,656 -  * Debugger is active!
+2025-11-29 16:33:28,692 -  * Debugger PIN: 139-885-293
+2025-11-29 16:35:01,489 - 127.0.0.1 - - [29/Nov/2025 16:35:01] "GET / HTTP/1.1" 200 -
+2025-11-29 16:35:01,508 - 127.0.0.1 - - [29/Nov/2025 16:35:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:35:01,509 - 127.0.0.1 - - [29/Nov/2025 16:35:01] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:35:03,477 - 127.0.0.1 - - [29/Nov/2025 16:35:03] "GET /books HTTP/1.1" 200 -
+2025-11-29 16:35:03,494 - 127.0.0.1 - - [29/Nov/2025 16:35:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:35:03,495 - 127.0.0.1 - - [29/Nov/2025 16:35:03] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:35:15,721 - 127.0.0.1 - - [29/Nov/2025 16:35:15] "GET /videos HTTP/1.1" 200 -
+2025-11-29 16:35:15,734 - 127.0.0.1 - - [29/Nov/2025 16:35:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:35:15,735 - 127.0.0.1 - - [29/Nov/2025 16:35:15] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:36:17,084 - 127.0.0.1 - - [29/Nov/2025 16:36:17] "GET / HTTP/1.1" 200 -
+2025-11-29 16:36:17,130 - 127.0.0.1 - - [29/Nov/2025 16:36:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:36:17,131 - 127.0.0.1 - - [29/Nov/2025 16:36:17] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:37:30,530 -  * Detected change in '/Users/bhaskar/src/FinLit/init_db.py', reloading
+2025-11-29 16:37:30,600 -  * Restarting with stat
+2025-11-29 16:37:30,951 -  * Debugger is active!
+2025-11-29 16:37:30,995 -  * Debugger PIN: 139-885-293
+2025-11-29 16:40:37,844 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 16:40:37,844 - [33mPress CTRL+C to quit[0m
+2025-11-29 16:40:37,844 -  * Restarting with stat
+2025-11-29 16:40:38,106 -  * Debugger is active!
+2025-11-29 16:40:38,145 -  * Debugger PIN: 139-885-293
+2025-11-29 16:40:42,565 - 127.0.0.1 - - [29/Nov/2025 16:40:42] "GET / HTTP/1.1" 200 -
+2025-11-29 16:40:42,586 - 127.0.0.1 - - [29/Nov/2025 16:40:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:40:42,586 - 127.0.0.1 - - [29/Nov/2025 16:40:42] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:40:44,014 - 127.0.0.1 - - [29/Nov/2025 16:40:44] "GET /videos HTTP/1.1" 200 -
+2025-11-29 16:40:44,024 - 127.0.0.1 - - [29/Nov/2025 16:40:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:40:44,025 - 127.0.0.1 - - [29/Nov/2025 16:40:44] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:40:47,659 - 127.0.0.1 - - [29/Nov/2025 16:40:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-29 16:43:50,755 - 127.0.0.1 - - [29/Nov/2025 16:43:50] "GET /books HTTP/1.1" 200 -
+2025-11-29 16:43:50,779 - 127.0.0.1 - - [29/Nov/2025 16:43:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:43:50,786 - 127.0.0.1 - - [29/Nov/2025 16:43:50] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:44:12,951 -  * Detected change in '/Users/bhaskar/src/FinLit/init_db.py', reloading
+2025-11-29 16:44:13,014 -  * Restarting with stat
+2025-11-29 16:44:13,335 -  * Debugger is active!
+2025-11-29 16:44:13,372 -  * Debugger PIN: 139-885-293
+2025-11-29 16:44:18,047 - 127.0.0.1 - - [29/Nov/2025 16:44:18] "GET /videos HTTP/1.1" 200 -
+2025-11-29 16:44:18,067 - 127.0.0.1 - - [29/Nov/2025 16:44:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:44:18,068 - 127.0.0.1 - - [29/Nov/2025 16:44:18] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:44:42,815 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 16:44:42,815 - [33mPress CTRL+C to quit[0m
+2025-11-29 16:44:42,815 -  * Restarting with stat
+2025-11-29 16:44:43,084 -  * Debugger is active!
+2025-11-29 16:44:43,121 -  * Debugger PIN: 139-885-293
+2025-11-29 16:44:47,183 - 127.0.0.1 - - [29/Nov/2025 16:44:47] "GET /videos HTTP/1.1" 200 -
+2025-11-29 16:44:47,210 - 127.0.0.1 - - [29/Nov/2025 16:44:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:44:47,211 - 127.0.0.1 - - [29/Nov/2025 16:44:47] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:45:01,687 - 127.0.0.1 - - [29/Nov/2025 16:45:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-29 16:50:21,760 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 16:50:21,760 - [33mPress CTRL+C to quit[0m
+2025-11-29 16:50:21,761 -  * Restarting with stat
+2025-11-29 16:50:22,020 -  * Debugger is active!
+2025-11-29 16:50:22,056 -  * Debugger PIN: 139-885-293
+2025-11-29 16:50:25,209 - 127.0.0.1 - - [29/Nov/2025 16:50:25] "GET /videos HTTP/1.1" 200 -
+2025-11-29 16:50:25,244 - 127.0.0.1 - - [29/Nov/2025 16:50:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:50:25,245 - 127.0.0.1 - - [29/Nov/2025 16:50:25] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:55:29,176 -  * Detected change in '/Users/bhaskar/src/FinLit/init_db.py', reloading
+2025-11-29 16:55:29,238 -  * Restarting with stat
+2025-11-29 16:55:29,562 -  * Debugger is active!
+2025-11-29 16:55:29,603 -  * Debugger PIN: 139-885-293
+2025-11-29 16:55:58,102 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 16:55:58,103 - [33mPress CTRL+C to quit[0m
+2025-11-29 16:55:58,103 -  * Restarting with stat
+2025-11-29 16:55:58,362 -  * Debugger is active!
+2025-11-29 16:55:58,398 -  * Debugger PIN: 139-885-293
+2025-11-29 16:56:05,185 - 127.0.0.1 - - [29/Nov/2025 16:56:05] "GET /videos HTTP/1.1" 200 -
+2025-11-29 16:56:05,217 - 127.0.0.1 - - [29/Nov/2025 16:56:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:56:05,217 - 127.0.0.1 - - [29/Nov/2025 16:56:05] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:56:33,330 - 127.0.0.1 - - [29/Nov/2025 16:56:33] "GET / HTTP/1.1" 200 -
+2025-11-29 16:56:33,358 - 127.0.0.1 - - [29/Nov/2025 16:56:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:56:33,361 - 127.0.0.1 - - [29/Nov/2025 16:56:33] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:56:34,269 - 127.0.0.1 - - [29/Nov/2025 16:56:34] "GET /games HTTP/1.1" 200 -
+2025-11-29 16:56:34,298 - 127.0.0.1 - - [29/Nov/2025 16:56:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:56:34,299 - 127.0.0.1 - - [29/Nov/2025 16:56:34] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:56:37,661 - 127.0.0.1 - - [29/Nov/2025 16:56:37] "GET /games/saving HTTP/1.1" 200 -
+2025-11-29 16:56:37,677 - 127.0.0.1 - - [29/Nov/2025 16:56:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:56:37,678 - 127.0.0.1 - - [29/Nov/2025 16:56:37] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:57:43,702 - 127.0.0.1 - - [29/Nov/2025 16:57:43] "GET /games/invest HTTP/1.1" 200 -
+2025-11-29 16:57:43,730 - 127.0.0.1 - - [29/Nov/2025 16:57:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:57:43,731 - 127.0.0.1 - - [29/Nov/2025 16:57:43] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:57:55,776 - {"game": "invest", "type": "index", "amount": 700.0, "years": 5, "final_value": 966.36, "return_rate": 38.1}
+2025-11-29 16:57:55,776 - 127.0.0.1 - - [29/Nov/2025 16:57:55] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 16:58:03,797 - 127.0.0.1 - - [29/Nov/2025 16:58:03] "GET /blog HTTP/1.1" 200 -
+2025-11-29 16:58:03,814 - 127.0.0.1 - - [29/Nov/2025 16:58:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:58:03,815 - 127.0.0.1 - - [29/Nov/2025 16:58:03] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 16:58:52,766 - 127.0.0.1 - - [29/Nov/2025 16:58:52] "GET / HTTP/1.1" 200 -
+2025-11-29 16:58:52,805 - 127.0.0.1 - - [29/Nov/2025 16:58:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 16:58:52,805 - 127.0.0.1 - - [29/Nov/2025 16:58:52] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:00:20,848 - 127.0.0.1 - - [29/Nov/2025 17:00:20] "GET / HTTP/1.1" 200 -
+2025-11-29 17:00:20,860 - 127.0.0.1 - - [29/Nov/2025 17:00:20] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:00:20,861 - 127.0.0.1 - - [29/Nov/2025 17:00:20] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-29 17:00:22,892 - 127.0.0.1 - - [29/Nov/2025 17:00:22] "GET /blog HTTP/1.1" 200 -
+2025-11-29 17:00:22,919 - 127.0.0.1 - - [29/Nov/2025 17:00:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:00:22,922 - 127.0.0.1 - - [29/Nov/2025 17:00:22] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:00:27,492 - 127.0.0.1 - - [29/Nov/2025 17:00:27] "GET /blog/90 HTTP/1.1" 200 -
+2025-11-29 17:00:27,516 - 127.0.0.1 - - [29/Nov/2025 17:00:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:00:27,517 - 127.0.0.1 - - [29/Nov/2025 17:00:27] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:01:45,282 - 127.0.0.1 - - [29/Nov/2025 17:01:45] "GET /books HTTP/1.1" 200 -
+2025-11-29 17:01:45,294 - 127.0.0.1 - - [29/Nov/2025 17:01:45] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:01:45,294 - 127.0.0.1 - - [29/Nov/2025 17:01:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:01:50,327 - 127.0.0.1 - - [29/Nov/2025 17:01:50] "GET /survey HTTP/1.1" 200 -
+2025-11-29 17:01:50,359 - 127.0.0.1 - - [29/Nov/2025 17:01:50] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:01:50,360 - 127.0.0.1 - - [29/Nov/2025 17:01:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:06:35,761 -  * Detected change in '/Users/bhaskar/src/FinLit/init_db.py', reloading
+2025-11-29 17:06:35,828 -  * Restarting with stat
+2025-11-29 17:06:36,189 -  * Debugger is active!
+2025-11-29 17:06:36,227 -  * Debugger PIN: 139-885-293
+2025-11-29 17:06:55,214 - 127.0.0.1 - - [29/Nov/2025 17:06:55] "GET /survey HTTP/1.1" 200 -
+2025-11-29 17:06:55,235 - 127.0.0.1 - - [29/Nov/2025 17:06:55] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:06:55,235 - 127.0.0.1 - - [29/Nov/2025 17:06:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:06:57,462 - 127.0.0.1 - - [29/Nov/2025 17:06:57] "GET / HTTP/1.1" 200 -
+2025-11-29 17:06:57,476 - 127.0.0.1 - - [29/Nov/2025 17:06:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:06:57,477 - 127.0.0.1 - - [29/Nov/2025 17:06:57] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:06:58,654 - 127.0.0.1 - - [29/Nov/2025 17:06:58] "GET /blog HTTP/1.1" 200 -
+2025-11-29 17:06:58,676 - 127.0.0.1 - - [29/Nov/2025 17:06:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:06:58,677 - 127.0.0.1 - - [29/Nov/2025 17:06:58] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:07:09,764 - 127.0.0.1 - - [29/Nov/2025 17:07:09] "GET /blog/61 HTTP/1.1" 200 -
+2025-11-29 17:07:09,786 - 127.0.0.1 - - [29/Nov/2025 17:07:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:07:09,787 - 127.0.0.1 - - [29/Nov/2025 17:07:09] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:07:16,540 - 127.0.0.1 - - [29/Nov/2025 17:07:16] "GET /blog/47 HTTP/1.1" 200 -
+2025-11-29 17:07:16,563 - 127.0.0.1 - - [29/Nov/2025 17:07:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:07:16,564 - 127.0.0.1 - - [29/Nov/2025 17:07:16] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:07:39,331 - 127.0.0.1 - - [29/Nov/2025 17:07:39] "GET /blog HTTP/1.1" 200 -
+2025-11-29 17:07:39,346 - 127.0.0.1 - - [29/Nov/2025 17:07:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:07:39,348 - 127.0.0.1 - - [29/Nov/2025 17:07:39] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:07:43,329 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 17:07:43,330 - [33mPress CTRL+C to quit[0m
+2025-11-29 17:07:43,330 -  * Restarting with stat
+2025-11-29 17:07:43,612 -  * Debugger is active!
+2025-11-29 17:07:43,659 -  * Debugger PIN: 139-885-293
+2025-11-29 17:07:45,771 - 127.0.0.1 - - [29/Nov/2025 17:07:45] "GET /blog HTTP/1.1" 200 -
+2025-11-29 17:07:45,790 - 127.0.0.1 - - [29/Nov/2025 17:07:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:07:45,790 - 127.0.0.1 - - [29/Nov/2025 17:07:45] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:08:21,449 - 127.0.0.1 - - [29/Nov/2025 17:08:21] "GET /blog/81 HTTP/1.1" 200 -
+2025-11-29 17:08:21,472 - 127.0.0.1 - - [29/Nov/2025 17:08:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:08:21,473 - 127.0.0.1 - - [29/Nov/2025 17:08:21] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:10:33,390 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 17:10:33,390 - [33mPress CTRL+C to quit[0m
+2025-11-29 17:10:33,390 -  * Restarting with stat
+2025-11-29 17:10:33,654 -  * Debugger is active!
+2025-11-29 17:10:33,692 -  * Debugger PIN: 139-885-293
+2025-11-29 17:10:36,816 - 127.0.0.1 - - [29/Nov/2025 17:10:36] "GET /blog HTTP/1.1" 200 -
+2025-11-29 17:10:36,836 - 127.0.0.1 - - [29/Nov/2025 17:10:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:10:36,837 - 127.0.0.1 - - [29/Nov/2025 17:10:36] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:10:41,488 - 127.0.0.1 - - [29/Nov/2025 17:10:41] "GET / HTTP/1.1" 200 -
+2025-11-29 17:10:41,515 - 127.0.0.1 - - [29/Nov/2025 17:10:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:10:41,515 - 127.0.0.1 - - [29/Nov/2025 17:10:41] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:10:43,392 - 127.0.0.1 - - [29/Nov/2025 17:10:43] "GET /blog HTTP/1.1" 200 -
+2025-11-29 17:10:43,404 - 127.0.0.1 - - [29/Nov/2025 17:10:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:10:43,405 - 127.0.0.1 - - [29/Nov/2025 17:10:43] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:11:09,137 - 127.0.0.1 - - [29/Nov/2025 17:11:09] "GET / HTTP/1.1" 200 -
+2025-11-29 17:11:09,149 - 127.0.0.1 - - [29/Nov/2025 17:11:09] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:11:09,149 - 127.0.0.1 - - [29/Nov/2025 17:11:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:11:10,564 - 127.0.0.1 - - [29/Nov/2025 17:11:10] "GET /blog HTTP/1.1" 200 -
+2025-11-29 17:11:10,580 - 127.0.0.1 - - [29/Nov/2025 17:11:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:11:10,581 - 127.0.0.1 - - [29/Nov/2025 17:11:10] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:11:22,720 - 127.0.0.1 - - [29/Nov/2025 17:11:22] "GET / HTTP/1.1" 200 -
+2025-11-29 17:11:22,739 - 127.0.0.1 - - [29/Nov/2025 17:11:22] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-29 17:11:22,740 - 127.0.0.1 - - [29/Nov/2025 17:11:22] "GET /static/js/games.js HTTP/1.1" 200 -
+2025-11-29 17:11:22,895 - 127.0.0.1 - - [29/Nov/2025 17:11:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-29 17:11:24,428 - 127.0.0.1 - - [29/Nov/2025 17:11:24] "GET /blog HTTP/1.1" 200 -
+2025-11-29 17:11:24,447 - 127.0.0.1 - - [29/Nov/2025 17:11:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:11:24,447 - 127.0.0.1 - - [29/Nov/2025 17:11:24] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:14:42,549 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 17:14:42,549 - [33mPress CTRL+C to quit[0m
+2025-11-29 17:14:42,549 -  * Restarting with stat
+2025-11-29 17:14:42,808 -  * Debugger is active!
+2025-11-29 17:14:42,845 -  * Debugger PIN: 139-885-293
+2025-11-29 17:14:46,664 - 127.0.0.1 - - [29/Nov/2025 17:14:46] "GET / HTTP/1.1" 200 -
+2025-11-29 17:14:46,686 - 127.0.0.1 - - [29/Nov/2025 17:14:46] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:14:46,687 - 127.0.0.1 - - [29/Nov/2025 17:14:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:14:48,247 - 127.0.0.1 - - [29/Nov/2025 17:14:48] "GET /blog HTTP/1.1" 200 -
+2025-11-29 17:14:48,258 - 127.0.0.1 - - [29/Nov/2025 17:14:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:14:48,259 - 127.0.0.1 - - [29/Nov/2025 17:14:48] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:14:56,982 - 127.0.0.1 - - [29/Nov/2025 17:14:56] "GET /games HTTP/1.1" 200 -
+2025-11-29 17:14:56,997 - 127.0.0.1 - - [29/Nov/2025 17:14:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:14:56,997 - 127.0.0.1 - - [29/Nov/2025 17:14:56] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:18:16,014 - 127.0.0.1 - - [29/Nov/2025 17:18:16] "GET / HTTP/1.1" 200 -
+2025-11-29 17:18:16,031 - 127.0.0.1 - - [29/Nov/2025 17:18:16] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:18:16,032 - 127.0.0.1 - - [29/Nov/2025 17:18:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:18:31,283 - 127.0.0.1 - - [29/Nov/2025 17:18:31] "GET /blog HTTP/1.1" 200 -
+2025-11-29 17:18:31,304 - 127.0.0.1 - - [29/Nov/2025 17:18:31] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:18:31,305 - 127.0.0.1 - - [29/Nov/2025 17:18:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:19:03,425 -  * Detected change in '/Users/bhaskar/src/FinLit/app.py', reloading
+2025-11-29 17:19:03,487 -  * Restarting with stat
+2025-11-29 17:19:03,832 -  * Debugger is active!
+2025-11-29 17:19:03,868 -  * Debugger PIN: 139-885-293
+2025-11-29 17:19:43,366 - 127.0.0.1 - - [29/Nov/2025 17:19:43] "GET /blog HTTP/1.1" 200 -
+2025-11-29 17:19:43,384 - 127.0.0.1 - - [29/Nov/2025 17:19:43] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:19:43,384 - 127.0.0.1 - - [29/Nov/2025 17:19:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:19:44,403 - 127.0.0.1 - - [29/Nov/2025 17:19:44] "GET /games HTTP/1.1" 200 -
+2025-11-29 17:19:44,425 - 127.0.0.1 - - [29/Nov/2025 17:19:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:19:44,425 - 127.0.0.1 - - [29/Nov/2025 17:19:44] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:19:48,072 - 127.0.0.1 - - [29/Nov/2025 17:19:48] "GET /games/budget HTTP/1.1" 200 -
+2025-11-29 17:19:48,088 - 127.0.0.1 - - [29/Nov/2025 17:19:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:19:48,088 - 127.0.0.1 - - [29/Nov/2025 17:19:48] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:19:52,781 - {"game": "budget", "income": 900.0, "expenses": {"phone": 50, "transport": 60, "lunch": 80, "clothing": 40, "entertainment": 100, "shopping": 80, "eating_out": 70, "subscriptions": 30}, "savings": 390.0, "savings_rate": 43.333333333333336, "score": 110, "tier": "Elite Saver", "tips": ["Discretionary (fun) spending is high relative to essentials. Try a 50/30/20 guideline: 50% needs, 30% wants, 20% savings."]}
+2025-11-29 17:19:52,789 - 127.0.0.1 - - [29/Nov/2025 17:19:52] "POST /api/games/budget HTTP/1.1" 200 -
+2025-11-29 17:20:02,849 - 127.0.0.1 - - [29/Nov/2025 17:20:02] "GET /games/budget HTTP/1.1" 200 -
+2025-11-29 17:20:02,865 - 127.0.0.1 - - [29/Nov/2025 17:20:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:20:02,866 - 127.0.0.1 - - [29/Nov/2025 17:20:02] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:20:16,379 - {"game": "budget", "income": 900.0, "expenses": {"phone": 50, "transport": 60, "lunch": 80, "clothing": 40, "entertainment": 100, "shopping": 80, "eating_out": 70, "subscriptions": 30}, "savings": 390.0, "savings_rate": 43.333333333333336, "score": 110, "tier": "Elite Saver", "tips": ["Discretionary (fun) spending is high relative to essentials. Try a 50/30/20 guideline: 50% needs, 30% wants, 20% savings."]}
+2025-11-29 17:20:16,382 - 127.0.0.1 - - [29/Nov/2025 17:20:16] "POST /api/games/budget HTTP/1.1" 200 -
+2025-11-29 17:20:20,646 - 127.0.0.1 - - [29/Nov/2025 17:20:20] "GET /games/saving HTTP/1.1" 200 -
+2025-11-29 17:20:20,657 - 127.0.0.1 - - [29/Nov/2025 17:20:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:20:20,657 - 127.0.0.1 - - [29/Nov/2025 17:20:20] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:20:45,875 - 127.0.0.1 - - [29/Nov/2025 17:20:45] "GET /games/invest HTTP/1.1" 200 -
+2025-11-29 17:20:45,891 - 127.0.0.1 - - [29/Nov/2025 17:20:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:20:45,892 - 127.0.0.1 - - [29/Nov/2025 17:20:45] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:20:49,695 - {"game": "invest", "type": "stock", "amount": 500.0, "years": 5, "final_value": 980.48, "return_rate": 96.1, "annual_rates": [19.14, -0.72, 29.07, -2.14, 31.26], "volatility": 15.97, "volatility_rating": "Medium"}
+2025-11-29 17:20:49,699 - 127.0.0.1 - - [29/Nov/2025 17:20:49] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 17:33:48,941 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 17:33:48,941 - [33mPress CTRL+C to quit[0m
+2025-11-29 17:33:48,942 -  * Restarting with stat
+2025-11-29 17:33:49,239 -  * Debugger is active!
+2025-11-29 17:33:49,282 -  * Debugger PIN: 139-885-293
+2025-11-29 17:34:05,583 - 127.0.0.1 - - [29/Nov/2025 17:34:05] "GET / HTTP/1.1" 200 -
+2025-11-29 17:34:05,602 - 127.0.0.1 - - [29/Nov/2025 17:34:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:34:05,603 - 127.0.0.1 - - [29/Nov/2025 17:34:05] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:34:07,399 - 127.0.0.1 - - [29/Nov/2025 17:34:07] "GET /games HTTP/1.1" 200 -
+2025-11-29 17:34:07,430 - 127.0.0.1 - - [29/Nov/2025 17:34:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:34:07,431 - 127.0.0.1 - - [29/Nov/2025 17:34:07] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:34:09,823 - 127.0.0.1 - - [29/Nov/2025 17:34:09] "GET /games/budget HTTP/1.1" 200 -
+2025-11-29 17:34:09,835 - 127.0.0.1 - - [29/Nov/2025 17:34:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:34:09,836 - 127.0.0.1 - - [29/Nov/2025 17:34:09] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:34:14,010 - {"game": "budget", "income": 900.0, "expenses": {"phone": 50, "transport": 60, "lunch": 80, "clothing": 40, "entertainment": 100, "shopping": 80, "eating_out": 70, "subscriptions": 30}, "savings": 390.0, "savings_rate": 43.333333333333336, "score": 110, "tier": "Elite Saver", "tips": ["Discretionary (fun) spending is high relative to essentials. Try a 50/30/20 guideline: 50% needs, 30% wants, 20% savings."]}
+2025-11-29 17:34:14,026 - 127.0.0.1 - - [29/Nov/2025 17:34:14] "POST /api/games/budget HTTP/1.1" 200 -
+2025-11-29 17:34:21,027 - 127.0.0.1 - - [29/Nov/2025 17:34:21] "GET /games/saving HTTP/1.1" 200 -
+2025-11-29 17:34:21,046 - 127.0.0.1 - - [29/Nov/2025 17:34:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:34:21,046 - 127.0.0.1 - - [29/Nov/2025 17:34:21] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:34:35,247 - {"game": "saving", "final_savings": 2195.0, "goal": 1000.0, "goal_percentage": 219.49999999999997, "grade": "A+", "avg_monthly_savings": 349.1666666666667, "consistency_score": 43.04241344064281, "decisions": [{"month": 1, "choice": "Buy supplies ($25) and go shopping with friends ($75)", "impact": -100, "monthlySavings": 300, "totalSavings": 400}, {"month": 2, "choice": "Buy a nice gift ($30) and attend the party ($20)", "impact": -50, "monthlySavings": 350, "totalSavings": 750}, {"month": 3, "choice": "Go to concert ($60) but DIY phone fix ($20)", "impact": -80, "monthlySavings": 320, "totalSavings": 1070}, {"month": 4, "choice": "New bike tire ($40), nice parent gift ($35)", "impact": -75, "monthlySavings": 325, "totalSavings": 1395}, {"month": 5, "choice": "Some summer activities ($60) while job hunting", "impact": -60, "monthlySavings": 340, "totalSavings": 1735}, {"month": 6, "choice": "Go to festival ($40) but save most of extra income", "impact": -40, "monthlySavings": 460, "totalSavings": 2195}]}
+2025-11-29 17:34:35,250 - 127.0.0.1 - - [29/Nov/2025 17:34:35] "POST /api/games/saving HTTP/1.1" 200 -
+2025-11-29 17:34:35,264 - {"game": "saving", "final_savings": 2195.0, "goal": 1000.0, "goal_percentage": 219.49999999999997, "grade": "A+", "avg_monthly_savings": 349.1666666666667, "consistency_score": 43.04241344064281, "decisions": [{"month": 1, "choice": "Buy supplies ($25) and go shopping with friends ($75)", "impact": -100, "monthlySavings": 300, "totalSavings": 400}, {"month": 2, "choice": "Buy a nice gift ($30) and attend the party ($20)", "impact": -50, "monthlySavings": 350, "totalSavings": 750}, {"month": 3, "choice": "Go to concert ($60) but DIY phone fix ($20)", "impact": -80, "monthlySavings": 320, "totalSavings": 1070}, {"month": 4, "choice": "New bike tire ($40), nice parent gift ($35)", "impact": -75, "monthlySavings": 325, "totalSavings": 1395}, {"month": 5, "choice": "Some summer activities ($60) while job hunting", "impact": -60, "monthlySavings": 340, "totalSavings": 1735}, {"month": 6, "choice": "Go to festival ($40) but save most of extra income", "impact": -40, "monthlySavings": 460, "totalSavings": 2195}]}
+2025-11-29 17:34:35,266 - 127.0.0.1 - - [29/Nov/2025 17:34:35] "POST /api/games/saving HTTP/1.1" 200 -
+2025-11-29 17:34:48,356 - {"game": "saving", "final_savings": 2290.0, "goal": 1000.0, "goal_percentage": 229.0, "grade": "A+", "avg_monthly_savings": 365.0, "consistency_score": 38.03226646068133, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Just buy a thoughtful but inexpensive gift ($15)", "impact": -15, "monthlySavings": 385, "totalSavings": 860}, {"month": 3, "choice": "Concert + professional phone repair ($130)", "impact": -130, "monthlySavings": 270, "totalSavings": 1130}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1490}, {"month": 5, "choice": "Some summer activities ($60) while job hunting", "impact": -60, "monthlySavings": 340, "totalSavings": 1830}, {"month": 6, "choice": "Go to festival ($40) but save most of extra income", "impact": -40, "monthlySavings": 460, "totalSavings": 2290}]}
+2025-11-29 17:34:48,361 - 127.0.0.1 - - [29/Nov/2025 17:34:48] "POST /api/games/saving HTTP/1.1" 200 -
+2025-11-29 17:34:48,381 - {"game": "saving", "final_savings": 2290.0, "goal": 1000.0, "goal_percentage": 229.0, "grade": "A+", "avg_monthly_savings": 365.0, "consistency_score": 38.03226646068133, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Just buy a thoughtful but inexpensive gift ($15)", "impact": -15, "monthlySavings": 385, "totalSavings": 860}, {"month": 3, "choice": "Concert + professional phone repair ($130)", "impact": -130, "monthlySavings": 270, "totalSavings": 1130}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1490}, {"month": 5, "choice": "Some summer activities ($60) while job hunting", "impact": -60, "monthlySavings": 340, "totalSavings": 1830}, {"month": 6, "choice": "Go to festival ($40) but save most of extra income", "impact": -40, "monthlySavings": 460, "totalSavings": 2290}]}
+2025-11-29 17:34:48,384 - 127.0.0.1 - - [29/Nov/2025 17:34:48] "POST /api/games/saving HTTP/1.1" 200 -
+2025-11-29 17:34:49,307 - 127.0.0.1 - - [29/Nov/2025 17:34:49] "GET /games/invest HTTP/1.1" 200 -
+2025-11-29 17:34:49,325 - 127.0.0.1 - - [29/Nov/2025 17:34:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:34:49,325 - 127.0.0.1 - - [29/Nov/2025 17:34:49] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:34:52,120 - {"game": "invest", "type": "savings", "amount": 500.0, "years": 5, "final_value": 525.33, "return_rate": 5.1, "annual_rates": [1.05, 0.88, 1.17, 1.07, 0.81], "volatility": 0.15, "volatility_rating": "Low"}
+2025-11-29 17:34:52,125 - 127.0.0.1 - - [29/Nov/2025 17:34:52] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 17:35:00,370 - {"game": "invest", "type": "index", "amount": 500.0, "years": 5, "final_value": 594.87, "return_rate": 19.0, "annual_rates": [-4.14, 2.35, 7.75, 18.93, -5.38], "volatility": 9.92, "volatility_rating": "Low"}
+2025-11-29 17:35:00,373 - 127.0.0.1 - - [29/Nov/2025 17:35:00] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 17:35:03,664 - {"game": "invest", "type": "stock", "amount": 500.0, "years": 5, "final_value": 714.23, "return_rate": 42.8, "annual_rates": [10.88, -7.64, -14.69, 40.11, 16.7], "volatility": 21.61, "volatility_rating": "High"}
+2025-11-29 17:35:03,669 - 127.0.0.1 - - [29/Nov/2025 17:35:03] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 17:35:57,491 - {"game": "invest", "type": "stock", "amount": 500.0, "years": 5, "final_value": 655.37, "return_rate": 31.1, "annual_rates": [8.1, 6.58, -4.8, 26.74, -5.71], "volatility": 13.12, "volatility_rating": "Medium"}
+2025-11-29 17:35:57,495 - 127.0.0.1 - - [29/Nov/2025 17:35:57] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 17:36:17,650 -  * Detected change in '/Users/bhaskar/src/FinLit/app.py', reloading
+2025-11-29 17:36:17,714 -  * Restarting with stat
+2025-11-29 17:36:18,030 -  * Debugger is active!
+2025-11-29 17:36:18,067 -  * Debugger PIN: 139-885-293
+2025-11-29 17:37:42,429 - 127.0.0.1 - - [29/Nov/2025 17:37:42] "GET /games/invest HTTP/1.1" 200 -
+2025-11-29 17:37:42,449 - 127.0.0.1 - - [29/Nov/2025 17:37:42] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:37:42,450 - 127.0.0.1 - - [29/Nov/2025 17:37:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:37:44,144 - {"game": "invest", "type": "savings", "amount": 500.0, "years": 5, "final_value": 526.93, "return_rate": 5.4, "annual_rates": [1.1, 1.05, 0.91, 1.12, 1.1], "volatility": 0.09, "volatility_rating": "Low"}
+2025-11-29 17:37:44,161 - 127.0.0.1 - - [29/Nov/2025 17:37:44] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 17:37:47,894 - {"game": "invest", "type": "index", "amount": 500.0, "years": 5, "final_value": 569.27, "return_rate": 13.9, "annual_rates": [0.44, -6.13, 2.3, 20.69, -2.19], "volatility": 10.37, "volatility_rating": "Medium"}
+2025-11-29 17:37:47,898 - 127.0.0.1 - - [29/Nov/2025 17:37:47] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 17:37:50,261 - {"game": "invest", "type": "stock", "amount": 500.0, "years": 5, "final_value": 418.29, "return_rate": -16.3, "annual_rates": [18.59, -8.59, 9.71, -14.48, -17.75], "volatility": 15.87, "volatility_rating": "Medium"}
+2025-11-29 17:37:50,264 - 127.0.0.1 - - [29/Nov/2025 17:37:50] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 17:39:01,038 -  * Detected change in '/Users/bhaskar/src/FinLit/app.py', reloading
+2025-11-29 17:39:01,112 -  * Restarting with stat
+2025-11-29 17:41:22,499 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 17:41:22,499 - [33mPress CTRL+C to quit[0m
+2025-11-29 17:41:22,499 -  * Restarting with stat
+2025-11-29 17:41:22,765 -  * Debugger is active!
+2025-11-29 17:41:22,803 -  * Debugger PIN: 139-885-293
+2025-11-29 17:41:26,689 - 127.0.0.1 - - [29/Nov/2025 17:41:26] "GET /games/invest HTTP/1.1" 200 -
+2025-11-29 17:41:26,711 - 127.0.0.1 - - [29/Nov/2025 17:41:26] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:41:26,712 - 127.0.0.1 - - [29/Nov/2025 17:41:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:41:28,363 - {"game": "invest", "type": "savings", "amount": 500.0, "years": 5, "final_value": 527.56, "return_rate": 5.5, "annual_rates": [1.02, 1.06, 1.14, 0.99, 1.18], "volatility": 0.08, "volatility_rating": "Low"}
+2025-11-29 17:41:28,378 - 127.0.0.1 - - [29/Nov/2025 17:41:28] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 17:41:32,149 - 127.0.0.1 - - [29/Nov/2025 17:41:32] "GET /games/invest HTTP/1.1" 200 -
+2025-11-29 17:41:32,165 - 127.0.0.1 - - [29/Nov/2025 17:41:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:41:32,165 - 127.0.0.1 - - [29/Nov/2025 17:41:32] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:41:34,385 - 127.0.0.1 - - [29/Nov/2025 17:41:34] "GET /games/invest HTTP/1.1" 200 -
+2025-11-29 17:41:34,395 - 127.0.0.1 - - [29/Nov/2025 17:41:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:41:34,396 - 127.0.0.1 - - [29/Nov/2025 17:41:34] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:41:38,289 - {"game": "invest", "type": "index", "amount": 500.0, "years": 5, "final_value": 926.54, "return_rate": 85.3, "annual_rates": [19.49, 4.42, 20.29, 17.4, 5.16], "volatility": 7.89, "volatility_rating": "Low"}
+2025-11-29 17:41:38,293 - 127.0.0.1 - - [29/Nov/2025 17:41:38] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 17:44:04,564 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 17:44:04,564 - [33mPress CTRL+C to quit[0m
+2025-11-29 17:44:04,565 -  * Restarting with stat
+2025-11-29 17:44:04,825 -  * Debugger is active!
+2025-11-29 17:44:04,862 -  * Debugger PIN: 139-885-293
+2025-11-29 17:44:08,778 - 127.0.0.1 - - [29/Nov/2025 17:44:08] "GET /games/invest HTTP/1.1" 200 -
+2025-11-29 17:44:08,799 - 127.0.0.1 - - [29/Nov/2025 17:44:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:44:08,799 - 127.0.0.1 - - [29/Nov/2025 17:44:08] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:44:10,347 - {"game": "invest", "type": "savings", "amount": 500.0, "years": 5, "final_value": 524.11, "return_rate": 4.8, "annual_rates": [1.1, 0.92, 0.91, 0.99, 0.82], "volatility": 0.1, "volatility_rating": "Low"}
+2025-11-29 17:44:10,359 - 127.0.0.1 - - [29/Nov/2025 17:44:10] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 17:50:50,552 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 17:50:50,553 - [33mPress CTRL+C to quit[0m
+2025-11-29 17:50:50,553 -  * Restarting with stat
+2025-11-29 17:50:50,819 -  * Debugger is active!
+2025-11-29 17:50:50,861 -  * Debugger PIN: 139-885-293
+2025-11-29 17:50:54,632 - 127.0.0.1 - - [29/Nov/2025 17:50:54] "[33mGET /games/invest HTTP/1.1[0m" 404 -
+2025-11-29 17:50:58,829 - 127.0.0.1 - - [29/Nov/2025 17:50:58] "GET / HTTP/1.1" 200 -
+2025-11-29 17:50:58,849 - 127.0.0.1 - - [29/Nov/2025 17:50:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:50:58,849 - 127.0.0.1 - - [29/Nov/2025 17:50:58] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:51:00,356 - 127.0.0.1 - - [29/Nov/2025 17:51:00] "[35m[1mGET /games HTTP/1.1[0m" 500 -
+2025-11-29 17:51:00,385 - 127.0.0.1 - - [29/Nov/2025 17:51:00] "GET /games?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-11-29 17:51:00,385 - 127.0.0.1 - - [29/Nov/2025 17:51:00] "GET /games?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-11-29 17:51:00,407 - 127.0.0.1 - - [29/Nov/2025 17:51:00] "GET /games?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-11-29 17:51:00,420 - 127.0.0.1 - - [29/Nov/2025 17:51:00] "[36mGET /games?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-11-29 17:51:59,279 -  * Detected change in '/Users/bhaskar/src/FinLit/app.py', reloading
+2025-11-29 17:51:59,344 -  * Restarting with stat
+2025-11-29 17:51:59,665 -  * Debugger is active!
+2025-11-29 17:51:59,700 -  * Debugger PIN: 139-885-293
+2025-11-29 17:54:08,607 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 17:54:08,607 - [33mPress CTRL+C to quit[0m
+2025-11-29 17:54:08,608 -  * Restarting with stat
+2025-11-29 17:54:08,867 -  * Debugger is active!
+2025-11-29 17:54:08,902 -  * Debugger PIN: 139-885-293
+2025-11-29 17:54:16,445 - 127.0.0.1 - - [29/Nov/2025 17:54:16] "GET / HTTP/1.1" 200 -
+2025-11-29 17:54:16,469 - 127.0.0.1 - - [29/Nov/2025 17:54:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:54:16,469 - 127.0.0.1 - - [29/Nov/2025 17:54:16] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:54:17,977 - 127.0.0.1 - - [29/Nov/2025 17:54:17] "GET /games HTTP/1.1" 200 -
+2025-11-29 17:54:18,009 - 127.0.0.1 - - [29/Nov/2025 17:54:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:54:18,009 - 127.0.0.1 - - [29/Nov/2025 17:54:18] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:54:20,509 - 127.0.0.1 - - [29/Nov/2025 17:54:20] "GET /games/budget HTTP/1.1" 200 -
+2025-11-29 17:54:20,526 - 127.0.0.1 - - [29/Nov/2025 17:54:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:54:20,527 - 127.0.0.1 - - [29/Nov/2025 17:54:20] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:54:27,413 - 127.0.0.1 - - [29/Nov/2025 17:54:27] "[35m[1mGET /games/invest HTTP/1.1[0m" 500 -
+2025-11-29 17:54:27,438 - 127.0.0.1 - - [29/Nov/2025 17:54:27] "GET /games/invest?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-11-29 17:54:27,438 - 127.0.0.1 - - [29/Nov/2025 17:54:27] "GET /games/invest?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-11-29 17:54:27,446 - 127.0.0.1 - - [29/Nov/2025 17:54:27] "GET /games/invest?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-11-29 17:54:27,468 - 127.0.0.1 - - [29/Nov/2025 17:54:27] "[36mGET /games/invest?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-11-29 17:54:54,729 - 127.0.0.1 - - [29/Nov/2025 17:54:54] "GET /games/saving HTTP/1.1" 200 -
+2025-11-29 17:54:54,745 - 127.0.0.1 - - [29/Nov/2025 17:54:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:54:54,745 - 127.0.0.1 - - [29/Nov/2025 17:54:54] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:55:06,616 - {"game": "saving", "final_savings": 2255.0, "goal": 1000.0, "goal_percentage": 225.5, "grade": "A+", "avg_monthly_savings": 359.1666666666667, "consistency_score": 38.64719511980999, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Buy a nice gift ($30) and attend the party ($20)", "impact": -50, "monthlySavings": 350, "totalSavings": 825}, {"month": 3, "choice": "Concert + professional phone repair ($130)", "impact": -130, "monthlySavings": 270, "totalSavings": 1095}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1455}, {"month": 5, "choice": "Some summer activities ($60) while job hunting", "impact": -60, "monthlySavings": 340, "totalSavings": 1795}, {"month": 6, "choice": "Go to festival ($40) but save most of extra income", "impact": -40, "monthlySavings": 460, "totalSavings": 2255}]}
+2025-11-29 17:55:06,617 - {"game": "saving", "final_savings": 2255.0, "goal": 1000.0, "goal_percentage": 225.5, "grade": "A+", "avg_monthly_savings": 359.1666666666667, "consistency_score": 38.64719511980999, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Buy a nice gift ($30) and attend the party ($20)", "impact": -50, "monthlySavings": 350, "totalSavings": 825}, {"month": 3, "choice": "Concert + professional phone repair ($130)", "impact": -130, "monthlySavings": 270, "totalSavings": 1095}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1455}, {"month": 5, "choice": "Some summer activities ($60) while job hunting", "impact": -60, "monthlySavings": 340, "totalSavings": 1795}, {"month": 6, "choice": "Go to festival ($40) but save most of extra income", "impact": -40, "monthlySavings": 460, "totalSavings": 2255}]}
+2025-11-29 17:55:06,629 - 127.0.0.1 - - [29/Nov/2025 17:55:06] "POST /api/games/saving HTTP/1.1" 200 -
+2025-11-29 17:55:06,631 - 127.0.0.1 - - [29/Nov/2025 17:55:06] "POST /api/games/saving HTTP/1.1" 200 -
+2025-11-29 17:55:07,166 - {"game": "saving", "final_savings": 2255.0, "goal": 1000.0, "goal_percentage": 225.5, "grade": "A+", "avg_monthly_savings": 359.1666666666667, "consistency_score": 38.64719511980999, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Buy a nice gift ($30) and attend the party ($20)", "impact": -50, "monthlySavings": 350, "totalSavings": 825}, {"month": 3, "choice": "Concert + professional phone repair ($130)", "impact": -130, "monthlySavings": 270, "totalSavings": 1095}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1455}, {"month": 5, "choice": "Some summer activities ($60) while job hunting", "impact": -60, "monthlySavings": 340, "totalSavings": 1795}, {"month": 6, "choice": "Go to festival ($40) but save most of extra income", "impact": -40, "monthlySavings": 460, "totalSavings": 2255}]}
+2025-11-29 17:55:07,169 - 127.0.0.1 - - [29/Nov/2025 17:55:07] "POST /api/games/saving HTTP/1.1" 200 -
+2025-11-29 17:55:09,211 - {"game": "saving", "final_savings": 2255.0, "goal": 1000.0, "goal_percentage": 225.5, "grade": "A+", "avg_monthly_savings": 359.1666666666667, "consistency_score": 38.64719511980999, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Buy a nice gift ($30) and attend the party ($20)", "impact": -50, "monthlySavings": 350, "totalSavings": 825}, {"month": 3, "choice": "Concert + professional phone repair ($130)", "impact": -130, "monthlySavings": 270, "totalSavings": 1095}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1455}, {"month": 5, "choice": "Some summer activities ($60) while job hunting", "impact": -60, "monthlySavings": 340, "totalSavings": 1795}, {"month": 6, "choice": "Go to festival ($40) but save most of extra income", "impact": -40, "monthlySavings": 460, "totalSavings": 2255}]}
+2025-11-29 17:55:09,215 - 127.0.0.1 - - [29/Nov/2025 17:55:09] "POST /api/games/saving HTTP/1.1" 200 -
+2025-11-29 17:55:10,898 - 127.0.0.1 - - [29/Nov/2025 17:55:10] "[35m[1mGET /games/invest HTTP/1.1[0m" 500 -
+2025-11-29 17:55:10,922 - 127.0.0.1 - - [29/Nov/2025 17:55:10] "[36mGET /games/invest?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:55:10,922 - 127.0.0.1 - - [29/Nov/2025 17:55:10] "[36mGET /games/invest?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-11-29 17:55:10,938 - 127.0.0.1 - - [29/Nov/2025 17:55:10] "[36mGET /games/invest?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-11-29 17:57:10,765 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 17:57:10,765 - [33mPress CTRL+C to quit[0m
+2025-11-29 17:57:10,766 -  * Restarting with stat
+2025-11-29 17:57:11,024 -  * Debugger is active!
+2025-11-29 17:57:11,060 -  * Debugger PIN: 139-885-293
+2025-11-29 17:57:15,460 - 127.0.0.1 - - [29/Nov/2025 17:57:15] "GET /games/invest HTTP/1.1" 200 -
+2025-11-29 17:57:15,478 - 127.0.0.1 - - [29/Nov/2025 17:57:15] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:57:15,479 - 127.0.0.1 - - [29/Nov/2025 17:57:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:57:21,978 - 127.0.0.1 - - [29/Nov/2025 17:57:21] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 17:58:26,820 - 127.0.0.1 - - [29/Nov/2025 17:58:26] "GET /games/invest HTTP/1.1" 200 -
+2025-11-29 17:58:26,836 - 127.0.0.1 - - [29/Nov/2025 17:58:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 17:58:26,837 - 127.0.0.1 - - [29/Nov/2025 17:58:26] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 17:58:47,668 - 127.0.0.1 - - [29/Nov/2025 17:58:47] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 17:58:49,398 - 127.0.0.1 - - [29/Nov/2025 17:58:49] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 18:00:51,141 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 18:00:51,142 - [33mPress CTRL+C to quit[0m
+2025-11-29 18:00:51,143 -  * Restarting with stat
+2025-11-29 18:00:51,439 -  * Debugger is active!
+2025-11-29 18:00:51,478 -  * Debugger PIN: 139-885-293
+2025-11-29 18:00:54,835 - 127.0.0.1 - - [29/Nov/2025 18:00:54] "GET /games/invest HTTP/1.1" 200 -
+2025-11-29 18:00:54,859 - 127.0.0.1 - - [29/Nov/2025 18:00:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 18:00:54,860 - 127.0.0.1 - - [29/Nov/2025 18:00:54] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 18:01:01,527 - 127.0.0.1 - - [29/Nov/2025 18:01:01] "GET / HTTP/1.1" 200 -
+2025-11-29 18:01:01,540 - 127.0.0.1 - - [29/Nov/2025 18:01:01] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 18:01:01,540 - 127.0.0.1 - - [29/Nov/2025 18:01:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 18:01:02,969 - 127.0.0.1 - - [29/Nov/2025 18:01:02] "GET /games HTTP/1.1" 200 -
+2025-11-29 18:01:02,985 - 127.0.0.1 - - [29/Nov/2025 18:01:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 18:01:02,986 - 127.0.0.1 - - [29/Nov/2025 18:01:02] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 18:01:06,712 - 127.0.0.1 - - [29/Nov/2025 18:01:06] "GET /games/invest HTTP/1.1" 200 -
+2025-11-29 18:01:06,729 - 127.0.0.1 - - [29/Nov/2025 18:01:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 18:01:06,729 - 127.0.0.1 - - [29/Nov/2025 18:01:06] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 18:01:16,322 - 127.0.0.1 - - [29/Nov/2025 18:01:16] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 18:01:19,484 - 127.0.0.1 - - [29/Nov/2025 18:01:19] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 18:01:29,388 - 127.0.0.1 - - [29/Nov/2025 18:01:29] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 18:01:34,248 - 127.0.0.1 - - [29/Nov/2025 18:01:34] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 18:01:36,485 - 127.0.0.1 - - [29/Nov/2025 18:01:36] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 18:03:01,924 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 18:03:01,924 - [33mPress CTRL+C to quit[0m
+2025-11-29 18:03:01,925 -  * Restarting with stat
+2025-11-29 18:03:02,226 -  * Debugger is active!
+2025-11-29 18:03:02,266 -  * Debugger PIN: 139-885-293
+2025-11-29 18:03:10,138 - 127.0.0.1 - - [29/Nov/2025 18:03:10] "GET /games/invest HTTP/1.1" 200 -
+2025-11-29 18:03:10,157 - 127.0.0.1 - - [29/Nov/2025 18:03:10] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 18:03:10,158 - 127.0.0.1 - - [29/Nov/2025 18:03:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 18:03:15,110 - 127.0.0.1 - - [29/Nov/2025 18:03:15] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 18:03:19,117 - 127.0.0.1 - - [29/Nov/2025 18:03:19] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 18:08:31,069 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 18:08:31,069 - [33mPress CTRL+C to quit[0m
+2025-11-29 18:08:31,070 -  * Restarting with stat
+2025-11-29 18:08:31,326 -  * Debugger is active!
+2025-11-29 18:08:31,362 -  * Debugger PIN: 139-885-293
+2025-11-29 18:08:38,586 - 127.0.0.1 - - [29/Nov/2025 18:08:38] "GET /games/invest HTTP/1.1" 200 -
+2025-11-29 18:08:38,603 - 127.0.0.1 - - [29/Nov/2025 18:08:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 18:08:38,604 - 127.0.0.1 - - [29/Nov/2025 18:08:38] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 18:08:40,954 - 127.0.0.1 - - [29/Nov/2025 18:08:40] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 18:08:43,836 - 127.0.0.1 - - [29/Nov/2025 18:08:43] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 18:08:49,797 - 127.0.0.1 - - [29/Nov/2025 18:08:49] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 18:08:54,539 - 127.0.0.1 - - [29/Nov/2025 18:08:54] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 18:08:57,074 - 127.0.0.1 - - [29/Nov/2025 18:08:57] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 18:11:12,189 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 18:11:12,190 - [33mPress CTRL+C to quit[0m
+2025-11-29 18:11:12,190 -  * Restarting with stat
+2025-11-29 18:11:12,453 -  * Debugger is active!
+2025-11-29 18:11:12,490 -  * Debugger PIN: 139-885-293
+2025-11-29 18:11:16,050 - 127.0.0.1 - - [29/Nov/2025 18:11:16] "GET /games/invest HTTP/1.1" 200 -
+2025-11-29 18:11:16,074 - 127.0.0.1 - - [29/Nov/2025 18:11:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 18:11:16,075 - 127.0.0.1 - - [29/Nov/2025 18:11:16] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 18:11:19,045 - 127.0.0.1 - - [29/Nov/2025 18:11:19] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 18:11:21,918 - 127.0.0.1 - - [29/Nov/2025 18:11:21] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 18:11:25,905 - 127.0.0.1 - - [29/Nov/2025 18:11:25] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 18:11:30,113 - 127.0.0.1 - - [29/Nov/2025 18:11:30] "POST /api/games/invest HTTP/1.1" 200 -
+2025-11-29 18:11:37,155 - 127.0.0.1 - - [29/Nov/2025 18:11:37] "GET /games HTTP/1.1" 200 -
+2025-11-29 18:11:37,168 - 127.0.0.1 - - [29/Nov/2025 18:11:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 18:11:37,170 - 127.0.0.1 - - [29/Nov/2025 18:11:37] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 18:11:39,577 - 127.0.0.1 - - [29/Nov/2025 18:11:39] "GET /games/saving HTTP/1.1" 200 -
+2025-11-29 18:11:39,595 - 127.0.0.1 - - [29/Nov/2025 18:11:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 18:11:39,596 - 127.0.0.1 - - [29/Nov/2025 18:11:39] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 18:12:30,057 - 127.0.0.1 - - [29/Nov/2025 18:12:30] "GET /blog HTTP/1.1" 200 -
+2025-11-29 18:12:30,071 - 127.0.0.1 - - [29/Nov/2025 18:12:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 18:12:30,072 - 127.0.0.1 - - [29/Nov/2025 18:12:30] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 18:12:36,866 - 127.0.0.1 - - [29/Nov/2025 18:12:36] "GET /videos HTTP/1.1" 200 -
+2025-11-29 18:12:36,919 - 127.0.0.1 - - [29/Nov/2025 18:12:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 18:12:36,920 - 127.0.0.1 - - [29/Nov/2025 18:12:36] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 18:12:44,139 - 127.0.0.1 - - [29/Nov/2025 18:12:44] "GET / HTTP/1.1" 200 -
+2025-11-29 18:12:44,169 - 127.0.0.1 - - [29/Nov/2025 18:12:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 18:12:44,171 - 127.0.0.1 - - [29/Nov/2025 18:12:44] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 18:15:28,775 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 18:15:28,775 - [33mPress CTRL+C to quit[0m
+2025-11-29 18:15:28,775 -  * Restarting with stat
+2025-11-29 18:15:29,035 -  * Debugger is active!
+2025-11-29 18:15:29,072 -  * Debugger PIN: 139-885-293
+2025-11-29 18:15:32,488 - 127.0.0.1 - - [29/Nov/2025 18:15:32] "GET / HTTP/1.1" 200 -
+2025-11-29 18:15:32,506 - 127.0.0.1 - - [29/Nov/2025 18:15:32] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 18:15:32,507 - 127.0.0.1 - - [29/Nov/2025 18:15:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 18:15:33,999 - 127.0.0.1 - - [29/Nov/2025 18:15:33] "GET /games HTTP/1.1" 200 -
+2025-11-29 18:15:34,023 - 127.0.0.1 - - [29/Nov/2025 18:15:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 18:15:34,024 - 127.0.0.1 - - [29/Nov/2025 18:15:34] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 18:15:36,580 - 127.0.0.1 - - [29/Nov/2025 18:15:36] "GET /games/invest HTTP/1.1" 200 -
+2025-11-29 18:15:36,611 - 127.0.0.1 - - [29/Nov/2025 18:15:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 18:15:36,612 - 127.0.0.1 - - [29/Nov/2025 18:15:36] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 18:15:51,438 - 127.0.0.1 - - [29/Nov/2025 18:15:51] "GET / HTTP/1.1" 200 -
+2025-11-29 18:15:51,467 - 127.0.0.1 - - [29/Nov/2025 18:15:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 18:15:51,467 - 127.0.0.1 - - [29/Nov/2025 18:15:51] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 18:21:24,716 - 127.0.0.1 - - [29/Nov/2025 18:21:24] "GET / HTTP/1.1" 200 -
+2025-11-29 18:21:24,728 - 127.0.0.1 - - [29/Nov/2025 18:21:24] "[33mGET /static/img/finlit_hero.png HTTP/1.1[0m" 404 -
+2025-11-29 18:21:24,730 - 127.0.0.1 - - [29/Nov/2025 18:21:24] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-29 18:21:24,731 - 127.0.0.1 - - [29/Nov/2025 18:21:24] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 18:22:17,887 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 18:22:17,887 - [33mPress CTRL+C to quit[0m
+2025-11-29 18:22:17,888 -  * Restarting with stat
+2025-11-29 18:22:18,153 -  * Debugger is active!
+2025-11-29 18:22:18,193 -  * Debugger PIN: 139-885-293
+2025-11-29 18:22:18,412 - 127.0.0.1 - - [29/Nov/2025 18:22:18] "GET / HTTP/1.1" 200 -
+2025-11-29 18:22:18,439 - 127.0.0.1 - - [29/Nov/2025 18:22:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 18:22:18,441 - 127.0.0.1 - - [29/Nov/2025 18:22:18] "GET /static/img/finlit_hero.png HTTP/1.1" 200 -
+2025-11-29 18:22:18,444 - 127.0.0.1 - - [29/Nov/2025 18:22:18] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-11-29 18:25:22,281 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-11-29 18:25:22,282 - [33mPress CTRL+C to quit[0m
+2025-11-29 18:25:22,282 -  * Restarting with stat
+2025-11-29 18:25:22,541 -  * Debugger is active!
+2025-11-29 18:25:22,581 -  * Debugger PIN: 139-885-293
+2025-11-29 18:25:23,780 - 127.0.0.1 - - [29/Nov/2025 18:25:23] "GET / HTTP/1.1" 200 -
+2025-11-29 18:25:23,802 - 127.0.0.1 - - [29/Nov/2025 18:25:23] "GET /static/img/finlit_hero.png HTTP/1.1" 200 -
+2025-11-29 18:25:23,802 - 127.0.0.1 - - [29/Nov/2025 18:25:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-29 18:25:23,819 - 127.0.0.1 - - [29/Nov/2025 18:25:23] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -

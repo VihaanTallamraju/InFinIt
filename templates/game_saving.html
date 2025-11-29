@@ -446,6 +446,25 @@ function resetGame() {
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', function() {
     savingGame.init();
+    // When results are shown, send summary to server for enhanced feedback
+    const observer = new MutationObserver(() => {
+        const resultsVisible = document.getElementById('results-card').style.display === 'block';
+        if (resultsVisible) {
+            fetch('/api/games/saving', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    decisions: savingGame.decisions,
+                    final_savings: savingGame.savings,
+                    goal: 1000
+                })
+            }).then(r => r.json()).then(summary => {
+                // Update learning summary with server-side personalized feedback
+                document.getElementById('learning-summary').innerHTML = `<p>${summary.learning_summary}</p>`;
+            }).catch(err => console.error('Saving summary error', err));
+        }
+    });
+    observer.observe(document.getElementById('results-card'), { attributes: true, attributeFilter: ['style'] });
 });
 </script>
 {% endblock %}

@@ -1,0 +1,2122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#0d6efd">
+    <title>Financial Literacy for Teens - Prototype</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+/* FinLit - Custom Styles */
+
+/* Root variables for consistent theming */
+:root {
+    --primary-color: #0d6efd;
+    --success-color: #198754;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-success: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+    --gradient-warning: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* Body and Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: #fff;
+}
+
+.flex-grow-1 {
+    flex: 1 0 auto;
+}
+
+/* Navigation Enhancements */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fff !important;
+    transform: translateY(-1px);
+}
+
+/* Hero Section Styles */
+.bg-gradient-primary {
+    background: var(--gradient-primary);
+}
+
+/* Removed hero icon animation */
+
+/* Card Enhancements */
+.card {
+    border: none;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+}
+
+.card-header {
+    font-weight: 600;
+    border-bottom: none;
+    padding: 1.5rem;
+}
+
+/* Game Card Specific Styles */
+.game-card {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.game-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+}
+
+.game-icon i {
+    transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-icon i {
+    transform: scale(1.1);
+}
+
+/* Button Enhancements */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    padding: 0.75rem 1.5rem;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+}
+
+.btn-success {
+    background: var(--gradient-success);
+}
+
+.btn-warning {
+    background: var(--gradient-warning);
+}
+
+/* Stats and Progress */
+.stat-card {
+    background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+}
+
+.progress {
+    height: 8px;
+    border-radius: 4px;
+    background: #e9ecef;
+}
+
+.progress-bar {
+    border-radius: 4px;
+    transition: width 0.6s ease;
+}
+
+/* Enhanced Mobile Optimization */
+@media (max-width: 768px) {
+    /* Typography improvements for mobile */
+    .hero-icon i {
+        font-size: 4rem;
+    }
+    
+    .display-4 { font-size: 2.5rem; }
+    .display-5 { font-size: 2rem; }
+    .display-6 { font-size: 1.75rem; }
+    
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    
+    /* Navigation improvements */
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+    
+    .navbar-nav {
+        text-align: center;
+        padding: 1rem 0;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 0.75rem 1rem;
+        font-size: 1.1rem;
+    }
+    
+    /* Card and layout improvements */
+    .card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .card-body {
+        padding: 1.25rem;
+    }
+    
+    /* Button improvements */
+    .btn {
+        min-height: 44px; /* Touch-friendly size */
+        font-size: 1rem;
+        padding: 0.75rem 1.25rem;
+    }
+    
+    .btn-group .btn {
+        margin-bottom: 0.5rem;
+        display: block;
+        width: 100%;
+    }
+    
+    /* Game-specific mobile improvements */
+    .game-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .stat-card {
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    
+    /* Form improvements for mobile */
+    .form-control, .form-select {
+        font-size: 16px; /* Prevents zoom on iOS */
+        min-height: 44px;
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Extra small devices optimization */
+    .container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    .hero-section {
+        padding: 2rem 0;
+    }
+    
+    .hero-icon i {
+        font-size: 3rem;
+    }
+    
+    .display-4 { font-size: 1.75rem; }
+    .display-5 { font-size: 1.5rem; }
+    .display-6 { font-size: 1.25rem; }
+    
+    /* Navigation for small screens */
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+    
+    /* Card improvements */
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .card-header {
+        padding: 0.75rem 1rem;
+    }
+    
+    /* Button improvements */
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Touch-specific enhancements */
+@media (pointer: coarse) {
+    /* Larger touch targets */
+    .btn, .form-control, .list-group-item-action {
+        min-height: 48px;
+    }
+    
+    /* Better spacing for touch navigation */
+    .navbar-nav .nav-link {
+        padding: 1rem;
+    }
+}
+
+/* Prevent zoom on form inputs (iOS Safari) */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    select, textarea, input[type="text"], input[type="password"], 
+    input[type="datetime"], input[type="datetime-local"], 
+    input[type="date"], input[type="month"], input[type="time"], 
+    input[type="week"], input[type="number"], input[type="email"], 
+    input[type="url"], input[type="search"], input[type="tel"], 
+    input[type="color"] {
+        font-size: 16px !important;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">
+                <span class="d-none d-sm-inline">Financial Literacy for Teens</span>
+                <span class="d-inline d-sm-none">FinLit</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#games">
+                            Games
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">
+                            Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#books">
+                            Books
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#videos">
+                            Videos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#survey">
+                            Feedback
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow-1">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section bg-gradient-primary text-white py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h1 class="display-4 fw-bold mb-4">Master Your Money Skills!</h1>
+                        <p class="lead mb-4">
+                            financial literacy the fun way!
+                        </p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                            <a href="#games" class="btn btn-light btn-lg px-4">
+                                Start Playing
+                            </a>
+                            <a href="#blog" class="btn btn-outline-light btn-lg px-4">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <div class="hero-content">
+                            <h2 class="display-3 text-white opacity-75">💰</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-card">
+                            <h3 class="fw-bold">3</h3>
+                            <p class="text-muted mb-0">Interactive Games</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-card">
+                            <h3 class="fw-bold">15+</h3>
+                            <p class="text-muted mb-0">Expert Articles</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-card">
+                            <h3 class="fw-bold">5+</h3>
+                            <p class="text-muted mb-0">Recommended Books</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-card">
+                            <h3 class="fw-bold">5+</h3>
+                            <p class="text-muted mb-0">Video Resources</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Games Section -->
+        <section id="games" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold">Interactive Financial Games</h2>
+                    <p class="lead text-muted">Learn by doing with our engaging financial literacy games</p>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Budget Challenge Game -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card game-card h-100 shadow">
+                            <div class="card-body text-center p-4">
+                                <div class="game-icon mb-4">
+                                    <div class="display-2">📊</div>
+                                </div>
+                                <h4 class="card-title fw-bold">Budget Challenge</h4>
+                                <p class="card-text text-muted">
+                                    Test your budgeting skills by allocating your monthly income between needs, wants, and savings.
+                                </p>
+                                <div class="mb-3">
+                                    <div class="badge bg-primary-subtle text-primary mb-2">Difficulty: Easy</div>
+                                    <div class="badge bg-success-subtle text-success">Duration: 5-10 mins</div>
+                                </div>
+                                <a href="#budget-game-page" class="btn btn-primary">
+                                    Play Game
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Saving Sprint Game -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card game-card h-100 shadow">
+                            <div class="card-body text-center p-4">
+                                <div class="game-icon mb-4">
+                                    <div class="display-2">🏃‍♂️</div>
+                                </div>
+                                <h4 class="card-title fw-bold">Saving Sprint</h4>
+                                <p class="card-text text-muted">
+                                    Race against time to reach your savings goals while managing daily expenses and temptations.
+                                </p>
+                                <div class="mb-3">
+                                    <div class="badge bg-warning-subtle text-warning mb-2">Difficulty: Medium</div>
+                                    <div class="badge bg-success-subtle text-success">Duration: 10-15 mins</div>
+                                </div>
+                                <a href="#saving-game-page" class="btn btn-success">
+                                    Play Game
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Investment Simulation Game -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card game-card h-100 shadow">
+                            <div class="card-body text-center p-4">
+                                <div class="game-icon mb-4">
+                                    <div class="display-2">📈</div>
+                                </div>
+                                <h4 class="card-title fw-bold">Investment Simulation</h4>
+                                <p class="card-text text-muted">
+                                    Learn about risk and return by making investment decisions in a simulated market environment.
+                                </p>
+                                <div class="mb-3">
+                                    <div class="badge bg-danger-subtle text-danger mb-2">Difficulty: Hard</div>
+                                    <div class="badge bg-success-subtle text-success">Duration: 15-20 mins</div>
+                                </div>
+                                <a href="#investment-game-page" class="btn btn-warning">
+                                    Play Game
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Budget Challenge Game Page -->
+        <section id="budget-game-page" class="py-5 bg-light d-none">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <!-- Game Header -->
+                        <div class="d-flex align-items-center mb-4">
+                            <button onclick="showSection('games')" class="btn btn-outline-primary me-3">
+                                ← Back to Games
+                            </button>
+                            <div>
+                                <h1 class="display-6 mb-0">
+                                    Budget Challenge
+                                </h1>
+                                <p class="text-muted mb-0">Master the art of balanced spending and saving</p>
+                            </div>
+                        </div>
+
+                        <div class="row g-4">
+                            <!-- Game Interface -->
+                            <div class="col-lg-8">
+                                <div class="card shadow">
+                                    <div class="card-header bg-primary text-white">
+                                        <h4 class="mb-0">Your Monthly Financial Challenge</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="alert alert-info">
+                                            <h5>Your Situation</h5>
+                                            <p class="mb-2">You're 16 years old with a part-time job. Monthly income: <strong class="text-primary">$900</strong></p>
+                                        </div>
+
+                                        <h5 class="mb-3">Allocate Your Money:</h5>
+                                        
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6">
+                                                <label class="form-label fw-semibold">Phone Bill</label>
+                                                <input type="range" class="form-range" min="30" max="100" value="50" oninput="updateBudget()">
+                                                <div class="d-flex justify-content-between">
+                                                    <small class="text-muted">$30</small>
+                                                    <span id="phone-amount" class="fw-bold text-primary">$50</span>
+                                                    <small class="text-muted">$100</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label fw-semibold">Entertainment</label>
+                                                <input type="range" class="form-range" min="0" max="200" value="100" oninput="updateBudget()">
+                                                <div class="d-flex justify-content-between">
+                                                    <small class="text-muted">$0</small>
+                                                    <span id="entertainment-amount" class="fw-bold text-primary">$100</span>
+                                                    <small class="text-muted">$200</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label fw-semibold">Savings Goal</label>
+                                                <input type="range" class="form-range" min="0" max="400" value="200" oninput="updateBudget()">
+                                                <div class="d-flex justify-content-between">
+                                                    <small class="text-muted">$0</small>
+                                                    <span id="savings-amount" class="fw-bold text-success">$200</span>
+                                                    <small class="text-muted">$400</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label fw-semibold">Emergency Fund</label>
+                                                <input type="range" class="form-range" min="0" max="300" value="100" oninput="updateBudget()">
+                                                <div class="d-flex justify-content-between">
+                                                    <small class="text-muted">$0</small>
+                                                    <span id="emergency-amount" class="fw-bold text-warning">$100</span>
+                                                    <small class="text-muted">$300</small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="card bg-light">
+                                                    <div class="card-body text-center">
+                                                        <h5>Budget Summary</h5>
+                                                        <div class="mb-2">
+                                                            <span class="text-muted">Remaining:</span>
+                                                            <span id="remaining-amount" class="fs-4 fw-bold text-primary">$450</span>
+                                                        </div>
+                                                        <div class="progress mb-2" style="height: 20px;">
+                                                            <div id="budget-progress" class="progress-bar bg-success" style="width: 50%"></div>
+                                                        </div>
+                                                        <small class="text-muted">Budget Utilization</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card bg-light">
+                                                    <div class="card-body text-center">
+                                                        <h5>Financial Health Score</h5>
+                                                        <div id="score-display" class="fs-1 fw-bold text-success">85</div>
+                                                        <small id="score-feedback" class="text-success">Great job! You're saving well!</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Game Info Sidebar -->
+                            <div class="col-lg-4">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Game Info</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Difficulty:</strong> <span class="badge bg-primary">Easy</span></p>
+                                        <p><strong>Duration:</strong> 5-10 minutes</p>
+                                        <p><strong>Skills:</strong> Budgeting, Planning, Decision Making</p>
+                                        <hr>
+                                        <h6>Learning Objectives:</h6>
+                                        <ul class="small">
+                                            <li>Understand needs vs. wants</li>
+                                            <li>Practice budget allocation</li>
+                                            <li>Learn about emergency funds</li>
+                                            <li>Build saving habits</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="card shadow">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Your Progress</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between">
+                                                <small>Games Completed</small>
+                                                <small>0/3</small>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 0%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between">
+                                                <small>Best Score</small>
+                                                <small class="fw-bold text-primary">--</small>
+                                            </div>
+                                        </div>
+                                        <div class="d-grid">
+                                            <button class="btn btn-outline-primary btn-sm">View All Scores</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Saving Sprint Game Page -->
+        <section id="saving-game-page" class="py-5 bg-light d-none">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <!-- Game Header -->
+                        <div class="d-flex align-items-center mb-4">
+                            <button onclick="showSection('games')" class="btn btn-outline-success me-3">
+                                ← Back to Games
+                            </button>
+                            <div>
+                                <h1 class="display-6 mb-0">
+                                    Saving Sprint
+                                </h1>
+                                <p class="text-muted mb-0">Race against time to reach your financial goals</p>
+                            </div>
+                        </div>
+
+                        <div class="row g-4">
+                            <!-- Game Interface -->
+                            <div class="col-lg-8">
+                                <div class="card shadow">
+                                    <div class="card-header bg-success text-white">
+                                        <h4 class="mb-0">6-Month Savings Challenge</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="alert alert-success">
+                                            <h5>Your Goal</h5>
+                                            <p class="mb-2">Save <strong>$1,200</strong> in 6 months for a new laptop while managing your expenses!</p>
+                                        </div>
+
+                                        <div class="row g-4 mb-4">
+                                            <div class="col-md-4">
+                                                <div class="card bg-light text-center">
+                                                    <div class="card-body">
+                                                        <h6 class="mt-2">Month 3</h6>
+                                                        <p class="text-muted mb-0">of 6</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="card bg-light text-center">
+                                                    <div class="card-body">
+                                                        <h6 class="mt-2">$650</h6>
+                                                        <p class="text-muted mb-0">Saved so far</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="card bg-light text-center">
+                                                    <div class="card-body">
+                                                        <h6 class="mt-2">$550</h6>
+                                                        <p class="text-muted mb-0">Still needed</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="progress mb-4" style="height: 25px;">
+                                            <div class="progress-bar bg-success" style="width: 54%">
+                                                54% Complete
+                                            </div>
+                                        </div>
+
+                                        <h6 class="mb-3">This Month's Challenge:</h6>
+                                        <div class="list-group">
+                                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    ✓ Skip coffee shop visits (3 times this week)
+                                                </div>
+                                                <span class="badge bg-success">+$15</span>
+                                            </div>
+                                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    ○ Find a side gig for extra income
+                                                </div>
+                                                <span class="badge bg-warning">+$100</span>
+                                            </div>
+                                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    ○ Sell items you don't need
+                                                </div>
+                                                <span class="badge bg-info">+$75</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Game Info Sidebar -->
+                            <div class="col-lg-4">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">ℹ️ Game Info</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Difficulty:</strong> <span class="badge bg-warning">Medium</span></p>
+                                        <p><strong>Duration:</strong> 10-15 minutes</p>
+                                        <p><strong>Skills:</strong> Goal Setting, Time Management, Discipline</p>
+                                        <hr>
+                                        <h6>Learning Objectives:</h6>
+                                        <ul class="small">
+                                            <li>Set realistic savings goals</li>
+                                            <li>Track progress over time</li>
+                                            <li>Find creative ways to save</li>
+                                            <li>Build consistency habits</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investment Simulation Game Page -->
+        <section id="investment-game-page" class="py-5 bg-light d-none">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <!-- Game Header -->
+                        <div class="d-flex align-items-center mb-4">
+                            <button onclick="showSection('games')" class="btn btn-outline-warning me-3">
+                                ← Back to Games
+                            </button>
+                            <div>
+                                <h1 class="display-6 mb-0">
+                                    Investment Simulation
+                                </h1>
+                                <p class="text-muted mb-0">Learn risk vs. reward in the stock market</p>
+                            </div>
+                        </div>
+
+                        <div class="row g-4">
+                            <!-- Game Interface -->
+                            <div class="col-lg-8">
+                                <div class="card shadow">
+                                    <div class="card-header bg-warning text-dark">
+                                        <h4 class="mb-0">Your Investment Portfolio</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="alert alert-warning">
+                                            <h5>Market Scenario</h5>
+                                            <p class="mb-2">You have <strong>$1,000</strong> to invest. Choose your strategy wisely - markets can be unpredictable!</p>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-4">
+                                                <div class="card border-primary">
+                                                    <div class="card-body text-center">
+                                                        <h6 class="mt-2">Safe Bonds</h6>
+                                                        <p class="text-muted small">Low risk, steady returns</p>
+                                                        <div class="fw-bold text-primary">3-5% annually</div>
+                                                        <button class="btn btn-outline-primary btn-sm mt-2">Invest $200</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="card border-warning">
+                                                    <div class="card-body text-center">
+                                                        <h6 class="mt-2">Index Funds</h6>
+                                                        <p class="text-muted small">Moderate risk, balanced returns</p>
+                                                        <div class="fw-bold text-warning">7-10% annually</div>
+                                                        <button class="btn btn-outline-warning btn-sm mt-2">Invest $500</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="card border-danger">
+                                                    <div class="card-body text-center">
+                                                        <h6 class="mt-2">Growth Stocks</h6>
+                                                        <p class="text-muted small">High risk, high potential</p>
+                                                        <div class="fw-bold text-danger">-5% to +25%</div>
+                                                        <button class="btn btn-outline-danger btn-sm mt-2">Invest $300</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card bg-light">
+                                            <div class="card-body">
+                                                <h6>Portfolio Performance (Year 1)</h6>
+                                                <div class="row text-center">
+                                                    <div class="col-3">
+                                                        <div class="fw-bold text-success fs-4">$1,087</div>
+                                                        <small class="text-muted">Current Value</small>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="fw-bold text-success fs-4">+$87</div>
+                                                        <small class="text-muted">Total Gain</small>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="fw-bold text-success fs-4">+8.7%</div>
+                                                        <small class="text-muted">Return Rate</small>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="fw-bold text-primary fs-4">A-</div>
+                                                        <small class="text-muted">Grade</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Game Info Sidebar -->
+                            <div class="col-lg-4">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">ℹ️ Game Info</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Difficulty:</strong> <span class="badge bg-danger">Hard</span></p>
+                                        <p><strong>Duration:</strong> 15-20 minutes</p>
+                                        <p><strong>Skills:</strong> Risk Assessment, Portfolio Management, Market Analysis</p>
+                                        <hr>
+                                        <h6>Learning Objectives:</h6>
+                                        <ul class="small">
+                                            <li>Understand risk vs. return</li>
+                                            <li>Learn portfolio diversification</li>
+                                            <li>Experience market volatility</li>
+                                            <li>Practice investment strategies</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold">Financial Learning Blog</h2>
+                    <p class="lead text-muted">Expert insights and practical tips for teen financial success</p>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Additional Integrated Articles (previously external) -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <small class="text-muted">September 2, 2025</small>
+                                </div>
+                                <h5 class="card-title">All About the Salad Oil Crisis</h5>
+                                <p class="card-text text-muted">Historic fraud case impacting commodities financing & risk controls...</p>
+                                <a href="https://vihaantallamraju-businessandstocks.blogspot.com/2025/09/all-about-salad-oil-crisis.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary">View Article</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <small class="text-muted">August 9, 2025</small>
+                                </div>
+                                <h5 class="card-title">What Is a Black Swan Event?</h5>
+                                <p class="card-text text-muted">Rare, high-impact market events and resilience concepts explained...</p>
+                                <a href="https://vihaantallamraju-businessandstocks.blogspot.com/2025/08/what-is-black-swan-event.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary">View Article</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <small class="text-muted">August 6, 2025</small>
+                                </div>
+                                <h5 class="card-title">10 Bearish Chart Patterns</h5>
+                                <p class="card-text text-muted">Visual signals traders use to anticipate downward momentum...</p>
+                                <a href="https://vihaantallamraju-businessandstocks.blogspot.com/2025/08/10-most-common-bearish-patterns-in.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary">View Article</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <small class="text-muted">May 3, 2025</small>
+                                </div>
+                                <h5 class="card-title">10 Bullish Chart Patterns</h5>
+                                <p class="card-text text-muted">Common reversal & continuation setups signaling potential rallies...</p>
+                                <a href="https://vihaantallamraju-businessandstocks.blogspot.com/2025/05/10-most-common-bullish-patterns-in.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary">View Article</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <small class="text-muted">March 23, 2025</small>
+                                </div>
+                                <h5 class="card-title">Basics of Candlestick Charts</h5>
+                                <p class="card-text text-muted">Foundational chart reading for price action interpretation...</p>
+                                <a href="https://vihaantallamraju-businessandstocks.blogspot.com/2025/03/the-basics-of-candlestick-charts.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary">View Article</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <small class="text-muted">March 19, 2025</small>
+                                </div>
+                                <h5 class="card-title">25 More Market Terms</h5>
+                                <p class="card-text text-muted">Extended glossary expanding core financial vocabulary...</p>
+                                <a href="https://vihaantallamraju-businessandstocks.blogspot.com/2025/03/25-more-stock-market-key-terminologies.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary">View Article</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <small class="text-muted">March 15, 2025</small>
+                                </div>
+                                <h5 class="card-title">25 Stock Market Terms</h5>
+                                <p class="card-text text-muted">Core terminology primer for early-stage learners...</p>
+                                <a href="https://vihaantallamraju-businessandstocks.blogspot.com/2025/03/25-stock-market-key-terminologies.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary">View Article</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <small class="text-muted">March 12, 2025</small>
+                                </div>
+                                <h5 class="card-title">Different Types of Stocks</h5>
+                                <p class="card-text text-muted">Overview of classes & characteristics influencing investor choice...</p>
+                                <a href="https://vihaantallamraju-businessandstocks.blogspot.com/2025/03/the-different-types-of-stocks.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary">View Article</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Original internal articles moved to bottom -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <small class="text-muted">October 5, 2025</small>
+                                </div>
+                                <h5 class="card-title">Your First Budget: A Teen's Guide</h5>
+                                <p class="card-text text-muted">Learn how to create your first budget using the 50/30/20 rule adapted for teenagers...</p>
+                                <a href="#blog-post-1" class="btn btn-outline-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <small class="text-muted">October 3, 2025</small>
+                                </div>
+                                <h5 class="card-title">Smart Saving Strategies for Teens</h5>
+                                <p class="card-text text-muted">Discover practical ways to save money as a teenager, from automatic transfers to goal setting...</p>
+                                <a href="#blog-post-2" class="btn btn-outline-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <small class="text-muted">October 1, 2025</small>
+                                </div>
+                                <h5 class="card-title">Understanding Credit Cards and Building Credit</h5>
+                                <p class="card-text text-muted">A beginner's guide to credit cards, credit scores, and how to start building good credit early...</p>
+                                <a href="#blog-post-3" class="btn btn-outline-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Post 1 -->
+        <section id="blog-post-1" class="py-5 d-none">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="mb-4">
+                            <button onclick="showSection('blog')" class="btn btn-outline-primary">
+                                ← Back to Blog
+                            </button>
+                        </div>
+                        
+                        <article class="card shadow">
+                            <div class="card-body p-5">
+                                <div class="mb-4">
+                                    <div class="d-flex align-items-center text-muted mb-2">
+                                        <small>October 5, 2025</small>
+                                        <span class="mx-2">•</span>
+                                        <small>5 min read</small>
+                                        <span class="mx-2">•</span>
+                                        <small>Budgeting</small>
+                                    </div>
+                                    <h1 class="display-6 fw-bold">Your First Budget: A Teen's Guide</h1>
+                                    <p class="lead text-muted">Master the fundamentals of budgeting with the 50/30/20 rule adapted specifically for teenagers.</p>
+                                </div>
+
+                                <div class="content">
+                                    <p>Creating your first budget might seem overwhelming, but it's one of the most important financial skills you'll ever learn. As a teenager, you have a unique opportunity to develop good money habits that will serve you for life.</p>
+
+                                    <h3>The 50/30/20 Rule for Teens</h3>
+                                    <p>The classic 50/30/20 budgeting rule can be adapted for teenage income:</p>
+                                    
+                                    <div class="row g-3 my-4">
+                                        <div class="col-md-4">
+                                            <div class="card bg-primary-subtle">
+                                                <div class="card-body text-center">
+                                                    <h5 class="mt-2">50% - Needs</h5>
+                                                    <p class="small mb-0">Phone bill, transportation, school supplies</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card bg-warning-subtle">
+                                                <div class="card-body text-center">
+                                                    <h5 class="mt-2">30% - Wants</h5>
+                                                    <p class="small mb-0">Entertainment, clothes, dining out</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card bg-success-subtle">
+                                                <div class="card-body text-center">
+                                                    <h5 class="mt-2">20% - Savings</h5>
+                                                    <p class="small mb-0">Future goals, emergency fund</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h3>Getting Started</h3>
+                                    <ol>
+                                        <li><strong>Track your income:</strong> Add up money from jobs, allowances, and gifts</li>
+                                        <li><strong>List your expenses:</strong> Write down everything you spend money on</li>
+                                        <li><strong>Categorize:</strong> Separate needs from wants</li>
+                                        <li><strong>Set limits:</strong> Use the 50/30/20 percentages as guidelines</li>
+                                        <li><strong>Review monthly:</strong> Adjust as needed</li>
+                                    </ol>
+
+                                    <div class="alert alert-info mt-4">
+                                        <h5>💡 Pro Tip</h5>
+                                        <p class="mb-0">Start with any amount! Even budgeting $50 a month helps you build the habit. You can always adjust as your income grows.</p>
+                                    </div>
+
+                                    <h3>Common Teen Budgeting Mistakes</h3>
+                                    <ul>
+                                        <li>Being too restrictive with the "wants" category</li>
+                                        <li>Not accounting for irregular expenses (gifts, events)</li>
+                                        <li>Forgetting to track small purchases</li>
+                                        <li>Not having any emergency savings</li>
+                                    </ul>
+
+                                    <p><strong>Remember:</strong> Budgeting is a skill that improves with practice. Start simple, be consistent, and don't be afraid to adjust your budget as you learn what works for you.</p>
+                                </div>
+
+                                <div class="border-top pt-4 mt-4">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <small class="text-muted">Share this article:</small>
+                                            <a href="#" class="ms-2 text-decoration-none">Facebook</a>
+                                            <a href="#" class="ms-2 text-decoration-none">Twitter</a>
+                                            <a href="#" class="ms-2 text-decoration-none">LinkedIn</a>
+                                        </div>
+                                        <div>
+                                            <small class="text-muted">Tags: </small>
+                                            <span class="badge bg-light text-dark">Budgeting</span>
+                                            <span class="badge bg-light text-dark">Teens</span>
+                                            <span class="badge bg-light text-dark">Financial Basics</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Post 2 -->
+        <section id="blog-post-2" class="py-5 d-none">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="mb-4">
+                            <button onclick="showSection('blog')" class="btn btn-outline-primary">
+                                ← Back to Blog
+                            </button>
+                        </div>
+                        
+                        <article class="card shadow">
+                            <div class="card-body p-5">
+                                <div class="mb-4">
+                                    <div class="d-flex align-items-center text-muted mb-2">
+                                        📅 <small>October 3, 2025</small>
+                                        <span class="mx-2">•</span>
+                                        <small>7 min read</small>
+                                        <span class="mx-2">•</span>
+                                        <small>Saving</small>
+                                    </div>
+                                    <h1 class="display-6 fw-bold">Smart Saving Strategies for Teens</h1>
+                                    <p class="lead text-muted">Discover practical and effective ways to save money as a teenager, from automation to goal setting.</p>
+                                </div>
+
+                                <div class="content">
+                                    <p>Saving money as a teenager can feel challenging when there are so many things you want to buy. But developing good saving habits now will pay off for the rest of your life. Here are proven strategies that work for teens.</p>
+
+                                    <h3>1. Automate Your Savings</h3>
+                                    <p>The easiest way to save is to make it automatic. Set up a separate savings account and transfer a fixed amount every time you get paid – even if it's just $10 or $20.</p>
+
+                                    <div class="card bg-light my-4">
+                                        <div class="card-body">
+                                            <h5>📊 Savings Calculator</h5>
+                                            <p class="mb-3">See how small amounts add up over time:</p>
+                                            <div class="row text-center">
+                                                <div class="col-3">
+                                                    <div class="fw-bold text-primary">$25/month</div>
+                                                    <small class="text-muted">= $300/year</small>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="fw-bold text-success">$50/month</div>
+                                                    <small class="text-muted">= $600/year</small>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="fw-bold text-warning">$100/month</div>
+                                                    <small class="text-muted">= $1,200/year</small>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="fw-bold text-danger">$200/month</div>
+                                                    <small class="text-muted">= $2,400/year</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h3>2. The Envelope Method (Digital Version)</h3>
+                                    <p>Create separate "envelopes" (savings accounts or even physical envelopes) for different goals:</p>
+                                    <ul>
+                                        <li><strong>Emergency Fund:</strong> For unexpected expenses</li>
+                                        <li><strong>Big Purchase:</strong> Car, laptop, vacation</li>
+                                        <li><strong>College Fund:</strong> For future education costs</li>
+                                        <li><strong>Fun Money:</strong> Guilt-free spending on wants</li>
+                                    </ul>
+
+                                    <h3>3. Smart Shopping Strategies</h3>
+                                    <ol>
+                                        <li><strong>Wait 24 hours:</strong> Before buying anything over $50</li>
+                                        <li><strong>Compare prices:</strong> Use apps like Honey or Rakuten</li>
+                                        <li><strong>Buy generic brands:</strong> Often 20-30% cheaper</li>
+                                        <li><strong>Shop sales:</strong> But only for things you actually need</li>
+                                        <li><strong>Use student discounts:</strong> Many stores offer 10-15% off</li>
+                                    </ol>
+
+                                    <div class="alert alert-success">
+                                        <h5>⭐ Challenge: The $5 Challenge</h5>
+                                        <p class="mb-0">Every time you receive a $5 bill, save it instead of spending it. You'll be surprised how much this adds up over a few months!</p>
+                                    </div>
+
+                                    <h3>4. Earn More, Save More</h3>
+                                    <p>Look for opportunities to increase your income:</p>
+                                    <ul>
+                                        <li>Part-time job or internship</li>
+                                        <li>Freelance work (tutoring, pet sitting, lawn care)</li>
+                                        <li>Sell items you no longer need</li>
+                                        <li>Online surveys or micro-tasks (be cautious of scams)</li>
+                                    </ul>
+
+                                    <p><strong>Bottom Line:</strong> Start small, be consistent, and celebrate your wins. Saving $1,000 by age 18 puts you ahead of most adults!</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Post 3 -->
+        <section id="blog-post-3" class="py-5 d-none">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="mb-4">
+                            <button onclick="showSection('blog')" class="btn btn-outline-primary">
+                                ← Back to Blog
+                            </button>
+                        </div>
+                        
+                        <article class="card shadow">
+                            <div class="card-body p-5">
+                                <div class="mb-4">
+                                    <div class="d-flex align-items-center text-muted mb-2">
+                                        📅 <small>October 1, 2025</small>
+                                        <span class="mx-2">•</span>
+                                        <small>8 min read</small>
+                                        <span class="mx-2">•</span>
+                                        <small>Credit</small>
+                                    </div>
+                                    <h1 class="display-6 fw-bold">Understanding Credit Cards and Building Credit</h1>
+                                    <p class="lead text-muted">A complete beginner's guide to credit cards, credit scores, and how to start building good credit early.</p>
+                                </div>
+
+                                <div class="content">
+                                    <p>Credit can seem confusing and scary, but understanding it early gives you a huge advantage. Here's everything you need to know about credit cards and building credit as a teenager.</p>
+
+                                    <h3>What is Credit?</h3>
+                                    <p>Credit is basically borrowed money that you promise to pay back. When you use a credit card, you're borrowing money from the bank, and they expect you to pay it back with interest if you don't pay the full amount right away.</p>
+
+                                    <div class="row g-3 my-4">
+                                        <div class="col-md-6">
+                                            <div class="card bg-success-subtle">
+                                                <div class="card-body">
+                                                    <h5>✅ Good Credit Habits</h5>
+                                                    <ul class="mb-0">
+                                                        <li>Pay on time, every time</li>
+                                                        <li>Keep balances low</li>
+                                                        <li>Don't apply for too many cards</li>
+                                                        <li>Check your score regularly</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-danger-subtle">
+                                                <div class="card-body">
+                                                    <h5>❌ Bad Credit Habits</h5>
+                                                    <ul class="mb-0">
+                                                        <li>Making late payments</li>
+                                                        <li>Maxing out credit cards</li>
+                                                        <li>Only making minimum payments</li>
+                                                        <li>Ignoring your credit report</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h3>Credit Score Basics</h3>
+                                    <p>Your credit score is a number between 300-850 that shows lenders how reliable you are with borrowed money:</p>
+                                    
+                                    <div class="progress-stacked my-3" style="height: 30px;">
+                                        <div class="progress" style="width: 17%">
+                                            <div class="progress-bar bg-danger" style="width: 100%">300-579 Poor</div>
+                                        </div>
+                                        <div class="progress" style="width: 23%">
+                                            <div class="progress-bar bg-warning" style="width: 100%">580-669 Fair</div>
+                                        </div>
+                                        <div class="progress" style="width: 30%">
+                                            <div class="progress-bar bg-primary" style="width: 100%">670-739 Good</div>
+                                        </div>
+                                        <div class="progress" style="width: 20%">
+                                            <div class="progress-bar bg-success" style="width: 100%">740-799 Very Good</div>
+                                        </div>
+                                        <div class="progress" style="width: 10%">
+                                            <div class="progress-bar bg-dark" style="width: 100%">800+ Excellent</div>
+                                        </div>
+                                    </div>
+
+                                    <h3>How to Build Credit as a Teen</h3>
+                                    <ol>
+                                        <li><strong>Become an authorized user:</strong> Ask a parent to add you to their credit card</li>
+                                        <li><strong>Get a student credit card:</strong> Designed for people with no credit history</li>
+                                        <li><strong>Consider a secured card:</strong> You put down a deposit as collateral</li>
+                                        <li><strong>Start small:</strong> Use the card for small purchases you can easily pay off</li>
+                                        <li><strong>Pay in full:</strong> Always pay the entire balance to avoid interest</li>
+                                    </ol>
+
+                                    <div class="alert alert-warning">
+                                        <h5>⚠️ Important Warning</h5>
+                                        <p class="mb-0">Credit cards are not free money! Only spend what you can afford to pay back immediately. Interest rates can be 20-30% annually – that's expensive!</p>
+                                    </div>
+
+                                    <h3>The Magic of Starting Early</h3>
+                                    <p>Building good credit takes time. If you start at 18 with good habits, by the time you're 25 you could have an excellent credit score. This will help you:</p>
+                                    <ul>
+                                        <li>Get better rates on car loans</li>
+                                        <li>Qualify for apartments more easily</li>
+                                        <li>Get lower insurance premiums</li>
+                                        <li>Be eligible for the best credit cards with rewards</li>
+                                    </ul>
+
+                                    <p><strong>Remember:</strong> Good credit is built slowly through consistent, responsible behavior. Start early, stay disciplined, and your future self will thank you!</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Books Section -->
+        <section id="books" class="py-5 bg-light">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold">Recommended Reading</h2>
+                    <p class="lead text-muted">Curated books to expand your financial knowledge</p>
+                </div>
+                <div class="row g-4">
+                    <!-- 1 -->
+                    <div class="col-lg-6">
+                        <div class="card shadow h-100">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="card-title mb-0">The Psychology of Money</h5>
+                                    <span class="badge bg-primary-subtle text-primary">Age 14+</span>
+                                </div>
+                                <p class="text-muted mb-1">Morgan Housel</p>
+                                <p class="small flex-grow-1">Clear stories explaining how behavior shapes financial success. Builds discipline and long‑term thinking.</p>
+                                <div class="mt-2"><span class="badge bg-light text-dark">Habits</span> <span class="badge bg-light text-dark">Mindset</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2 -->
+                    <div class="col-lg-6">
+                        <div class="card shadow h-100">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="card-title mb-0">Rich Dad Poor Dad for Teens</h5>
+                                    <span class="badge bg-success-subtle text-success">Age 12–18</span>
+                                </div>
+                                <p class="text-muted mb-1">Robert Kiyosaki</p>
+                                <p class="small flex-grow-1">Simple ideas about assets vs. liabilities and thinking smarter about money decisions.</p>
+                                <div class="mt-2"><span class="badge bg-light text-dark">Assets</span> <span class="badge bg-light text-dark">Mindset</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 3 -->
+                    <div class="col-lg-6">
+                        <div class="card shadow h-100">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="card-title mb-0">I Will Teach You To Be Rich</h5>
+                                    <span class="badge bg-warning-subtle text-warning">Age 15+</span>
+                                </div>
+                                <p class="text-muted mb-1">Ramit Sethi</p>
+                                <p class="small flex-grow-1">Covers saving, budgeting, investing and modern financial habits in a friendly tone.</p>
+                                <div class="mt-2"><span class="badge bg-light text-dark">Budgeting</span> <span class="badge bg-light text-dark">Investing</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 4 -->
+                    <div class="col-lg-6">
+                        <div class="card shadow h-100">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="card-title mb-0">The Richest Man in Babylon</h5>
+                                    <span class="badge bg-info-subtle text-info">Age 12+</span>
+                                </div>
+                                <p class="text-muted mb-1">George S. Clason</p>
+                                <p class="small flex-grow-1">Short parables teaching: save first, live wisely, avoid debt traps.</p>
+                                <div class="mt-2"><span class="badge bg-light text-dark">Saving</span> <span class="badge bg-light text-dark">Debt</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 5 -->
+                    <div class="col-lg-6">
+                        <div class="card shadow h-100">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="card-title mb-0">The Teen Investor</h5>
+                                    <span class="badge bg-danger-subtle text-danger">Age 13–18</span>
+                                </div>
+                                <p class="text-muted mb-1">Emmanuel Modu</p>
+                                <p class="small flex-grow-1">Designed for teens who want to understand investing safely and early.</p>
+                                <div class="mt-2"><span class="badge bg-light text-dark">Investing</span> <span class="badge bg-light text-dark">Safety</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 6 -->
+                    <div class="col-lg-6">
+                        <div class="card shadow h-100">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="card-title mb-0">How to Money</h5>
+                                    <span class="badge bg-primary-subtle text-primary">Age 12–20</span>
+                                </div>
+                                <p class="text-muted mb-1">Jean Chatzky & Kathryn Tuggle</p>
+                                <p class="small flex-grow-1">Entry level guide: savings accounts, budgeting, credit cards, simple investing.</p>
+                                <div class="mt-2"><span class="badge bg-light text-dark">Basics</span> <span class="badge bg-light text-dark">Credit</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 7 -->
+                    <div class="col-lg-6">
+                        <div class="card shadow h-100">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="card-title mb-0">The Simple Path to Wealth</h5>
+                                    <span class="badge bg-success-subtle text-success">Age 15+</span>
+                                </div>
+                                <p class="text-muted mb-1">JL Collins</p>
+                                <p class="small flex-grow-1">Explains index funds and long‑term investing simply. Core book for young adults.</p>
+                                <div class="mt-2"><span class="badge bg-light text-dark">Index Funds</span> <span class="badge bg-light text-dark">Long Term</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 8 -->
+                    <div class="col-lg-6">
+                        <div class="card shadow h-100">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="card-title mb-0">Broke Millennial</h5>
+                                    <span class="badge bg-warning-subtle text-warning">Age 16+</span>
+                                </div>
+                                <p class="text-muted mb-1">Erin Lowry</p>
+                                <p class="small flex-grow-1">Guides young adults through salary, credit, debt and early financial independence.</p>
+                                <div class="mt-2"><span class="badge bg-light text-dark">Early Career</span> <span class="badge bg-light text-dark">Debt</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 9 -->
+                    <div class="col-lg-6">
+                        <div class="card shadow h-100">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="card-title mb-0">The Millionaire Next Door</h5>
+                                    <span class="badge bg-info-subtle text-info">Age 15+</span>
+                                </div>
+                                <p class="text-muted mb-1">Thomas J. Stanley</p>
+                                <p class="small flex-grow-1">Shows how ordinary families build wealth through consistent smart choices.</p>
+                                <div class="mt-2"><span class="badge bg-light text-dark">Wealth Habits</span> <span class="badge bg-light text-dark">Frugality</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 10 -->
+                    <div class="col-lg-6">
+                        <div class="card shadow h-100">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="card-title mb-0">Atomic Habits</h5>
+                                    <span class="badge bg-danger-subtle text-danger">Age 13+</span>
+                                </div>
+                                <p class="text-muted mb-1">James Clear</p>
+                                <p class="small flex-grow-1">Not a finance book—teaches life systems that support saving, investing, discipline.</p>
+                                <div class="mt-2"><span class="badge bg-light text-dark">Habits</span> <span class="badge bg-light text-dark">Discipline</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Videos Section -->
+        <section id="videos" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold">Educational Videos</h2>
+                    <p class="lead text-muted">Learn through engaging video content</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card shadow" style="cursor: pointer;" onclick="showSection('video-1')">
+                            <div class="position-relative">
+                                <div class="ratio ratio-16x9 bg-light d-flex align-items-center justify-content-center">
+                                    <div class="display-1">▶️</div>
+                                </div>
+                                <div class="position-absolute top-50 start-50 translate-middle">
+                                    <div class="badge bg-dark">8:42</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title">Budgeting Basics for Teenagers</h6>
+                                <p class="card-text text-muted small">Khan Academy</p>
+                                <p class="card-text">Learn the fundamental principles of creating and sticking to a budget.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card shadow" style="cursor: pointer;" onclick="showSection('video-2')">
+                            <div class="position-relative">
+                                <div class="ratio ratio-16x9 bg-light d-flex align-items-center justify-content-center">
+                                    <div class="display-1">▶️</div>
+                                </div>
+                                <div class="position-absolute top-50 start-50 translate-middle">
+                                    <div class="badge bg-dark">12:15</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title">The Power of Compound Interest</h6>
+                                <p class="card-text text-muted small">TED-Ed</p>
+                                <p class="card-text">Understand how your money can grow exponentially over time.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card shadow" style="cursor: pointer;" onclick="showSection('video-3')">
+                            <div class="position-relative">
+                                <div class="ratio ratio-16x9 bg-light d-flex align-items-center justify-content-center">
+                                    <div class="display-1">▶️</div>
+                                </div>
+                                <div class="position-absolute top-50 start-50 translate-middle">
+                                    <div class="badge bg-dark">15:30</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title">Smart Shopping & Avoiding Debt</h6>
+                                <p class="card-text text-muted small">Crash Course</p>
+                                <p class="card-text">Tips for making wise purchasing decisions and staying debt-free.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Detail Pages -->
+        <section id="video-1" class="py-5 d-none">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="mb-4">
+                            <button onclick="showSection('videos')" class="btn btn-outline-primary">
+                                ← Back to Videos
+                            </button>
+                        </div>
+                        
+                        <div class="row g-4">
+                            <div class="col-lg-8">
+                                <div class="card shadow">
+                                    <div class="position-relative">
+                                        <div class="ratio ratio-16x9 bg-dark d-flex align-items-center justify-content-center">
+                                            <div class="text-center text-white">
+                                                <div class="display-1 mb-3">▶️</div>
+                                                <h5>Budgeting Basics for Teenagers</h5>
+                                                <p class="text-muted">Khan Academy • 8:42</p>
+                                                <button class="btn btn-primary">
+                                                    ▶️ Play Video
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h4>Budgeting Basics for Teenagers</h4>
+                                        <div class="d-flex align-items-center text-muted mb-3">
+                                            <small>Khan Academy</small>
+                                            <span class="mx-2">•</span>
+                                            <small>8:42 minutes</small>
+                                            <span class="mx-2">•</span>
+                                            <small>Beginner Level</small>
+                                        </div>
+                                        <p>Learn the fundamental principles of creating and sticking to a budget. This video covers the basics of income tracking, expense categorization, and the importance of saving for both short-term and long-term goals.</p>
+                                        
+                                        <h6 class="mt-4">What You'll Learn:</h6>
+                                        <ul>
+                                            <li>How to track your income and expenses</li>
+                                            <li>The difference between needs and wants</li>
+                                            <li>Setting up your first budget</li>
+                                            <li>Tips for sticking to your budget</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card shadow">
+                                    <div class="card-header">
+                                        <h6>📺 Related Videos</h6>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <div class="list-group list-group-flush">
+                                            <a href="#video-2" class="list-group-item list-group-item-action">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="bg-success text-white rounded d-flex align-items-center justify-content-center" style="width: 60px; height: 45px;">
+                                                            ▶️
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1">The Power of Compound Interest</h6>
+                                                        <small class="text-muted">TED-Ed • 12:15</small>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#video-3" class="list-group-item list-group-item-action">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="bg-warning text-white rounded d-flex align-items-center justify-content-center" style="width: 60px; height: 45px;">
+                                                            ▶️
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1">Smart Shopping & Avoiding Debt</h6>
+                                                        <small class="text-muted">Crash Course • 15:30</small>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="video-2" class="py-5 d-none">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="mb-4">
+                            <button onclick="showSection('videos')" class="btn btn-outline-success">
+                                ← Back to Videos
+                            </button>
+                        </div>
+                        
+                        <div class="row g-4">
+                            <div class="col-lg-8">
+                                <div class="card shadow">
+                                    <div class="position-relative">
+                                        <div class="ratio ratio-16x9 bg-dark d-flex align-items-center justify-content-center">
+                                            <div class="text-center text-white">
+                                                <div class="display-1 mb-3">▶️</div>
+                                                <h5>The Power of Compound Interest</h5>
+                                                <p class="text-muted">TED-Ed • 12:15</p>
+                                                <button class="btn btn-success">
+                                                    ▶️ Play Video
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h4>The Power of Compound Interest</h4>
+                                        <div class="d-flex align-items-center text-muted mb-3">
+                                            <small>TED-Ed</small>
+                                            <span class="mx-2">•</span>
+                                            <small>12:15 minutes</small>
+                                            <span class="mx-2">•</span>
+                                            <small>Intermediate Level</small>
+                                        </div>
+                                        <p>Understand how your money can grow exponentially over time through the magic of compound interest. This concept is often called the "eighth wonder of the world" – learn why it's so powerful for building wealth.</p>
+                                        
+                                        <h6 class="mt-4">What You'll Learn:</h6>
+                                        <ul>
+                                            <li>What compound interest means</li>
+                                            <li>How time affects your investment growth</li>
+                                            <li>Real examples of compound interest in action</li>
+                                            <li>Why starting early makes such a big difference</li>
+                                        </ul>
+                                        
+                                        <div class="alert alert-info">
+                                            <strong>Key Takeaway:</strong> Starting to save just $25 a month at age 16 versus age 25 can result in tens of thousands more dollars by retirement!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card shadow">
+                                    <div class="card-header">
+                                        <h6>🧮 Compound Interest Calculator</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <label class="form-label">Monthly Investment</label>
+                                            <input type="range" class="form-range" min="10" max="200" value="50">
+                                            <div class="d-flex justify-content-between">
+                                                <small>$10</small>
+                                                <span class="fw-bold">$50</span>
+                                                <small>$200</small>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Time Period</label>
+                                            <input type="range" class="form-range" min="5" max="40" value="20">
+                                            <div class="d-flex justify-content-between">
+                                                <small>5 years</small>
+                                                <span class="fw-bold">20 years</span>
+                                                <small>40 years</small>
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="fs-4 fw-bold text-success">$30,679</div>
+                                            <small class="text-muted">Estimated Final Amount</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="video-3" class="py-5 d-none">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="mb-4">
+                            <button onclick="showSection('videos')" class="btn btn-outline-warning">
+                                ← Back to Videos
+                            </button>
+                        </div>
+                        
+                        <div class="row g-4">
+                            <div class="col-lg-8">
+                                <div class="card shadow">
+                                    <div class="position-relative">
+                                        <div class="ratio ratio-16x9 bg-dark d-flex align-items-center justify-content-center">
+                                            <div class="text-center text-white">
+                                                <div class="display-1 mb-3">▶️</div>
+                                                <h5>Smart Shopping & Avoiding Debt</h5>
+                                                <p class="text-muted">Crash Course • 15:30</p>
+                                                <button class="btn btn-warning">
+                                                    ▶️ Play Video
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h4>Smart Shopping & Avoiding Debt</h4>
+                                        <div class="d-flex align-items-center text-muted mb-3">
+                                            <small>Crash Course</small>
+                                            <span class="mx-2">•</span>
+                                            <small>15:30 minutes</small>
+                                            <span class="mx-2">•</span>
+                                            <small>Beginner Level</small>
+                                        </div>
+                                        <p>Learn practical tips for making wise purchasing decisions and staying debt-free. This video covers everything from comparison shopping to understanding the true cost of debt and how to avoid common spending traps.</p>
+                                        
+                                        <h6 class="mt-4">What You'll Learn:</h6>
+                                        <ul>
+                                            <li>How to compare prices effectively</li>
+                                            <li>Understanding the psychology of marketing</li>
+                                            <li>When to use credit vs. debit cards</li>
+                                            <li>Strategies for avoiding impulse purchases</li>
+                                            <li>The real cost of debt and interest</li>
+                                        </ul>
+                                        
+                                        <div class="alert alert-warning">
+                                            <strong>Remember:</strong> A $500 credit card purchase at 18% interest, paying minimum payments, takes over 10 years and costs $1,115 total!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card shadow">
+                                    <div class="card-header">
+                                        <h6>✅ Smart Shopping Checklist</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="check1">
+                                            <label class="form-check-label" for="check1">
+                                                Do I really need this?
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="check2">
+                                            <label class="form-check-label" for="check2">
+                                                Have I compared prices?
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="check3">
+                                            <label class="form-check-label" for="check3">
+                                                Can I afford it without debt?
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="check4">
+                                            <label class="form-check-label" for="check4">
+                                                Have I waited 24 hours?
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="check5">
+                                            <label class="form-check-label" for="check5">
+                                                Does this fit my budget?
+                                            </label>
+                                        </div>
+                                        <small class="text-muted">Check all boxes before making any purchase over $50!</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Survey Section -->
+        <section id="survey" class="py-5 bg-light">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center mb-5">
+                            <h2 class="display-5 fw-bold">Share Your Feedback</h2>
+                            <p class="lead text-muted">Help us improve the platform with your insights</p>
+                        </div>
+                        
+                        <div class="card shadow">
+                            <div class="card-body p-4">
+                                <form>
+                                    <div class="mb-4">
+                                        <label class="form-label fw-semibold">How would you rate your current financial knowledge?</label>
+                                        <div class="btn-group-vertical d-grid gap-2" role="group">
+                                            <input type="radio" class="btn-check" name="knowledge" id="knowledge1" autocomplete="off">
+                                            <label class="btn btn-outline-primary text-start" for="knowledge1">
+                                                ☆ Beginner - I'm just getting started
+                                            </label>
+                                            <input type="radio" class="btn-check" name="knowledge" id="knowledge2" autocomplete="off" checked>
+                                            <label class="btn btn-outline-primary text-start" for="knowledge2">
+                                                ⭐ Intermediate - I know some basics
+                                            </label>
+                                            <input type="radio" class="btn-check" name="knowledge" id="knowledge3" autocomplete="off">
+                                            <label class="btn btn-outline-primary text-start" for="knowledge3">
+                                                ⭐ Advanced - I'm pretty knowledgeable
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label class="form-label fw-semibold">What financial topics interest you most?</label>
+                                        <div class="row g-2">
+                                            <div class="col-md-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="topic1" checked>
+                                                    <label class="form-check-label" for="topic1">Budgeting & Saving</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="topic2">
+                                                    <label class="form-check-label" for="topic2">Investing & Stocks</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="topic3" checked>
+                                                    <label class="form-check-label" for="topic3">Credit & Loans</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="topic4">
+                                                    <label class="form-check-label" for="topic4">Entrepreneurship</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label for="feedback" class="form-label fw-semibold">Any suggestions for improvement?</label>
+                                        <textarea class="form-control" id="feedback" rows="3" placeholder="Share your thoughts on how we can make this platform better..."></textarea>
+                                    </div>
+
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-primary btn-lg">
+                                            📤 Submit Feedback
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="mb-3">
+                        🐷 
+                        Financial Literacy for Teens
+                    </h5>
+                    <p class="text-muted mb-3">
+                        Interactive learning
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light">
+                            Facebook
+                        </a>
+                        <a href="#" class="text-light">
+                            Twitter
+                        </a>
+                        <a href="#" class="text-light">
+                            Instagram
+                        </a>
+                        <a href="#" class="text-light">
+                            YouTube
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h6 class="mb-3">Quick Links</h6>
+                            <ul class="list-unstyled">
+                                <li><a href="#games" class="text-muted text-decoration-none">Games</a></li>
+                                <li><a href="#blog" class="text-muted text-decoration-none">Blog</a></li>
+                                <li><a href="#books" class="text-muted text-decoration-none">Books</a></li>
+                                <li><a href="#videos" class="text-muted text-decoration-none">Videos</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <h6 class="mb-3">Support</h6>
+                            <ul class="list-unstyled">
+                                <li><a href="#" class="text-muted text-decoration-none">Help Center</a></li>
+                                <li><a href="#" class="text-muted text-decoration-none">Privacy Policy</a></li>
+                                <li><a href="#" class="text-muted text-decoration-none">Terms of Service</a></li>
+                                <li><a href="#survey" class="text-muted text-decoration-none">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-muted">&copy; 2025 Financial Literacy for Teens. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0 text-muted">
+                        💡
+                        <em>Start saving early, invest wisely, spend smartly!</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Section Navigation Functions
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('d-none');
+            });
+            
+            // Show the requested section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.remove('d-none');
+                
+                // Scroll to top of the section
+                setTimeout(() => {
+                    targetSection.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }, 100);
+            }
+        }
+
+        // Show home sections by default
+        function showHomeView() {
+            document.querySelectorAll('section').forEach(section => {
+                if (section.id === 'home' || 
+                    section.id === '' || 
+                    section.classList.contains('py-5') && !section.classList.contains('d-none')) {
+                    section.classList.remove('d-none');
+                }
+            });
+            
+            // Hide individual pages
+            const individualPages = ['budget-game-page', 'saving-game-page', 'investment-game-page', 
+                                   'blog-post-1', 'blog-post-2', 'blog-post-3', 
+                                   'video-1', 'video-2', 'video-3'];
+            individualPages.forEach(pageId => {
+                const page = document.getElementById(pageId);
+                if (page) page.classList.add('d-none');
+            });
+        }
+
+        // Interactive Budget Demo Functions
+        function updateBudget() {
+            const phone = document.querySelector('input[oninput="updateBudget()"]').value;
+            const entertainment = document.querySelectorAll('input[oninput="updateBudget()"]')[1].value;
+            const savings = document.querySelectorAll('input[oninput="updateBudget()"]')[2].value;
+            const emergency = document.querySelectorAll('input[oninput="updateBudget()"]')[3].value;
+            
+            // Update displayed amounts
+            document.getElementById('phone-amount').textContent = '$' + phone;
+            document.getElementById('entertainment-amount').textContent = '$' + entertainment;
+            document.getElementById('savings-amount').textContent = '$' + savings;
+            document.getElementById('emergency-amount').textContent = '$' + emergency;
+            
+            // Calculate remaining and progress
+            const total = 900;
+            const spent = parseInt(phone) + parseInt(entertainment) + parseInt(savings) + parseInt(emergency);
+            const remaining = total - spent;
+            
+            document.getElementById('remaining-amount').textContent = '$' + remaining;
+            document.getElementById('remaining-amount').className = remaining >= 0 ? 'fs-4 fw-bold text-success' : 'fs-4 fw-bold text-danger';
+            
+            // Update progress bar
+            const progressPercent = Math.min((spent / total) * 100, 100);
+            document.getElementById('budget-progress').style.width = progressPercent + '%';
+            document.getElementById('budget-progress').className = progressPercent > 100 ? 'progress-bar bg-danger' : 'progress-bar bg-success';
+            
+            // Calculate and update score
+            const savingsRate = (parseInt(savings) + parseInt(emergency)) / total;
+            let score = 50;
+            
+            if (savingsRate >= 0.3) score += 30; // Great savings rate
+            else if (savingsRate >= 0.2) score += 20; // Good savings rate
+            else if (savingsRate >= 0.1) score += 10; // Okay savings rate
+            
+            if (remaining >= 0) score += 20; // Staying within budget
+            if (parseInt(emergency) >= 50) score += 10; // Emergency fund
+            
+            score = Math.min(score, 100);
+            
+            document.getElementById('score-display').textContent = score;
+            document.getElementById('score-display').className = score >= 80 ? 'fs-1 fw-bold text-success' : score >= 60 ? 'fs-1 fw-bold text-warning' : 'fs-1 fw-bold text-danger';
+            
+            // Update feedback
+            let feedback = '';
+            if (score >= 90) feedback = 'Excellent! You\'re a budgeting superstar!';
+            else if (score >= 80) feedback = 'Great job! You\'re saving well!';
+            else if (score >= 70) feedback = 'Good work! Consider saving more.';
+            else if (score >= 60) feedback = 'Not bad! Try to increase your savings.';
+            else feedback = 'Keep trying! Focus on needs vs wants.';
+            
+            document.getElementById('score-feedback').textContent = feedback;
+            document.getElementById('score-feedback').className = score >= 80 ? 'text-success' : score >= 60 ? 'text-warning' : 'text-danger';
+        }
+
+            // Enhanced navigation for sections and individual pages
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href').substring(1); // Remove #
+                    
+                    // Check if it's an individual page (game, blog post, or video)
+                    const individualPages = ['budget-game-page', 'saving-game-page', 'investment-game-page', 
+                                           'blog-post-1', 'blog-post-2', 'blog-post-3',
+                                           'video-1', 'video-2', 'video-3'];
+                    
+                    if (individualPages.includes(href)) {
+                        showSection(href);
+                    } else {
+                        // Regular section navigation
+                        showHomeView();
+                        setTimeout(() => {
+                            const target = document.getElementById(href);
+                            if (target) {
+                                const offsetTop = target.offsetTop - 70; // Account for navbar height
+                                window.scrollTo({
+                                    top: offsetTop,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }, 100);
+                    }
+                });
+            });            // Initialize budget demo
+            updateBudget();
+
+            // Mobile touch feedback
+            if ('ontouchstart' in window) {
+                document.querySelectorAll('.btn, .card').forEach(element => {
+                    element.addEventListener('touchstart', function() {
+                        this.style.opacity = '0.8';
+                        this.style.transform = 'scale(0.98)';
+                    });
+                    
+                    element.addEventListener('touchend', function() {
+                        setTimeout(() => {
+                            this.style.opacity = '';
+                            this.style.transform = '';
+                        }, 150);
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

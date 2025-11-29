@@ -52,6 +52,16 @@ body {
     opacity: 0.8;
     animation: float 3s ease-in-out infinite;
 }
+    /* Hero illustration sizing */
+    .hero-illustration {
+        max-width: 320px;
+        width: 100%;
+        height: auto;
+        transition: transform .3s ease;
+    }
+    .hero-illustration:hover {
+        transform: scale(1.03);
+    }
 
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
@@ -107,7 +117,8 @@ body {
 }
 
 .blog-post-card .card-title a {
-    color: var(--dark-color);
+    /* Force visible title color regardless of dark-mode variable overrides */
+    color: #212529 !important;
     transition: color 0.3s ease;
 }
 

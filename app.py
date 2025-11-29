@@ -24,6 +24,13 @@ logging.basicConfig(
     format='%(asctime)s - %(message)s'
 )
 
+# Ensure all tables exist at startup to avoid 500s on first run
+with app.app_context():
+    try:
+        db.create_all()
+    except Exception as e:
+        logging.error(f"DB init error: {e}")
+
 # Database Models
 class BlogPost(db.Model):
     """Blog post model for financial literacy articles"""
@@ -72,6 +79,16 @@ class Survey(db.Model):
     def __repr__(self):
         return f'<Survey {self.id} - Age {self.age}>'
 
+class GamePlay(db.Model):
+    """Game play session records for analytics and personalized feedback"""
+    id = db.Column(db.Integer, primary_key=True)
+    game_name = db.Column(db.String(50), nullable=False)
+    metrics_json = db.Column(db.Text, nullable=False)  # Stored JSON of play metrics
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    
+    def __repr__(self):
+        return f'<GamePlay {self.game_name} {self.created_at.isoformat()}>'
+
 # Routes
 @app.route('/')
 def index():
@@ -98,111 +115,129 @@ def game_invest():
     """Investment Simulation game"""
     return render_template('game_invest.html')
 
-@app.route('/api/games/budget', methods=['POST'])
-def api_budget_game():
-    """API endpoint for budget game scoring"""
-    data = request.get_json()
-    
-    income = float(data.get('income', 0))
-    expenses = data.get('expenses', {})
-    
-    total_expenses = sum(float(v) for v in expenses.values())
-    savings = income - total_expenses
-    savings_rate = (savings / income * 100) if income > 0 else 0
-    
-    # Calculate score based on savings rate
-    if savings_rate >= 20:
-        score = 100
-        message = "Excellent! You're saving 20% or more. That's fantastic financial planning!"
-    elif savings_rate >= 10:
-        score = 80
-        message = "Good job! Try to save a bit more if possible. Aim for 20% savings."
-    elif savings_rate >= 5:
-        score = 60
-        message = "Not bad, but you could save more. Look for expenses to cut back on."
-    elif savings_rate >= 0:
-        score = 40
-        message = "You're spending everything you earn. Try to reduce some expenses."
-    else:
-        score = 20
-        message = "You're overspending! You need to cut back on expenses immediately."
-    
-    # Log game play
-    logging.info(json.dumps({
-        'game': 'budget',
-        'income': income,
-        'expenses': expenses,
-        'savings': savings,
-        'savings_rate': savings_rate,
-        'score': score
-    }))
-    
+# Investment Simulation API (reverted to simpler working version)
+@app.route('/api/games/invest', methods=['POST'])
+def api_invest():
+    data = request.get_json() or {}
+    amount = float(data.get('amount', 500))
+    years = int(data.get('years', 5))
+    inv_type = str(data.get('type', 'savings'))
+
+    investments = {
+        'savings': {'rate': 0.01, 'explanation': 'Savings Account: Safe and predictable, ideal for short-term goals.'},
+        'index':   {'rate': 0.07, 'explanation': 'Index Fund: Diversified stock market exposure with moderate risk.'},
+        'stock':   {'rate': 0.12, 'explanation': 'Individual Stock: Potentially high returns but high volatility and risk.'},
+    }
+
+    config = investments.get(inv_type, investments['savings'])
+    base_rate = config['rate']
+
+    import random
+    value = amount
+    annual_returns = []
+    for _ in range(years):
+        jitter = random.uniform(-base_rate * 0.2, base_rate * 0.2)
+        rate = max(-0.3, min(0.5, base_rate + jitter))
+        value = round(value * (1 + rate), 2)
+        annual_returns.append(value)
+
+    total_return = round(value - amount, 2)
+    overall_rate = round(((value / amount) - 1) * 100, 2)
+    explanation = config['explanation']
+
+    try:
+        gp = GamePlay(game_name='invest', metrics_json=json.dumps({
+            'amount': amount,
+            'years': years,
+            'type': inv_type,
+            'final_value': value,
+            'total_return': total_return,
+            'return_rate': overall_rate,
+            'annual_returns': annual_returns,
+        }))
+        db.session.add(gp)
+        db.session.commit()
+    except Exception:
+        db.session.rollback()
+
     return jsonify({
-        'score': score,
-        'savings': round(savings, 2),
-        'savings_rate': round(savings_rate, 1),
-        'message': message
+        'final_value': value,
+        'total_return': total_return,
+        'return_rate': overall_rate,
+        'annual_returns': annual_returns,
+        'explanation': explanation,
     })
 
-@app.route('/api/games/invest', methods=['POST'])
-def api_invest_game():
-    """API endpoint for investment simulation"""
-    import random
+@app.route('/api/games/saving', methods=['POST'])
+def api_saving_game():
+    """API endpoint to record Saving Sprint decisions and compute enhanced summary"""
+    data = request.get_json() or {}
+    decisions = data.get('decisions', [])  # list of {month, choice, monthlySavings, totalSavings}
+    final_savings = float(data.get('final_savings', 0))
+    goal = float(data.get('goal', 1000))
+    goal_percentage = (final_savings / goal * 100) if goal > 0 else 0
     
-    data = request.get_json()
-    investment_type = data.get('type', 'savings')
-    amount = float(data.get('amount', 0))
-    years = int(data.get('years', 1))
+    # Grade logic similar to client with enhancement
+    if goal_percentage >= 100:
+        grade = 'A+'
+        base_message = 'Outstanding goal completion and disciplined saving.'
+    elif goal_percentage >= 80:
+        grade = 'A'
+        base_message = 'Excellent progress. You are close to full emergency readiness.'
+    elif goal_percentage >= 60:
+        grade = 'B'
+        base_message = 'Good effort. Consider tightening wants to push higher.'
+    elif goal_percentage >= 40:
+        grade = 'C'
+        base_message = 'Moderate progress. Reevaluate discretionary spending patterns.'
+    else:
+        grade = 'D'
+        base_message = 'Limited emergency buffer. Prioritize consistent monthly savings.'
     
-    # Define investment parameters
-    investments = {
-        'savings': {'rate': 0.01, 'risk': 0.002},
-        'index': {'rate': 0.07, 'risk': 0.15},
-        'stock': {'rate': 0.12, 'risk': 0.30}
+    # Analyze decision patterns
+    monthly_savings_values = [d.get('monthlySavings', 0) for d in decisions]
+    avg_monthly = sum(monthly_savings_values) / len(monthly_savings_values) if monthly_savings_values else 0
+    if len(monthly_savings_values) > 1:
+        mean_val = avg_monthly
+        variance = sum((v - mean_val) ** 2 for v in monthly_savings_values) / (len(monthly_savings_values) - 1)
+        consistency = max(0.0, 100 - (variance ** 0.5))  # heuristic
+    else:
+        consistency = 100.0
+    
+    # Personalized pointers
+    pointers = []
+    if avg_monthly < goal / 12:
+        pointers.append('Average monthly savings is below pace for goal; try reserving a fixed amount immediately on income receipt.')
+    if consistency < 70:
+        pointers.append('Savings were volatile. Setting a baseline amount each month can stabilize progress.')
+    if not pointers:
+        pointers.append('Great consistency and pace. Consider setting a stretch goal or allocating part to investing.')
+    
+    learning_summary = base_message + ' ' + ' '.join(pointers)
+    
+    metrics = {
+        'game': 'saving',
+        'final_savings': final_savings,
+        'goal': goal,
+        'goal_percentage': goal_percentage,
+        'grade': grade,
+        'avg_monthly_savings': avg_monthly,
+        'consistency_score': consistency,
+        'decisions': decisions
     }
-    
-    params = investments.get(investment_type, investments['savings'])
-    base_rate = params['rate']
-    risk = params['risk']
-    
-    # Simulate returns with some randomness
-    annual_returns = []
-    current_value = amount
-    
-    for year in range(years):
-        # Add random variance based on risk
-        variance = random.uniform(-risk, risk)
-        annual_rate = base_rate + variance
-        current_value *= (1 + annual_rate)
-        annual_returns.append(round(current_value, 2))
-    
-    final_value = round(current_value, 2)
-    total_return = round(final_value - amount, 2)
-    return_rate = round((final_value / amount - 1) * 100, 1) if amount > 0 else 0
-    
-    # Generate explanation
-    explanations = {
-        'savings': f"Savings accounts are very safe but offer low returns. Your money grew steadily at about 1% per year.",
-        'index': f"Index funds offer moderate risk and returns. Over {years} year(s), you experienced some ups and downs but generally positive growth.",
-        'stock': f"Individual stocks are risky but can offer high returns. Your investment experienced significant volatility over {years} year(s)."
-    }
-    
-    # Log game play
-    logging.info(json.dumps({
-        'game': 'invest',
-        'type': investment_type,
-        'amount': amount,
-        'years': years,
-        'final_value': final_value,
-        'return_rate': return_rate
-    }))
+    logging.info(json.dumps(metrics))
+    try:
+        db.session.add(GamePlay(game_name='saving', metrics_json=json.dumps(metrics)))
+        db.session.commit()
+    except Exception as e:
+        logging.error(f"GamePlay persist error (saving): {e}")
     
     return jsonify({
-        'final_value': final_value,
-        'total_return': total_return,
-        'return_rate': return_rate,
-        'annual_returns': annual_returns,
-        'explanation': explanations[investment_type]
+        'grade': grade,
+        'goal_percentage': round(goal_percentage, 1),
+        'avg_monthly_savings': round(avg_monthly, 2),
+        'consistency_score': round(consistency, 1),
+        'learning_summary': learning_summary
     })
 
 @app.route('/blog')
