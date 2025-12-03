@@ -52,6 +52,15 @@ body {
     opacity: 0.8;
     animation: float 3s ease-in-out infinite;
 }
+/* Reusable boxed hero for inner page headings */
+.section-hero {
+    background: var(--gradient-primary);
+    color: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+}
+.section-hero h1 { color: #fff; }
+.section-hero .lead { color: rgba(255,255,255,0.85); }
     /* Hero illustration sizing */
     .hero-illustration {
         max-width: 320px;

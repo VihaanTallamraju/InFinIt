@@ -168,6 +168,97 @@ def api_invest():
         'explanation': explanation,
     })
 
+# Budget Challenge API
+@app.route('/api/games/budget', methods=['POST'])
+def api_budget_game():
+    """Compute budget results from income and expenses.
+    Expects JSON: { income: number, expenses: { ... } }
+    Returns: savings, savings_rate, score, tier, message, rationale, tips
+    """
+    data = request.get_json() or {}
+    try:
+        income = float(data.get('income', 0))
+        expenses = data.get('expenses', {}) or {}
+        total_expenses = 0.0
+        for v in expenses.values():
+            try:
+                total_expenses += float(v or 0)
+            except (TypeError, ValueError):
+                continue
+        savings = max(0.0, income - total_expenses)
+        savings_rate = round((savings / income * 100) if income > 0 else 0.0, 1)
+
+        # Simple scoring based on 50/30/20 heuristic
+        needs_keys = ['phone', 'transport', 'lunch', 'clothing']
+        wants_keys = ['entertainment', 'shopping', 'eating_out', 'subscriptions']
+        needs = sum(float(expenses.get(k, 0) or 0) for k in needs_keys)
+        wants = sum(float(expenses.get(k, 0) or 0) for k in wants_keys)
+        income_safe = income if income > 0 else 1.0
+        needs_pct = needs / income_safe * 100
+        wants_pct = wants / income_safe * 100
+
+        # Score 0-100 based on closeness to 50/30/20
+        def clamp(x, lo, hi):
+            return max(lo, min(hi, x))
+        penalty = abs(needs_pct - 50) + abs(wants_pct - 30) + abs(savings_rate - 20)
+        score = clamp(round(100 - penalty, 1), 0, 100)
+
+        if score >= 90:
+            tier = 'Gold'
+            message = 'Excellent balance! Your budget closely follows the 50/30/20 rule.'
+        elif score >= 75:
+            tier = 'Silver'
+            message = 'Strong budgeting. A few tweaks can get you to perfect balance.'
+        elif score >= 60:
+            tier = 'Bronze'
+            message = 'Decent start. Work on aligning needs, wants, and savings better.'
+        else:
+            tier = 'Starter'
+            message = 'Room to improve. Focus on reducing wants and boosting savings.'
+
+        rationale = (
+            f"Needs: {needs_pct:.1f}% | Wants: {wants_pct:.1f}% | Savings: {savings_rate:.1f}%"
+        )
+        tips = []
+        if wants_pct > 35:
+            tips.append('Trim fun spending by 10-20% to free up savings.')
+        if savings_rate < 15:
+            tips.append('Aim to save at least 15-20% by paying yourself first.')
+        if needs_pct > 55:
+            tips.append('Review essentials for cheaper alternatives (phone plan, transport).')
+        if not tips:
+            tips.append('Great balance—consider setting a stretch saving goal next month!')
+
+        # Persist gameplay (best-effort)
+        try:
+            metrics = {
+                'game': 'budget',
+                'income': income,
+                'total_expenses': round(total_expenses, 2),
+                'savings': round(savings, 2),
+                'savings_rate': savings_rate,
+                'needs_pct': round(needs_pct, 1),
+                'wants_pct': round(wants_pct, 1),
+                'score': score,
+                'tier': tier,
+            }
+            db.session.add(GamePlay(game_name='budget', metrics_json=json.dumps(metrics)))
+            db.session.commit()
+        except Exception:
+            db.session.rollback()
+
+        return jsonify({
+            'savings': round(savings, 2),
+            'savings_rate': savings_rate,
+            'score': score,
+            'tier': tier,
+            'message': message,
+            'rationale': rationale,
+            'tips': tips,
+        })
+    except Exception as e:
+        return jsonify({'error': True, 'message': f'Invalid input: {e}'}), 400
+
 @app.route('/api/games/saving', methods=['POST'])
 def api_saving_game():
     """API endpoint to record Saving Sprint decisions and compute enhanced summary"""
