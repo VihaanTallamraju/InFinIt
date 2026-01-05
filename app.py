@@ -197,37 +197,97 @@ def api_budget_game():
         needs_pct = needs / income_safe * 100
         wants_pct = wants / income_safe * 100
 
-        # Score 0-100 based on closeness to 50/30/20
+        # Score 0-100 with tolerance bands and savings-forward weighting
         def clamp(x, lo, hi):
             return max(lo, min(hi, x))
-        penalty = abs(needs_pct - 50) + abs(wants_pct - 30) + abs(savings_rate - 20)
+
+        # Penalties that favor high savings and only penalize excess wants or extreme needs
+        def needs_range_penalty(val, center=50.0, tol=10.0, weight=0.3):
+            upper = center + tol
+            lower = center - tol
+            if val > upper:
+                return (val - upper) * weight
+            if val < lower:
+                return (lower - val) * weight
+            return 0.0
+
+        def wants_excess_penalty(val, target=30.0, tol=10.0, weight=0.3):
+            # Only penalize wants above target + tol; no penalty for very low wants
+            cutoff = target + tol
+            return max(0.0, val - cutoff) * weight
+
+        def savings_under_penalty(val, target=20.0, tol=10.0, weight=0.4):
+            # Only penalize savings below target - tol; high savings get no penalty
+            cutoff = target - tol
+            if val < cutoff:
+                return (cutoff - val) * weight
+            return 0.0
+
+        penalty = (
+            needs_range_penalty(needs_pct, center=50.0, tol=10.0, weight=0.3) +
+            wants_excess_penalty(wants_pct, target=30.0, tol=10.0, weight=0.3) +
+            savings_under_penalty(savings_rate, target=20.0, tol=10.0, weight=0.4)
+        )
         score = clamp(round(100 - penalty, 1), 0, 100)
 
+        # Map score to grade (for consistency with Saving Sprint)
         if score >= 90:
+            grade = 'A+'
             tier = 'Gold'
             message = 'Excellent balance! Your budget closely follows the 50/30/20 rule.'
-        elif score >= 75:
+        elif score >= 80:
+            grade = 'A'
             tier = 'Silver'
             message = 'Strong budgeting. A few tweaks can get you to perfect balance.'
-        elif score >= 60:
+        elif score >= 70:
+            grade = 'B'
             tier = 'Bronze'
-            message = 'Decent start. Work on aligning needs, wants, and savings better.'
-        else:
+            message = 'Good budgeting. Keep nudging towards a more balanced split.'
+        elif score >= 60:
+            grade = 'C'
             tier = 'Starter'
-            message = 'Room to improve. Focus on reducing wants and boosting savings.'
+            message = 'Room to improve. Aim for a more sustainable 50/30/20 balance.'
+        else:
+            grade = 'D'
+            tier = 'Starter'
+            message = 'Significant imbalance. Rebalance towards needs and savings.'
+
+        # Refine message to match actual distribution (avoid contradictory guidance)
+        if score < 80:
+            if wants_pct > 35:
+                message = 'Trim fun spending and shift towards savings for better balance.'
+            elif wants_pct <= 10 and savings_rate >= 50:
+                message = 'Savings-focused budget—great discipline. Ensure essentials are realistic and sustainable.'
+            elif savings_rate < 15:
+                message = 'Boost savings closer to 15–20% by paying yourself first.'
+            elif needs_pct > 55:
+                message = 'Essentials are high; look for cheaper alternatives to free up savings.'
+            elif needs_pct < 35:
+                message = 'Essentials look low; verify you’re not under-budgeting necessities.'
+            else:
+                message = 'Good progress. Work toward a more balanced 50/30/20 split.'
 
         rationale = (
             f"Needs: {needs_pct:.1f}% | Wants: {wants_pct:.1f}% | Savings: {savings_rate:.1f}%"
         )
         tips = []
         if wants_pct > 35:
-            tips.append('Trim fun spending by 10-20% to free up savings.')
+            tips.append('Trim fun spending by 10–20% to free up savings.')
+        if wants_pct <= 10 and savings_rate >= 50 and score < 80:
+            tips.append('Strong savings; allow a small, sustainable fun budget to avoid burnout.')
         if savings_rate < 15:
-            tips.append('Aim to save at least 15-20% by paying yourself first.')
+            tips.append('Aim to save at least 15–20% by paying yourself first.')
+        if savings_rate > 50 and score < 80:
+            tips.append('Keep essentials realistic; extreme savings can be hard to sustain.')
         if needs_pct > 55:
             tips.append('Review essentials for cheaper alternatives (phone plan, transport).')
+        if needs_pct < 35 and score < 80:
+            tips.append('Verify essential costs (food, transport) aren’t under-budgeted.')
         if not tips:
-            tips.append('Great balance—consider setting a stretch saving goal next month!')
+            if score >= 80:
+                tips.append('Great balance—consider setting a stretch saving goal next month!')
+            else:
+                tips.append('Align closer to 50/30/20 to improve overall balance.')
 
         # Persist gameplay (best-effort)
         try:
@@ -240,6 +300,7 @@ def api_budget_game():
                 'needs_pct': round(needs_pct, 1),
                 'wants_pct': round(wants_pct, 1),
                 'score': score,
+                'grade': grade,
                 'tier': tier,
             }
             db.session.add(GamePlay(game_name='budget', metrics_json=json.dumps(metrics)))
@@ -251,6 +312,7 @@ def api_budget_game():
             'savings': round(savings, 2),
             'savings_rate': savings_rate,
             'score': score,
+            'grade': grade,
             'tier': tier,
             'message': message,
             'rationale': rationale,

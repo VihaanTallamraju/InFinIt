@@ -6,6 +6,19 @@
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-lg-8">
+            <!-- Session Grade Banner -->
+            <div id="session-grade-banner" class="alert alert-warning d-none" role="alert">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <strong><i class="bi bi-award"></i> Last Session Grade:</strong> 
+                        <span id="session-grade-text"></span>
+                        <span class="ms-2 text-muted small">(Score: <span id="session-score-text"></span>)</span>
+                    </div>
+                    <button class="btn btn-sm btn-outline-dark" onclick="resetGame(true)">
+                        <i class="bi bi-trash"></i> Reset Session
+                    </button>
+                </div>
+            </div>
             <!-- Game Header -->
             <div class="text-center mb-4">
                 <h1 class="display-6">
@@ -264,6 +277,12 @@ let budgetGame = {
             // Update local storage
             const played = parseInt(localStorage.getItem('budget_games_played') || 0) + 1;
             localStorage.setItem('budget_games_played', played);
+            if (result && typeof result.grade !== 'undefined') {
+                localStorage.setItem('budget_last_grade', result.grade);
+            }
+            if (result && typeof result.score !== 'undefined') {
+                localStorage.setItem('budget_last_score', result.score);
+            }
             
         } catch (error) {
             console.error('Error:', error);
@@ -280,7 +299,7 @@ let budgetGame = {
         document.getElementById('result-savings').textContent = result.savings.toFixed ? result.savings.toFixed(2) : result.savings;
         document.getElementById('result-rate').textContent = result.savings_rate;
         document.getElementById('result-score').textContent = result.score;
-        document.getElementById('result-tier').textContent = result.tier || '';
+        document.getElementById('result-tier').textContent = (result.grade ? `Grade ${result.grade}` : (result.tier || ''));
         document.getElementById('result-message').innerHTML = `<p class="mb-0">${result.message}</p>`;
         document.getElementById('result-rationale').textContent = result.rationale || '';
         const tipsEl = document.getElementById('result-tips');
@@ -295,6 +314,16 @@ let budgetGame = {
         
         document.getElementById('results').style.display = 'block';
         document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+
+        // Update session banner
+        const banner = document.getElementById('session-grade-banner');
+        const gradeText = document.getElementById('session-grade-text');
+        const scoreText = document.getElementById('session-score-text');
+        if (result.grade) {
+            gradeText.textContent = result.grade;
+            scoreText.textContent = result.score;
+            banner.classList.remove('d-none');
+        }
     }
 };
 
@@ -317,11 +346,27 @@ function resetGame() {
     
     // Scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Optionally clear session banner if requested
+    if (arguments.length && arguments[0] === true) {
+        localStorage.removeItem('budget_last_grade');
+        localStorage.removeItem('budget_last_score');
+        const banner = document.getElementById('session-grade-banner');
+        banner.classList.add('d-none');
+    }
 }
 
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', function() {
     budgetGame.init();
+    // Show last session grade if available
+    const lastGrade = localStorage.getItem('budget_last_grade');
+    const lastScore = localStorage.getItem('budget_last_score');
+    if (lastGrade) {
+        document.getElementById('session-grade-text').textContent = lastGrade;
+        document.getElementById('session-score-text').textContent = lastScore || '';
+        document.getElementById('session-grade-banner').classList.remove('d-none');
+    }
 });
 </script>
 {% endblock %}

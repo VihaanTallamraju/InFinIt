@@ -6,6 +6,19 @@
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-lg-10">
+            <!-- Session Grade Banner -->
+            <div id="saving-session-banner" class="alert alert-warning d-none" role="alert">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <strong><i class="bi bi-award"></i> Last Session Grade:</strong>
+                        <span id="saving-session-grade"></span>
+                        <span class="ms-2 text-muted small">(Final Fund: $<span id="saving-session-final"></span>)</span>
+                    </div>
+                    <button class="btn btn-sm btn-outline-dark" onclick="resetSavingSession()">
+                        <i class="bi bi-trash"></i> Reset Session
+                    </button>
+                </div>
+            </div>
             <!-- Game Header -->
             <div class="text-center mb-4">
                 <h1 class="display-6">
@@ -389,6 +402,14 @@ let savingGame = {
         // Update local storage
         const played = parseInt(localStorage.getItem('saving_games_played') || 0) + 1;
         localStorage.setItem('saving_games_played', played);
+        localStorage.setItem('saving_last_grade', grade);
+        localStorage.setItem('saving_last_final', String(this.savings));
+
+        // Update session banner
+        const banner = document.getElementById('saving-session-banner');
+        document.getElementById('saving-session-grade').textContent = grade;
+        document.getElementById('saving-session-final').textContent = this.savings;
+        banner.classList.remove('d-none');
         
         // Scroll to results
         document.getElementById('results-card').scrollIntoView({ behavior: 'smooth' });
@@ -446,6 +467,14 @@ function resetGame() {
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', function() {
     savingGame.init();
+    // Show last session grade if available
+    const lastGrade = localStorage.getItem('saving_last_grade');
+    const lastFinal = localStorage.getItem('saving_last_final');
+    if (lastGrade) {
+        document.getElementById('saving-session-grade').textContent = lastGrade;
+        document.getElementById('saving-session-final').textContent = lastFinal || '';
+        document.getElementById('saving-session-banner').classList.remove('d-none');
+    }
     // When results are shown, send summary to server for enhanced feedback
     const observer = new MutationObserver(() => {
         const resultsVisible = document.getElementById('results-card').style.display === 'block';
@@ -466,5 +495,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     observer.observe(document.getElementById('results-card'), { attributes: true, attributeFilter: ['style'] });
 });
+
+function resetSavingSession() {
+    localStorage.removeItem('saving_last_grade');
+    localStorage.removeItem('saving_last_final');
+    const banner = document.getElementById('saving-session-banner');
+    banner.classList.add('d-none');
+}
 </script>
 {% endblock %}

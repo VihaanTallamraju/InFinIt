@@ -1297,3 +1297,358 @@
 2025-12-04 21:36:48,141 - 192.168.50.130 - - [04/Dec/2025 21:36:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2025-12-04 21:36:48,156 - 192.168.50.130 - - [04/Dec/2025 21:36:48] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
 2025-12-04 21:37:03,119 - 192.168.50.130 - - [04/Dec/2025 21:37:03] "POST /api/games/invest HTTP/1.1" 200 -
+2025-12-07 06:28:08,101 - 127.0.0.1 - - [07/Dec/2025 06:28:08] "GET / HTTP/1.1" 200 -
+2025-12-07 06:28:08,129 - 127.0.0.1 - - [07/Dec/2025 06:28:08] "GET /static/img/finlit_hero.png HTTP/1.1" 200 -
+2025-12-07 06:28:08,129 - 127.0.0.1 - - [07/Dec/2025 06:28:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-07 06:28:08,142 - 127.0.0.1 - - [07/Dec/2025 06:28:08] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2025-12-13 19:06:17,625 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2025-12-13 19:06:17,625 - [33mPress CTRL+C to quit[0m
+2025-12-13 19:06:17,626 -  * Restarting with stat
+2025-12-13 19:06:17,874 -  * Debugger is active!
+2025-12-13 19:06:17,912 -  * Debugger PIN: 139-885-293
+2026-01-05 18:03:53,796 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2026-01-05 18:03:53,796 - [33mPress CTRL+C to quit[0m
+2026-01-05 18:03:53,797 -  * Restarting with stat
+2026-01-05 18:03:54,048 -  * Debugger is active!
+2026-01-05 18:03:54,086 -  * Debugger PIN: 139-885-293
+2026-01-05 18:04:08,971 - 127.0.0.1 - - [05/Jan/2026 18:04:08] "GET / HTTP/1.1" 200 -
+2026-01-05 18:04:09,000 - 127.0.0.1 - - [05/Jan/2026 18:04:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:04:09,002 - 127.0.0.1 - - [05/Jan/2026 18:04:09] "GET /static/img/finlit_hero.png HTTP/1.1" 200 -
+2026-01-05 18:04:09,004 - 127.0.0.1 - - [05/Jan/2026 18:04:09] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:04:09,083 - 127.0.0.1 - - [05/Jan/2026 18:04:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-01-05 18:04:16,215 - 127.0.0.1 - - [05/Jan/2026 18:04:16] "GET /blog HTTP/1.1" 200 -
+2026-01-05 18:04:16,224 - 127.0.0.1 - - [05/Jan/2026 18:04:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:04:16,226 - 127.0.0.1 - - [05/Jan/2026 18:04:16] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:04:21,902 - 127.0.0.1 - - [05/Jan/2026 18:04:21] "GET /games HTTP/1.1" 200 -
+2026-01-05 18:04:21,916 - 127.0.0.1 - - [05/Jan/2026 18:04:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:04:21,917 - 127.0.0.1 - - [05/Jan/2026 18:04:21] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:04:24,222 - 127.0.0.1 - - [05/Jan/2026 18:04:24] "GET /games/budget HTTP/1.1" 200 -
+2026-01-05 18:04:24,241 - 127.0.0.1 - - [05/Jan/2026 18:04:24] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:04:24,241 - 127.0.0.1 - - [05/Jan/2026 18:04:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:04:31,545 - 127.0.0.1 - - [05/Jan/2026 18:04:31] "POST /api/games/budget HTTP/1.1" 200 -
+2026-01-05 18:05:09,763 - 127.0.0.1 - - [05/Jan/2026 18:05:09] "POST /api/games/budget HTTP/1.1" 200 -
+2026-01-05 18:05:30,890 - 127.0.0.1 - - [05/Jan/2026 18:05:30] "POST /api/games/budget HTTP/1.1" 200 -
+2026-01-05 18:06:52,509 - 127.0.0.1 - - [05/Jan/2026 18:06:52] "GET / HTTP/1.1" 200 -
+2026-01-05 18:06:52,532 - 127.0.0.1 - - [05/Jan/2026 18:06:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:06:52,533 - 127.0.0.1 - - [05/Jan/2026 18:06:52] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:06:52,534 - 127.0.0.1 - - [05/Jan/2026 18:06:52] "[36mGET /static/img/finlit_hero.png HTTP/1.1[0m" 304 -
+2026-01-05 18:06:53,780 - 127.0.0.1 - - [05/Jan/2026 18:06:53] "GET /blog HTTP/1.1" 200 -
+2026-01-05 18:06:53,790 - 127.0.0.1 - - [05/Jan/2026 18:06:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:06:53,791 - 127.0.0.1 - - [05/Jan/2026 18:06:53] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:07:04,647 - 127.0.0.1 - - [05/Jan/2026 18:07:04] "GET /blog HTTP/1.1" 200 -
+2026-01-05 18:07:04,659 - 127.0.0.1 - - [05/Jan/2026 18:07:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:07:04,661 - 127.0.0.1 - - [05/Jan/2026 18:07:04] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:07:07,095 - 127.0.0.1 - - [05/Jan/2026 18:07:07] "GET /blog HTTP/1.1" 200 -
+2026-01-05 18:07:07,107 - 127.0.0.1 - - [05/Jan/2026 18:07:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:07:07,107 - 127.0.0.1 - - [05/Jan/2026 18:07:07] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:07:42,621 - 127.0.0.1 - - [05/Jan/2026 18:07:42] "GET /games HTTP/1.1" 200 -
+2026-01-05 18:07:42,640 - 127.0.0.1 - - [05/Jan/2026 18:07:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:07:42,641 - 127.0.0.1 - - [05/Jan/2026 18:07:42] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:07:44,003 - 127.0.0.1 - - [05/Jan/2026 18:07:44] "GET /games/budget HTTP/1.1" 200 -
+2026-01-05 18:07:44,021 - 127.0.0.1 - - [05/Jan/2026 18:07:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:07:44,022 - 127.0.0.1 - - [05/Jan/2026 18:07:44] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:07:46,678 - 127.0.0.1 - - [05/Jan/2026 18:07:46] "POST /api/games/budget HTTP/1.1" 200 -
+2026-01-05 18:08:03,002 - 127.0.0.1 - - [05/Jan/2026 18:08:03] "GET /games HTTP/1.1" 200 -
+2026-01-05 18:08:03,016 - 127.0.0.1 - - [05/Jan/2026 18:08:03] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:08:03,016 - 127.0.0.1 - - [05/Jan/2026 18:08:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:08:55,399 - 127.0.0.1 - - [05/Jan/2026 18:08:55] "GET /games/saving HTTP/1.1" 200 -
+2026-01-05 18:08:55,412 - 127.0.0.1 - - [05/Jan/2026 18:08:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:08:55,414 - 127.0.0.1 - - [05/Jan/2026 18:08:55] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:09:50,935 - {"game": "saving", "final_savings": 2460.0, "goal": 1000.0, "goal_percentage": 246.0, "grade": "A+", "avg_monthly_savings": 393.3333333333333, "consistency_score": 51.86823640602116, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Just buy a thoughtful but inexpensive gift ($15)", "impact": -15, "monthlySavings": 385, "totalSavings": 860}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1240}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1600}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1970}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2460}]}
+2026-01-05 18:09:50,936 - {"game": "saving", "final_savings": 2460.0, "goal": 1000.0, "goal_percentage": 246.0, "grade": "A+", "avg_monthly_savings": 393.3333333333333, "consistency_score": 51.86823640602116, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Just buy a thoughtful but inexpensive gift ($15)", "impact": -15, "monthlySavings": 385, "totalSavings": 860}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1240}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1600}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1970}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2460}]}
+2026-01-05 18:09:50,941 - 127.0.0.1 - - [05/Jan/2026 18:09:50] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:09:50,942 - 127.0.0.1 - - [05/Jan/2026 18:09:50] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:09:51,255 - {"game": "saving", "final_savings": 2460.0, "goal": 1000.0, "goal_percentage": 246.0, "grade": "A+", "avg_monthly_savings": 393.3333333333333, "consistency_score": 51.86823640602116, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Just buy a thoughtful but inexpensive gift ($15)", "impact": -15, "monthlySavings": 385, "totalSavings": 860}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1240}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1600}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1970}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2460}]}
+2026-01-05 18:09:51,258 - 127.0.0.1 - - [05/Jan/2026 18:09:51] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:09:52,762 - {"game": "saving", "final_savings": 2460.0, "goal": 1000.0, "goal_percentage": 246.0, "grade": "A+", "avg_monthly_savings": 393.3333333333333, "consistency_score": 51.86823640602116, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Just buy a thoughtful but inexpensive gift ($15)", "impact": -15, "monthlySavings": 385, "totalSavings": 860}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1240}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1600}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1970}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2460}]}
+2026-01-05 18:09:52,766 - 127.0.0.1 - - [05/Jan/2026 18:09:52] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:10:21,430 - {"game": "saving", "final_savings": 2460.0, "goal": 1000.0, "goal_percentage": 246.0, "grade": "A+", "avg_monthly_savings": 393.3333333333333, "consistency_score": 51.86823640602116, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Just buy a thoughtful but inexpensive gift ($15)", "impact": -15, "monthlySavings": 385, "totalSavings": 860}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1240}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1600}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1970}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2460}]}
+2026-01-05 18:10:21,435 - 127.0.0.1 - - [05/Jan/2026 18:10:21] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:10:24,585 - 127.0.0.1 - - [05/Jan/2026 18:10:24] "GET / HTTP/1.1" 200 -
+2026-01-05 18:10:24,608 - 127.0.0.1 - - [05/Jan/2026 18:10:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:10:24,610 - 127.0.0.1 - - [05/Jan/2026 18:10:24] "[36mGET /static/img/finlit_hero.png HTTP/1.1[0m" 304 -
+2026-01-05 18:10:24,610 - 127.0.0.1 - - [05/Jan/2026 18:10:24] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:10:57,974 - 127.0.0.1 - - [05/Jan/2026 18:10:57] "GET / HTTP/1.1" 200 -
+2026-01-05 18:10:57,989 - 127.0.0.1 - - [05/Jan/2026 18:10:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:10:57,991 - 127.0.0.1 - - [05/Jan/2026 18:10:57] "[36mGET /static/img/finlit_hero.png HTTP/1.1[0m" 304 -
+2026-01-05 18:10:57,992 - 127.0.0.1 - - [05/Jan/2026 18:10:57] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:12:00,659 - 127.0.0.1 - - [05/Jan/2026 18:12:00] "GET /games HTTP/1.1" 200 -
+2026-01-05 18:12:00,682 - 127.0.0.1 - - [05/Jan/2026 18:12:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:12:00,683 - 127.0.0.1 - - [05/Jan/2026 18:12:00] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:12:03,164 - 127.0.0.1 - - [05/Jan/2026 18:12:03] "GET /games/budget HTTP/1.1" 200 -
+2026-01-05 18:12:03,176 - 127.0.0.1 - - [05/Jan/2026 18:12:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:12:03,177 - 127.0.0.1 - - [05/Jan/2026 18:12:03] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:12:07,082 - 127.0.0.1 - - [05/Jan/2026 18:12:07] "POST /api/games/budget HTTP/1.1" 200 -
+2026-01-05 18:12:54,955 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2026-01-05 18:12:54,955 - [33mPress CTRL+C to quit[0m
+2026-01-05 18:12:54,956 -  * Restarting with stat
+2026-01-05 18:12:55,211 -  * Debugger is active!
+2026-01-05 18:12:55,247 -  * Debugger PIN: 139-885-293
+2026-01-05 18:12:57,146 - 127.0.0.1 - - [05/Jan/2026 18:12:57] "GET /games HTTP/1.1" 200 -
+2026-01-05 18:12:57,172 - 127.0.0.1 - - [05/Jan/2026 18:12:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:12:57,173 - 127.0.0.1 - - [05/Jan/2026 18:12:57] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:12:58,768 - 127.0.0.1 - - [05/Jan/2026 18:12:58] "GET /games/saving HTTP/1.1" 200 -
+2026-01-05 18:12:58,787 - 127.0.0.1 - - [05/Jan/2026 18:12:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:12:58,787 - 127.0.0.1 - - [05/Jan/2026 18:12:58] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:13:10,436 - {"game": "saving", "final_savings": 2460.0, "goal": 1000.0, "goal_percentage": 246.0, "grade": "A+", "avg_monthly_savings": 393.3333333333333, "consistency_score": 51.86823640602116, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Just buy a thoughtful but inexpensive gift ($15)", "impact": -15, "monthlySavings": 385, "totalSavings": 860}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1240}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1600}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1970}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2460}]}
+2026-01-05 18:13:10,445 - {"game": "saving", "final_savings": 2460.0, "goal": 1000.0, "goal_percentage": 246.0, "grade": "A+", "avg_monthly_savings": 393.3333333333333, "consistency_score": 51.86823640602116, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Just buy a thoughtful but inexpensive gift ($15)", "impact": -15, "monthlySavings": 385, "totalSavings": 860}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1240}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1600}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1970}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2460}]}
+2026-01-05 18:13:10,450 - 127.0.0.1 - - [05/Jan/2026 18:13:10] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:13:10,452 - 127.0.0.1 - - [05/Jan/2026 18:13:10] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:13:11,978 - {"game": "saving", "final_savings": 2460.0, "goal": 1000.0, "goal_percentage": 246.0, "grade": "A+", "avg_monthly_savings": 393.3333333333333, "consistency_score": 51.86823640602116, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Just buy a thoughtful but inexpensive gift ($15)", "impact": -15, "monthlySavings": 385, "totalSavings": 860}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1240}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1600}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1970}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2460}]}
+2026-01-05 18:13:11,979 - 127.0.0.1 - - [05/Jan/2026 18:13:11] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:13:12,013 - {"game": "saving", "final_savings": 2460.0, "goal": 1000.0, "goal_percentage": 246.0, "grade": "A+", "avg_monthly_savings": 393.3333333333333, "consistency_score": 51.86823640602116, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Just buy a thoughtful but inexpensive gift ($15)", "impact": -15, "monthlySavings": 385, "totalSavings": 860}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1240}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1600}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1970}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2460}]}
+2026-01-05 18:13:12,014 - {"game": "saving", "final_savings": 2460.0, "goal": 1000.0, "goal_percentage": 246.0, "grade": "A+", "avg_monthly_savings": 393.3333333333333, "consistency_score": 51.86823640602116, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Just buy a thoughtful but inexpensive gift ($15)", "impact": -15, "monthlySavings": 385, "totalSavings": 860}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1240}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1600}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1970}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2460}]}
+2026-01-05 18:13:12,015 - 127.0.0.1 - - [05/Jan/2026 18:13:12] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:13:12,016 - 127.0.0.1 - - [05/Jan/2026 18:13:12] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:13:18,189 - {"game": "saving", "final_savings": 2460.0, "goal": 1000.0, "goal_percentage": 246.0, "grade": "A+", "avg_monthly_savings": 393.3333333333333, "consistency_score": 51.86823640602116, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Just buy a thoughtful but inexpensive gift ($15)", "impact": -15, "monthlySavings": 385, "totalSavings": 860}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1240}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1600}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1970}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2460}]}
+2026-01-05 18:13:18,192 - 127.0.0.1 - - [05/Jan/2026 18:13:18] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:13:18,842 - {"game": "saving", "final_savings": 2460.0, "goal": 1000.0, "goal_percentage": 246.0, "grade": "A+", "avg_monthly_savings": 393.3333333333333, "consistency_score": 51.86823640602116, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Just buy a thoughtful but inexpensive gift ($15)", "impact": -15, "monthlySavings": 385, "totalSavings": 860}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1240}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1600}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1970}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2460}]}
+2026-01-05 18:13:18,843 - 127.0.0.1 - - [05/Jan/2026 18:13:18] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:13:24,512 - {"game": "saving", "final_savings": 2460.0, "goal": 1000.0, "goal_percentage": 246.0, "grade": "A+", "avg_monthly_savings": 393.3333333333333, "consistency_score": 51.86823640602116, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Just buy a thoughtful but inexpensive gift ($15)", "impact": -15, "monthlySavings": 385, "totalSavings": 860}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1240}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1600}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1970}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2460}]}
+2026-01-05 18:13:24,515 - 127.0.0.1 - - [05/Jan/2026 18:13:24] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:13:27,531 - {"game": "saving", "final_savings": 2460.0, "goal": 1000.0, "goal_percentage": 246.0, "grade": "A+", "avg_monthly_savings": 393.3333333333333, "consistency_score": 51.86823640602116, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Just buy a thoughtful but inexpensive gift ($15)", "impact": -15, "monthlySavings": 385, "totalSavings": 860}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1240}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1600}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1970}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2460}]}
+2026-01-05 18:13:27,533 - 127.0.0.1 - - [05/Jan/2026 18:13:27] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:13:32,466 - {"game": "saving", "final_savings": 2460.0, "goal": 1000.0, "goal_percentage": 246.0, "grade": "A+", "avg_monthly_savings": 393.3333333333333, "consistency_score": 51.86823640602116, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Just buy a thoughtful but inexpensive gift ($15)", "impact": -15, "monthlySavings": 385, "totalSavings": 860}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1240}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1600}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1970}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2460}]}
+2026-01-05 18:13:32,468 - 127.0.0.1 - - [05/Jan/2026 18:13:32] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:13:32,704 - {"game": "saving", "final_savings": 2460.0, "goal": 1000.0, "goal_percentage": 246.0, "grade": "A+", "avg_monthly_savings": 393.3333333333333, "consistency_score": 51.86823640602116, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Just buy a thoughtful but inexpensive gift ($15)", "impact": -15, "monthlySavings": 385, "totalSavings": 860}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1240}, {"month": 4, "choice": "Fix bike ($25), simple gift for parent ($15)", "impact": -40, "monthlySavings": 360, "totalSavings": 1600}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1970}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2460}]}
+2026-01-05 18:13:32,739 - 127.0.0.1 - - [05/Jan/2026 18:13:32] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:13:34,674 - 127.0.0.1 - - [05/Jan/2026 18:13:34] "GET /games HTTP/1.1" 200 -
+2026-01-05 18:13:34,685 - 127.0.0.1 - - [05/Jan/2026 18:13:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:13:34,685 - 127.0.0.1 - - [05/Jan/2026 18:13:34] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:13:36,518 - 127.0.0.1 - - [05/Jan/2026 18:13:36] "GET /games/invest HTTP/1.1" 200 -
+2026-01-05 18:13:36,540 - 127.0.0.1 - - [05/Jan/2026 18:13:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:13:36,541 - 127.0.0.1 - - [05/Jan/2026 18:13:36] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:13:41,733 - 127.0.0.1 - - [05/Jan/2026 18:13:41] "POST /api/games/invest HTTP/1.1" 200 -
+2026-01-05 18:15:14,509 -  * Detected change in '/Users/bhaskar/src/FinLit/app.py', reloading
+2026-01-05 18:15:14,583 -  * Restarting with stat
+2026-01-05 18:15:14,916 -  * Debugger is active!
+2026-01-05 18:15:14,953 -  * Debugger PIN: 139-885-293
+2026-01-05 18:16:56,929 - 127.0.0.1 - - [05/Jan/2026 18:16:56] "GET / HTTP/1.1" 200 -
+2026-01-05 18:16:56,949 - 127.0.0.1 - - [05/Jan/2026 18:16:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:16:56,949 - 127.0.0.1 - - [05/Jan/2026 18:16:56] "[36mGET /static/img/finlit_hero.png HTTP/1.1[0m" 304 -
+2026-01-05 18:16:56,952 - 127.0.0.1 - - [05/Jan/2026 18:16:56] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:17:12,118 - 127.0.0.1 - - [05/Jan/2026 18:17:12] "GET / HTTP/1.1" 200 -
+2026-01-05 18:17:12,128 - 127.0.0.1 - - [05/Jan/2026 18:17:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:17:12,129 - 127.0.0.1 - - [05/Jan/2026 18:17:12] "[36mGET /static/img/finlit_hero.png HTTP/1.1[0m" 304 -
+2026-01-05 18:17:12,130 - 127.0.0.1 - - [05/Jan/2026 18:17:12] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:17:13,449 - 127.0.0.1 - - [05/Jan/2026 18:17:13] "GET /games HTTP/1.1" 200 -
+2026-01-05 18:17:13,475 - 127.0.0.1 - - [05/Jan/2026 18:17:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:17:13,476 - 127.0.0.1 - - [05/Jan/2026 18:17:13] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:17:15,474 - 127.0.0.1 - - [05/Jan/2026 18:17:15] "GET /games/budget HTTP/1.1" 200 -
+2026-01-05 18:17:15,488 - 127.0.0.1 - - [05/Jan/2026 18:17:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:17:15,489 - 127.0.0.1 - - [05/Jan/2026 18:17:15] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:17:20,941 - 127.0.0.1 - - [05/Jan/2026 18:17:20] "POST /api/games/budget HTTP/1.1" 200 -
+2026-01-05 18:17:32,798 - 127.0.0.1 - - [05/Jan/2026 18:17:32] "POST /api/games/budget HTTP/1.1" 200 -
+2026-01-05 18:17:45,458 - 127.0.0.1 - - [05/Jan/2026 18:17:45] "POST /api/games/budget HTTP/1.1" 200 -
+2026-01-05 18:18:06,797 - 127.0.0.1 - - [05/Jan/2026 18:18:06] "POST /api/games/budget HTTP/1.1" 200 -
+2026-01-05 18:21:38,912 - 127.0.0.1 - - [05/Jan/2026 18:21:38] "GET /games/budget HTTP/1.1" 200 -
+2026-01-05 18:21:38,927 - 127.0.0.1 - - [05/Jan/2026 18:21:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:21:38,939 - 127.0.0.1 - - [05/Jan/2026 18:21:38] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:21:41,402 - 127.0.0.1 - - [05/Jan/2026 18:21:41] "GET / HTTP/1.1" 200 -
+2026-01-05 18:21:41,413 - 127.0.0.1 - - [05/Jan/2026 18:21:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:21:41,413 - 127.0.0.1 - - [05/Jan/2026 18:21:41] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:21:41,414 - 127.0.0.1 - - [05/Jan/2026 18:21:41] "[36mGET /static/img/finlit_hero.png HTTP/1.1[0m" 304 -
+2026-01-05 18:21:43,055 - 127.0.0.1 - - [05/Jan/2026 18:21:43] "GET /games HTTP/1.1" 200 -
+2026-01-05 18:21:43,067 - 127.0.0.1 - - [05/Jan/2026 18:21:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:21:43,068 - 127.0.0.1 - - [05/Jan/2026 18:21:43] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:21:44,612 - 127.0.0.1 - - [05/Jan/2026 18:21:44] "GET /games/budget HTTP/1.1" 200 -
+2026-01-05 18:21:44,620 - 127.0.0.1 - - [05/Jan/2026 18:21:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:21:44,635 - 127.0.0.1 - - [05/Jan/2026 18:21:44] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:21:51,265 - 127.0.0.1 - - [05/Jan/2026 18:21:51] "POST /api/games/budget HTTP/1.1" 200 -
+2026-01-05 18:22:07,175 - 127.0.0.1 - - [05/Jan/2026 18:22:07] "POST /api/games/budget HTTP/1.1" 200 -
+2026-01-05 18:22:16,227 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2026-01-05 18:22:16,227 - [33mPress CTRL+C to quit[0m
+2026-01-05 18:22:16,228 -  * Restarting with stat
+2026-01-05 18:22:16,482 -  * Debugger is active!
+2026-01-05 18:22:16,519 -  * Debugger PIN: 139-885-293
+2026-01-05 18:22:19,446 - 127.0.0.1 - - [05/Jan/2026 18:22:19] "GET /games/budget HTTP/1.1" 200 -
+2026-01-05 18:22:19,464 - 127.0.0.1 - - [05/Jan/2026 18:22:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:22:19,465 - 127.0.0.1 - - [05/Jan/2026 18:22:19] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:22:20,855 - 127.0.0.1 - - [05/Jan/2026 18:22:20] "GET /games/budget HTTP/1.1" 200 -
+2026-01-05 18:22:20,866 - 127.0.0.1 - - [05/Jan/2026 18:22:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:22:20,866 - 127.0.0.1 - - [05/Jan/2026 18:22:20] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:22:37,462 - 127.0.0.1 - - [05/Jan/2026 18:22:37] "POST /api/games/budget HTTP/1.1" 200 -
+2026-01-05 18:24:02,380 -  * Detected change in '/Users/bhaskar/src/FinLit/app.py', reloading
+2026-01-05 18:24:02,448 -  * Restarting with stat
+2026-01-05 18:24:02,804 -  * Debugger is active!
+2026-01-05 18:24:02,869 -  * Debugger PIN: 139-885-293
+2026-01-05 18:25:38,823 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2026-01-05 18:25:38,823 - [33mPress CTRL+C to quit[0m
+2026-01-05 18:25:38,824 -  * Restarting with stat
+2026-01-05 18:25:39,078 -  * Debugger is active!
+2026-01-05 18:25:39,114 -  * Debugger PIN: 139-885-293
+2026-01-05 18:25:48,522 - 127.0.0.1 - - [05/Jan/2026 18:25:48] "GET /games/budget HTTP/1.1" 200 -
+2026-01-05 18:25:48,543 - 127.0.0.1 - - [05/Jan/2026 18:25:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:25:48,543 - 127.0.0.1 - - [05/Jan/2026 18:25:48] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:25:50,969 - 127.0.0.1 - - [05/Jan/2026 18:25:50] "GET / HTTP/1.1" 200 -
+2026-01-05 18:25:50,983 - 127.0.0.1 - - [05/Jan/2026 18:25:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:25:50,985 - 127.0.0.1 - - [05/Jan/2026 18:25:50] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:25:50,985 - 127.0.0.1 - - [05/Jan/2026 18:25:50] "[36mGET /static/img/finlit_hero.png HTTP/1.1[0m" 304 -
+2026-01-05 18:25:54,528 - 127.0.0.1 - - [05/Jan/2026 18:25:54] "GET /games HTTP/1.1" 200 -
+2026-01-05 18:25:54,545 - 127.0.0.1 - - [05/Jan/2026 18:25:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:25:54,546 - 127.0.0.1 - - [05/Jan/2026 18:25:54] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:25:57,959 - 127.0.0.1 - - [05/Jan/2026 18:25:57] "GET /games/budget HTTP/1.1" 200 -
+2026-01-05 18:25:57,975 - 127.0.0.1 - - [05/Jan/2026 18:25:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:25:57,976 - 127.0.0.1 - - [05/Jan/2026 18:25:57] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:26:13,372 - 127.0.0.1 - - [05/Jan/2026 18:26:13] "POST /api/games/budget HTTP/1.1" 200 -
+2026-01-05 18:28:33,413 -  * Detected change in '/Users/bhaskar/src/FinLit/app.py', reloading
+2026-01-05 18:28:33,472 -  * Restarting with stat
+2026-01-05 18:28:33,885 -  * Debugger is active!
+2026-01-05 18:28:33,933 -  * Debugger PIN: 139-885-293
+2026-01-05 18:36:12,328 - 127.0.0.1 - - [05/Jan/2026 18:36:12] "GET /games/budget HTTP/1.1" 200 -
+2026-01-05 18:36:12,357 - 127.0.0.1 - - [05/Jan/2026 18:36:12] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:36:12,357 - 127.0.0.1 - - [05/Jan/2026 18:36:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:36:25,877 - 127.0.0.1 - - [05/Jan/2026 18:36:25] "POST /api/games/budget HTTP/1.1" 200 -
+2026-01-05 18:36:59,877 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2026-01-05 18:36:59,877 - [33mPress CTRL+C to quit[0m
+2026-01-05 18:36:59,877 -  * Restarting with stat
+2026-01-05 18:37:00,133 -  * Debugger is active!
+2026-01-05 18:37:00,169 -  * Debugger PIN: 139-885-293
+2026-01-05 18:37:05,286 - 127.0.0.1 - - [05/Jan/2026 18:37:05] "GET / HTTP/1.1" 200 -
+2026-01-05 18:37:05,306 - 127.0.0.1 - - [05/Jan/2026 18:37:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:37:05,306 - 127.0.0.1 - - [05/Jan/2026 18:37:05] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:37:05,309 - 127.0.0.1 - - [05/Jan/2026 18:37:05] "[36mGET /static/img/finlit_hero.png HTTP/1.1[0m" 304 -
+2026-01-05 18:37:06,446 - 127.0.0.1 - - [05/Jan/2026 18:37:06] "GET /blog HTTP/1.1" 200 -
+2026-01-05 18:37:06,466 - 127.0.0.1 - - [05/Jan/2026 18:37:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:37:06,466 - 127.0.0.1 - - [05/Jan/2026 18:37:06] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:37:15,286 - 127.0.0.1 - - [05/Jan/2026 18:37:15] "GET /games HTTP/1.1" 200 -
+2026-01-05 18:37:15,299 - 127.0.0.1 - - [05/Jan/2026 18:37:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:37:15,299 - 127.0.0.1 - - [05/Jan/2026 18:37:15] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:37:17,474 - 127.0.0.1 - - [05/Jan/2026 18:37:17] "GET /games/budget HTTP/1.1" 200 -
+2026-01-05 18:37:17,507 - 127.0.0.1 - - [05/Jan/2026 18:37:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:37:17,508 - 127.0.0.1 - - [05/Jan/2026 18:37:17] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:37:31,844 - 127.0.0.1 - - [05/Jan/2026 18:37:31] "POST /api/games/budget HTTP/1.1" 200 -
+2026-01-05 18:38:27,427 -  * Detected change in '/Users/bhaskar/src/FinLit/app.py', reloading
+2026-01-05 18:38:27,495 -  * Restarting with stat
+2026-01-05 18:38:27,805 -  * Debugger is active!
+2026-01-05 18:38:27,841 -  * Debugger PIN: 139-885-293
+2026-01-05 18:38:30,596 - 127.0.0.1 - - [05/Jan/2026 18:38:30] "POST /api/games/budget HTTP/1.1" 200 -
+2026-01-05 18:39:40,604 - 127.0.0.1 - - [05/Jan/2026 18:39:40] "GET /games/saving HTTP/1.1" 200 -
+2026-01-05 18:39:40,623 - 127.0.0.1 - - [05/Jan/2026 18:39:40] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:39:40,623 - 127.0.0.1 - - [05/Jan/2026 18:39:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:39:57,478 - {"game": "saving", "final_savings": 2390.0, "goal": 1000.0, "goal_percentage": 239.0, "grade": "A+", "avg_monthly_savings": 381.6666666666667, "consistency_score": 43.19624425562455, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Buy a nice gift ($30) and attend the party ($20)", "impact": -50, "monthlySavings": 350, "totalSavings": 825}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1205}, {"month": 4, "choice": "New bike tire ($40), nice parent gift ($35)", "impact": -75, "monthlySavings": 325, "totalSavings": 1530}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1900}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2390}]}
+2026-01-05 18:39:57,483 - 127.0.0.1 - - [05/Jan/2026 18:39:57] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:39:57,490 - {"game": "saving", "final_savings": 2390.0, "goal": 1000.0, "goal_percentage": 239.0, "grade": "A+", "avg_monthly_savings": 381.6666666666667, "consistency_score": 43.19624425562455, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Buy a nice gift ($30) and attend the party ($20)", "impact": -50, "monthlySavings": 350, "totalSavings": 825}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1205}, {"month": 4, "choice": "New bike tire ($40), nice parent gift ($35)", "impact": -75, "monthlySavings": 325, "totalSavings": 1530}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1900}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2390}]}
+2026-01-05 18:39:57,492 - 127.0.0.1 - - [05/Jan/2026 18:39:57] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:39:57,527 - {"game": "saving", "final_savings": 2390.0, "goal": 1000.0, "goal_percentage": 239.0, "grade": "A+", "avg_monthly_savings": 381.6666666666667, "consistency_score": 43.19624425562455, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Buy a nice gift ($30) and attend the party ($20)", "impact": -50, "monthlySavings": 350, "totalSavings": 825}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1205}, {"month": 4, "choice": "New bike tire ($40), nice parent gift ($35)", "impact": -75, "monthlySavings": 325, "totalSavings": 1530}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1900}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2390}]}
+2026-01-05 18:39:57,530 - 127.0.0.1 - - [05/Jan/2026 18:39:57] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:40:06,699 - {"game": "saving", "final_savings": 2390.0, "goal": 1000.0, "goal_percentage": 239.0, "grade": "A+", "avg_monthly_savings": 381.6666666666667, "consistency_score": 43.19624425562455, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Buy a nice gift ($30) and attend the party ($20)", "impact": -50, "monthlySavings": 350, "totalSavings": 825}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1205}, {"month": 4, "choice": "New bike tire ($40), nice parent gift ($35)", "impact": -75, "monthlySavings": 325, "totalSavings": 1530}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1900}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2390}]}
+2026-01-05 18:40:06,703 - 127.0.0.1 - - [05/Jan/2026 18:40:06] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:40:09,457 - {"game": "saving", "final_savings": 2390.0, "goal": 1000.0, "goal_percentage": 239.0, "grade": "A+", "avg_monthly_savings": 381.6666666666667, "consistency_score": 43.19624425562455, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Buy a nice gift ($30) and attend the party ($20)", "impact": -50, "monthlySavings": 350, "totalSavings": 825}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1205}, {"month": 4, "choice": "New bike tire ($40), nice parent gift ($35)", "impact": -75, "monthlySavings": 325, "totalSavings": 1530}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1900}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2390}]}
+2026-01-05 18:40:09,460 - 127.0.0.1 - - [05/Jan/2026 18:40:09] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:40:10,391 - {"game": "saving", "final_savings": 2390.0, "goal": 1000.0, "goal_percentage": 239.0, "grade": "A+", "avg_monthly_savings": 381.6666666666667, "consistency_score": 43.19624425562455, "decisions": [{"month": 1, "choice": "Buy only essential school supplies ($25) and save the rest", "impact": -25, "monthlySavings": 375, "totalSavings": 475}, {"month": 2, "choice": "Buy a nice gift ($30) and attend the party ($20)", "impact": -50, "monthlySavings": 350, "totalSavings": 825}, {"month": 3, "choice": "Skip the concert, fix phone yourself with a kit ($20)", "impact": -20, "monthlySavings": 380, "totalSavings": 1205}, {"month": 4, "choice": "New bike tire ($40), nice parent gift ($35)", "impact": -75, "monthlySavings": 325, "totalSavings": 1530}, {"month": 5, "choice": "Focus on job search, minimal summer spending ($30)", "impact": -30, "monthlySavings": 370, "totalSavings": 1900}, {"month": 6, "choice": "Skip festival, save all extra income ($10 expenses only)", "impact": -10, "monthlySavings": 490, "totalSavings": 2390}]}
+2026-01-05 18:40:10,394 - 127.0.0.1 - - [05/Jan/2026 18:40:10] "POST /api/games/saving HTTP/1.1" 200 -
+2026-01-05 18:40:10,965 - 127.0.0.1 - - [05/Jan/2026 18:40:10] "GET /games/invest HTTP/1.1" 200 -
+2026-01-05 18:40:10,984 - 127.0.0.1 - - [05/Jan/2026 18:40:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:40:10,984 - 127.0.0.1 - - [05/Jan/2026 18:40:10] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:40:13,850 - 127.0.0.1 - - [05/Jan/2026 18:40:13] "POST /api/games/invest HTTP/1.1" 200 -
+2026-01-05 18:40:29,097 - 127.0.0.1 - - [05/Jan/2026 18:40:29] "GET / HTTP/1.1" 200 -
+2026-01-05 18:40:29,110 - 127.0.0.1 - - [05/Jan/2026 18:40:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:40:29,111 - 127.0.0.1 - - [05/Jan/2026 18:40:29] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:40:29,112 - 127.0.0.1 - - [05/Jan/2026 18:40:29] "[36mGET /static/img/finlit_hero.png HTTP/1.1[0m" 304 -
+2026-01-05 18:45:42,126 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2026-01-05 18:45:42,126 - [33mPress CTRL+C to quit[0m
+2026-01-05 18:45:42,127 -  * Restarting with stat
+2026-01-05 18:45:42,364 -  * Debugger is active!
+2026-01-05 18:45:42,398 -  * Debugger PIN: 139-885-293
+2026-01-05 18:45:42,458 - 127.0.0.1 - - [05/Jan/2026 18:45:42] "GET / HTTP/1.1" 200 -
+2026-01-05 18:45:42,476 - 127.0.0.1 - - [05/Jan/2026 18:45:42] "[33mGET /static/img/home_hero.png HTTP/1.1[0m" 404 -
+2026-01-05 18:45:42,484 - 127.0.0.1 - - [05/Jan/2026 18:45:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:45:42,486 - 127.0.0.1 - - [05/Jan/2026 18:45:42] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:54:05,414 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2026-01-05 18:54:05,415 - [33mPress CTRL+C to quit[0m
+2026-01-05 18:54:05,415 -  * Restarting with stat
+2026-01-05 18:54:05,653 -  * Debugger is active!
+2026-01-05 18:54:05,687 -  * Debugger PIN: 139-885-293
+2026-01-05 18:54:05,722 - 127.0.0.1 - - [05/Jan/2026 18:54:05] "GET / HTTP/1.1" 200 -
+2026-01-05 18:54:05,743 - 127.0.0.1 - - [05/Jan/2026 18:54:05] "[33mGET /static/img/home_hero.png HTTP/1.1[0m" 404 -
+2026-01-05 18:54:05,749 - 127.0.0.1 - - [05/Jan/2026 18:54:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:54:05,750 - 127.0.0.1 - - [05/Jan/2026 18:54:05] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:54:10,463 - 127.0.0.1 - - [05/Jan/2026 18:54:10] "GET / HTTP/1.1" 200 -
+2026-01-05 18:54:10,484 - 127.0.0.1 - - [05/Jan/2026 18:54:10] "[33mGET /static/img/home_hero.png HTTP/1.1[0m" 404 -
+2026-01-05 18:54:10,485 - 127.0.0.1 - - [05/Jan/2026 18:54:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:54:10,486 - 127.0.0.1 - - [05/Jan/2026 18:54:10] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:54:11,225 - 127.0.0.1 - - [05/Jan/2026 18:54:11] "GET / HTTP/1.1" 200 -
+2026-01-05 18:54:11,242 - 127.0.0.1 - - [05/Jan/2026 18:54:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:54:11,242 - 127.0.0.1 - - [05/Jan/2026 18:54:11] "[33mGET /static/img/home_hero.png HTTP/1.1[0m" 404 -
+2026-01-05 18:54:11,244 - 127.0.0.1 - - [05/Jan/2026 18:54:11] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:54:16,704 - 127.0.0.1 - - [05/Jan/2026 18:54:16] "GET / HTTP/1.1" 200 -
+2026-01-05 18:54:16,726 - 127.0.0.1 - - [05/Jan/2026 18:54:16] "[33mGET /static/img/home_hero.png HTTP/1.1[0m" 404 -
+2026-01-05 18:54:16,727 - 127.0.0.1 - - [05/Jan/2026 18:54:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:54:16,728 - 127.0.0.1 - - [05/Jan/2026 18:54:16] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:55:00,426 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2026-01-05 18:55:00,427 - [33mPress CTRL+C to quit[0m
+2026-01-05 18:55:00,427 -  * Restarting with stat
+2026-01-05 18:55:00,743 -  * Debugger is active!
+2026-01-05 18:55:00,779 -  * Debugger PIN: 139-885-293
+2026-01-05 18:55:05,556 - 127.0.0.1 - - [05/Jan/2026 18:55:05] "GET / HTTP/1.1" 200 -
+2026-01-05 18:55:05,579 - 127.0.0.1 - - [05/Jan/2026 18:55:05] "[33mGET /static/img/home_hero.png HTTP/1.1[0m" 404 -
+2026-01-05 18:55:05,588 - 127.0.0.1 - - [05/Jan/2026 18:55:05] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:55:05,589 - 127.0.0.1 - - [05/Jan/2026 18:55:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:55:06,607 - 127.0.0.1 - - [05/Jan/2026 18:55:06] "GET / HTTP/1.1" 200 -
+2026-01-05 18:55:06,627 - 127.0.0.1 - - [05/Jan/2026 18:55:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:55:06,627 - 127.0.0.1 - - [05/Jan/2026 18:55:06] "[33mGET /static/img/home_hero.png HTTP/1.1[0m" 404 -
+2026-01-05 18:55:06,629 - 127.0.0.1 - - [05/Jan/2026 18:55:06] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:55:07,927 - 127.0.0.1 - - [05/Jan/2026 18:55:07] "GET / HTTP/1.1" 200 -
+2026-01-05 18:55:07,940 - 127.0.0.1 - - [05/Jan/2026 18:55:07] "[33mGET /static/img/home_hero.png HTTP/1.1[0m" 404 -
+2026-01-05 18:55:07,940 - 127.0.0.1 - - [05/Jan/2026 18:55:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:55:07,942 - 127.0.0.1 - - [05/Jan/2026 18:55:07] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:55:37,453 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2026-01-05 18:55:37,454 - [33mPress CTRL+C to quit[0m
+2026-01-05 18:55:37,454 -  * Restarting with stat
+2026-01-05 18:55:37,693 -  * Debugger is active!
+2026-01-05 18:55:37,727 -  * Debugger PIN: 139-885-293
+2026-01-05 18:55:41,661 - 127.0.0.1 - - [05/Jan/2026 18:55:41] "GET / HTTP/1.1" 200 -
+2026-01-05 18:55:41,687 - 127.0.0.1 - - [05/Jan/2026 18:55:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:55:41,692 - 127.0.0.1 - - [05/Jan/2026 18:55:41] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:55:41,693 - 127.0.0.1 - - [05/Jan/2026 18:55:41] "GET /static/img/home_hero.png HTTP/1.1" 200 -
+2026-01-05 18:56:06,416 - 127.0.0.1 - - [05/Jan/2026 18:56:06] "GET / HTTP/1.1" 200 -
+2026-01-05 18:56:06,438 - 127.0.0.1 - - [05/Jan/2026 18:56:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:56:06,439 - 127.0.0.1 - - [05/Jan/2026 18:56:06] "[36mGET /static/img/home_hero.png HTTP/1.1[0m" 304 -
+2026-01-05 18:56:06,439 - 127.0.0.1 - - [05/Jan/2026 18:56:06] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:58:30,698 - 127.0.0.1 - - [05/Jan/2026 18:58:30] "GET / HTTP/1.1" 200 -
+2026-01-05 18:58:30,718 - 127.0.0.1 - - [05/Jan/2026 18:58:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 18:58:30,718 - 127.0.0.1 - - [05/Jan/2026 18:58:30] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 18:58:30,719 - 127.0.0.1 - - [05/Jan/2026 18:58:30] "[36mGET /static/img/home_hero.png HTTP/1.1[0m" 304 -
+2026-01-05 19:04:33,441 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2026-01-05 19:04:33,441 - [33mPress CTRL+C to quit[0m
+2026-01-05 19:04:33,442 -  * Restarting with stat
+2026-01-05 19:04:33,688 -  * Debugger is active!
+2026-01-05 19:04:33,726 -  * Debugger PIN: 139-885-293
+2026-01-05 19:04:37,545 - 127.0.0.1 - - [05/Jan/2026 19:04:37] "GET / HTTP/1.1" 200 -
+2026-01-05 19:04:37,569 - 127.0.0.1 - - [05/Jan/2026 19:04:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-05 19:04:37,572 - 127.0.0.1 - - [05/Jan/2026 19:04:37] "[36mGET /static/img/home_hero.png HTTP/1.1[0m" 304 -
+2026-01-05 19:04:37,579 - 127.0.0.1 - - [05/Jan/2026 19:04:37] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
