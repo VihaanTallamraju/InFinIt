@@ -1652,3 +1652,22 @@
 2026-01-05 19:04:37,569 - 127.0.0.1 - - [05/Jan/2026 19:04:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2026-01-05 19:04:37,572 - 127.0.0.1 - - [05/Jan/2026 19:04:37] "[36mGET /static/img/home_hero.png HTTP/1.1[0m" 304 -
 2026-01-05 19:04:37,579 - 127.0.0.1 - - [05/Jan/2026 19:04:37] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 19:10:34,590 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2026-01-05 19:10:34,590 - [33mPress CTRL+C to quit[0m
+2026-01-05 19:10:34,590 -  * Restarting with stat
+2026-01-05 19:10:34,853 -  * Debugger is active!
+2026-01-05 19:10:34,888 -  * Debugger PIN: 139-885-293
+2026-01-05 19:11:50,609 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2026-01-05 19:11:50,609 - [33mPress CTRL+C to quit[0m
+2026-01-05 19:11:50,609 -  * Restarting with stat
+2026-01-05 19:11:50,845 -  * Debugger is active!
+2026-01-05 19:11:50,878 -  * Debugger PIN: 139-885-293
+2026-01-05 19:11:55,705 - 127.0.0.1 - - [05/Jan/2026 19:11:55] "GET /blog HTTP/1.1" 200 -
+2026-01-05 19:11:55,723 - 127.0.0.1 - - [05/Jan/2026 19:11:55] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-05 19:11:55,724 - 127.0.0.1 - - [05/Jan/2026 19:11:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -

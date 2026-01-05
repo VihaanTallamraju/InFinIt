@@ -84,6 +84,54 @@ def add_blog_posts():
 
         print(f"Imported {imported} blog posts from external source.")
 
+        # Add requested specific articles explicitly (ensures visibility)
+        manual_articles = [
+            {
+                "title": "Types of Investments",
+                "url": "https://vihaantallamraju-businessandstocks.blogspot.com/2026/01/types-of-investments.html#more",
+                "excerpt": "Overview of common investment types for beginners: stocks, bonds, index funds, and more.",
+                "content_html": (
+                    "<p>This article explains different types of investments for beginners and how they compare." 
+                    "</p><p><a href='https://vihaantallamraju-businessandstocks.blogspot.com/2026/01/types-of-investments.html#more' "
+                    "target='_blank' rel='noopener noreferrer' class='btn btn-primary'>Read on Blogger</a></p>"
+                )
+            },
+            {
+                "title": "Why Investing Is Important",
+                "url": "https://vihaantallamraju-businessandstocks.blogspot.com/2026/01/why-investing-is-important.html",
+                "excerpt": "Why starting to invest early matters: compound growth, beating inflation, and building long-term wealth.",
+                "content_html": (
+                    "<p>This article covers why investing is important, including compound interest and long-term goals." 
+                    "</p><p><a href='https://vihaantallamraju-businessandstocks.blogspot.com/2026/01/why-investing-is-important.html' "
+                    "target='_blank' rel='noopener noreferrer' class='btn btn-primary'>Read on Blogger</a></p>"
+                )
+            },
+            {
+                "title": "Needs vs Wants",
+                "url": "https://vihaantallamraju-businessandstocks.blogspot.com/2026/01/needs-vs-wants.html",
+                "excerpt": "Learn to separate essential expenses from discretionary spending to improve budgeting decisions.",
+                "content_html": (
+                    "<p>Understand the difference between needs and wants to make smarter budgeting decisions." 
+                    "</p><p><a href='https://vihaantallamraju-businessandstocks.blogspot.com/2026/01/needs-vs-wants.html' "
+                    "target='_blank' rel='noopener noreferrer' class='btn btn-primary'>Read on Blogger</a></p>"
+                )
+            }
+        ]
+
+        # Insert manual articles if not present by title
+        for art in manual_articles:
+            exists = BlogPost.query.filter(BlogPost.title == art["title"]).first()
+            if exists:
+                continue
+            post = BlogPost(
+                title=art["title"],
+                excerpt=art["excerpt"],
+                content=art["content_html"],
+                date_posted=datetime.utcnow()
+            )
+            db.session.add(post)
+        db.session.commit()
+
 def add_books():
     """Add sample book recommendations"""
     print("Adding book recommendations...")
