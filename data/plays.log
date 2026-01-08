@@ -1751,3 +1751,58 @@
 2026-01-07 17:41:21,911 - 127.0.0.1 - - [07/Jan/2026 17:41:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2026-01-07 17:41:21,911 - 127.0.0.1 - - [07/Jan/2026 17:41:21] "[36mGET /static/img/home_hero.png HTTP/1.1[0m" 304 -
 2026-01-07 17:41:21,912 - 127.0.0.1 - - [07/Jan/2026 17:41:21] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-08 07:38:11,590 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2026-01-08 07:38:11,591 - [33mPress CTRL+C to quit[0m
+2026-01-08 07:38:11,591 -  * Restarting with stat
+2026-01-08 07:38:11,822 -  * Debugger is active!
+2026-01-08 07:38:11,859 -  * Debugger PIN: 139-885-293
+2026-01-08 07:38:24,332 - 127.0.0.1 - - [08/Jan/2026 07:38:24] "GET / HTTP/1.1" 200 -
+2026-01-08 07:38:24,366 - 127.0.0.1 - - [08/Jan/2026 07:38:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-08 07:38:24,369 - 127.0.0.1 - - [08/Jan/2026 07:38:24] "[36mGET /static/img/home_hero.png HTTP/1.1[0m" 304 -
+2026-01-08 07:38:24,371 - 127.0.0.1 - - [08/Jan/2026 07:38:24] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-08 07:38:27,458 - 127.0.0.1 - - [08/Jan/2026 07:38:27] "GET /blog HTTP/1.1" 200 -
+2026-01-08 07:38:27,472 - 127.0.0.1 - - [08/Jan/2026 07:38:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-08 07:38:27,473 - 127.0.0.1 - - [08/Jan/2026 07:38:27] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-08 07:38:30,849 - 127.0.0.1 - - [08/Jan/2026 07:38:30] "GET /blog HTTP/1.1" 200 -
+2026-01-08 07:38:30,863 - 127.0.0.1 - - [08/Jan/2026 07:38:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-08 07:38:30,865 - 127.0.0.1 - - [08/Jan/2026 07:38:30] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-08 07:38:41,293 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2026-01-08 07:38:41,293 - [33mPress CTRL+C to quit[0m
+2026-01-08 07:38:41,293 -  * Restarting with stat
+2026-01-08 07:38:41,530 -  * Debugger is active!
+2026-01-08 07:38:41,563 -  * Debugger PIN: 139-885-293
+2026-01-08 07:38:43,549 - 127.0.0.1 - - [08/Jan/2026 07:38:43] "GET /blog HTTP/1.1" 200 -
+2026-01-08 07:38:43,578 - 127.0.0.1 - - [08/Jan/2026 07:38:43] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-08 07:38:43,579 - 127.0.0.1 - - [08/Jan/2026 07:38:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-08 07:39:35,007 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2026-01-08 07:39:35,007 - [33mPress CTRL+C to quit[0m
+2026-01-08 07:39:35,007 -  * Restarting with stat
+2026-01-08 07:39:35,239 -  * Debugger is active!
+2026-01-08 07:39:35,272 -  * Debugger PIN: 139-885-293
+2026-01-08 07:39:37,325 - 127.0.0.1 - - [08/Jan/2026 07:39:37] "GET /blog HTTP/1.1" 200 -
+2026-01-08 07:39:37,360 - 127.0.0.1 - - [08/Jan/2026 07:39:37] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-08 07:39:37,361 - 127.0.0.1 - - [08/Jan/2026 07:39:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-08 07:39:57,519 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.50.167:5001
+2026-01-08 07:39:57,519 - [33mPress CTRL+C to quit[0m
+2026-01-08 07:39:57,519 -  * Restarting with stat
+2026-01-08 07:39:57,751 -  * Debugger is active!
+2026-01-08 07:39:57,782 -  * Debugger PIN: 139-885-293
+2026-01-08 07:40:00,596 - 127.0.0.1 - - [08/Jan/2026 07:40:00] "GET / HTTP/1.1" 200 -
+2026-01-08 07:40:00,628 - 127.0.0.1 - - [08/Jan/2026 07:40:00] "[36mGET /static/img/home_hero.png HTTP/1.1[0m" 304 -
+2026-01-08 07:40:00,628 - 127.0.0.1 - - [08/Jan/2026 07:40:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-08 07:40:00,632 - 127.0.0.1 - - [08/Jan/2026 07:40:00] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -
+2026-01-08 07:40:04,967 - 127.0.0.1 - - [08/Jan/2026 07:40:04] "GET /blog HTTP/1.1" 200 -
+2026-01-08 07:40:04,981 - 127.0.0.1 - - [08/Jan/2026 07:40:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-01-08 07:40:04,982 - 127.0.0.1 - - [08/Jan/2026 07:40:04] "[36mGET /static/js/games.js HTTP/1.1[0m" 304 -

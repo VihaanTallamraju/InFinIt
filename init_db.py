@@ -96,26 +96,6 @@ def add_blog_posts():
                     "target='_blank' rel='noopener noreferrer' class='btn btn-primary'>Read on Blogger</a></p>"
                 )
             },
-            {
-                "title": "Why Investing Is Important",
-                "url": "https://vihaantallamraju-businessandstocks.blogspot.com/2026/01/why-investing-is-important.html",
-                "excerpt": "Why starting to invest early matters: compound growth, beating inflation, and building long-term wealth.",
-                "content_html": (
-                    "<p>This article covers why investing is important, including compound interest and long-term goals." 
-                    "</p><p><a href='https://vihaantallamraju-businessandstocks.blogspot.com/2026/01/why-investing-is-important.html' "
-                    "target='_blank' rel='noopener noreferrer' class='btn btn-primary'>Read on Blogger</a></p>"
-                )
-            },
-            {
-                "title": "Needs vs Wants",
-                "url": "https://vihaantallamraju-businessandstocks.blogspot.com/2026/01/needs-vs-wants.html",
-                "excerpt": "Learn to separate essential expenses from discretionary spending to improve budgeting decisions.",
-                "content_html": (
-                    "<p>Understand the difference between needs and wants to make smarter budgeting decisions." 
-                    "</p><p><a href='https://vihaantallamraju-businessandstocks.blogspot.com/2026/01/needs-vs-wants.html' "
-                    "target='_blank' rel='noopener noreferrer' class='btn btn-primary'>Read on Blogger</a></p>"
-                )
-            }
         ]
 
         # Insert manual articles if not present by title
